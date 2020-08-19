@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DHTaskCreatorGitItem">
+            <connections>
+                <outlet property="branchPopupButton" destination="s43-qz-tfZ" id="BxC-ST-5HP"/>
+                <outlet property="contentView" destination="6Fy-M3-gKP" id="p2d-Tz-t2b"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="6Fy-M3-gKP">
+                    <rect key="frame" x="10" y="10" width="460" height="75"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-fa-DkM">
+                            <rect key="frame" x="-2" y="39" width="114" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="s46-Ca-ni8"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Branchs:" id="t3Z-y9-Ib5">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jKD-XE-9wV">
+                            <rect key="frame" x="-2" y="13" width="114" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="eak-1w-ZA4"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Need Git Pull:" id="ADm-Qi-nHI">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s43-qz-tfZ">
+                            <rect key="frame" x="118" y="34" width="335" height="25"/>
+                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hEw-WJ-1Ku" id="85H-3D-nzo">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <menu key="menu" id="4a0-JX-h2E">
+                                    <items>
+                                        <menuItem title="Item 1" state="on" id="hEw-WJ-1Ku"/>
+                                        <menuItem title="Item 2" id="C7G-g5-I31"/>
+                                        <menuItem title="Item 3" id="Jz0-Ks-J6v"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="branchAction:" target="-2" id="cRI-q7-wJ0"/>
+                            </connections>
+                        </popUpButton>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Let-Jc-tEk">
+                            <rect key="frame" x="-2" y="59" width="96" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="GIT SETTINGS" id="5Bw-QO-h5N">
+                                <font key="font" metaFont="systemBold"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="liM-2s-QW4">
+                            <rect key="frame" x="118" y="9" width="42" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="38" id="TCW-k6-XJF"/>
+                                <constraint firstAttribute="height" constant="21" id="j55-H3-W2V"/>
+                            </constraints>
+                        </switch>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Let-Jc-tEk" firstAttribute="leading" secondItem="6Fy-M3-gKP" secondAttribute="leading" id="Cln-Mg-jeI"/>
+                        <constraint firstItem="jKD-XE-9wV" firstAttribute="leading" secondItem="Ww2-fa-DkM" secondAttribute="leading" id="SHG-0l-eGV"/>
+                        <constraint firstItem="jKD-XE-9wV" firstAttribute="width" secondItem="Ww2-fa-DkM" secondAttribute="width" id="X7M-Sr-DdA"/>
+                        <constraint firstItem="Ww2-fa-DkM" firstAttribute="leading" secondItem="6Fy-M3-gKP" secondAttribute="leading" id="YIO-MP-yXe"/>
+                        <constraint firstItem="Ww2-fa-DkM" firstAttribute="top" secondItem="6Fy-M3-gKP" secondAttribute="top" constant="20" id="giH-ne-zzz"/>
+                        <constraint firstItem="s43-qz-tfZ" firstAttribute="leading" secondItem="Ww2-fa-DkM" secondAttribute="trailing" constant="10" id="hYI-ii-cOJ"/>
+                        <constraint firstItem="Let-Jc-tEk" firstAttribute="top" secondItem="6Fy-M3-gKP" secondAttribute="top" id="jbI-rp-I48"/>
+                        <constraint firstItem="s43-qz-tfZ" firstAttribute="centerY" secondItem="Ww2-fa-DkM" secondAttribute="centerY" id="jkp-T2-rp4"/>
+                        <constraint firstAttribute="trailing" secondItem="s43-qz-tfZ" secondAttribute="trailing" constant="10" id="kxT-xE-PoR"/>
+                        <constraint firstItem="liM-2s-QW4" firstAttribute="centerY" secondItem="jKD-XE-9wV" secondAttribute="centerY" id="nwz-xY-RM7"/>
+                        <constraint firstItem="liM-2s-QW4" firstAttribute="leading" secondItem="s43-qz-tfZ" secondAttribute="leading" id="vWd-H9-nuT"/>
+                        <constraint firstItem="jKD-XE-9wV" firstAttribute="top" secondItem="Ww2-fa-DkM" secondAttribute="bottom" constant="10" id="zr4-nX-b0q"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="6Fy-M3-gKP" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="KK9-U9-B7B"/>
+                <constraint firstAttribute="trailing" secondItem="6Fy-M3-gKP" secondAttribute="trailing" constant="10" id="QPP-KC-Wb6"/>
+                <constraint firstAttribute="bottom" secondItem="6Fy-M3-gKP" secondAttribute="bottom" constant="10" id="nvr-6A-D4A"/>
+                <constraint firstItem="6Fy-M3-gKP" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="wCU-VF-0rA"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="65.5"/>
+        </customView>
+        <collectionViewItem id="xfB-8J-bV9" customClass="DHTaskCreatorGitItem"/>
+    </objects>
+</document>

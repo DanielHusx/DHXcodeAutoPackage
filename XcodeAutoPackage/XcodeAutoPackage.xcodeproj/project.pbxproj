@@ -1,0 +1,1129 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D54453124C6B21B00290046 /* DHLoggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D54453024C6B21B00290046 /* DHLoggerViewController.m */; };
+		3D54453524C6B36D00290046 /* DHVerticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D54453424C6B36D00290046 /* DHVerticalViewController.m */; };
+		3D54453824C6B39E00290046 /* DHHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D54453724C6B39E00290046 /* DHHorizontalViewController.m */; };
+		3D54453B24C6B99700290046 /* DHVerticalSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D54453A24C6B99700290046 /* DHVerticalSplitView.m */; };
+		3DFE868D24C025980015BB11 /* DHCheckCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE868C24C025980015BB11 /* DHCheckCellView.m */; };
+		3DFE869024C025F20015BB11 /* DHCheckColumnHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE868F24C025F20015BB11 /* DHCheckColumnHeaderCell.m */; };
+		3DFE869324C026100015BB11 /* DHTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE869224C026100015BB11 /* DHTableHeaderView.m */; };
+		3DFE869624C026F70015BB11 /* DHTextCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE869524C026F70015BB11 /* DHTextCellView.m */; };
+		3DFE869D24C04B5D0015BB11 /* DHTaskListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE869C24C04B5D0015BB11 /* DHTaskListViewModel.m */; };
+		3DFE86A024C053760015BB11 /* NSArray+DHArrayExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE869F24C053760015BB11 /* NSArray+DHArrayExtension.m */; };
+		3DFE86D724C55B1D0015BB11 /* DHCheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE86D624C55B1D0015BB11 /* DHCheckButton.m */; };
+		3DFE86DA24C55E480015BB11 /* DHClickTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE86D924C55E480015BB11 /* DHClickTextField.m */; };
+		65451CB024CC2AA60063A07B /* DHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 65451CAF24CC2AA60063A07B /* DHLogger.m */; };
+		657CD11124D5BA5D00D3F233 /* DHXcodeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65234B4D24D5B092003113CF /* DHXcodeSDK.framework */; };
+		657CD11224D5BA5D00D3F233 /* DHXcodeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65234B4D24D5B092003113CF /* DHXcodeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		657CD11424D5BDBF00D3F233 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDA701A24A870EA00F72E48 /* libiconv.tbd */; };
+		657CD11524D5BDC400D3F233 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDA6FEB24A86B5600F72E48 /* libz.tbd */; };
+		658F2E8E24A11C4300A9C6EA /* DHTaskCreatorViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2E8D24A11C4300A9C6EA /* DHTaskCreatorViewModel.m */; };
+		658F2E9524A23C1B00A9C6EA /* DHTaskCreatorProjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2E9324A23C1B00A9C6EA /* DHTaskCreatorProjectItem.m */; };
+		658F2E9624A23C1B00A9C6EA /* DHTaskCreatorProjectItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658F2E9424A23C1B00A9C6EA /* DHTaskCreatorProjectItem.xib */; };
+		658F2E9A24A24B9200A9C6EA /* DHTaskCreatorProfileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2E9824A24B9200A9C6EA /* DHTaskCreatorProfileItem.m */; };
+		658F2E9B24A24B9200A9C6EA /* DHTaskCreatorProfileItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658F2E9924A24B9200A9C6EA /* DHTaskCreatorProfileItem.xib */; };
+		658F2E9F24A24BA700A9C6EA /* DHTaskCreatorPathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2E9D24A24BA700A9C6EA /* DHTaskCreatorPathItem.m */; };
+		658F2EA024A24BA700A9C6EA /* DHTaskCreatorPathItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658F2E9E24A24BA700A9C6EA /* DHTaskCreatorPathItem.xib */; };
+		658F2EAF24A2617300A9C6EA /* DHTaskCreatorAppItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2EAD24A2617300A9C6EA /* DHTaskCreatorAppItem.m */; };
+		658F2EB024A2617300A9C6EA /* DHTaskCreatorAppItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658F2EAE24A2617300A9C6EA /* DHTaskCreatorAppItem.xib */; };
+		658F2EB624A26D3900A9C6EA /* DHTaskUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2EB524A26D3900A9C6EA /* DHTaskUtils.m */; };
+		6593AA0A24CC7609006E8D77 /* DHTaskFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6593AA0924CC7609006E8D77 /* DHTaskFactory.m */; };
+		65B3163824BCC7CD00E1A53F /* DHMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3163724BCC7CD00E1A53F /* DHMainWindowController.m */; };
+		65B3163F24BDEE7B00E1A53F /* DHTaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3163E24BDEE7B00E1A53F /* DHTaskListViewController.m */; };
+		65B62AF724C2A185000D6584 /* DHTaskGitHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B62AF624C2A185000D6584 /* DHTaskGitHandler.m */; };
+		65B62AFA24C2AE64000D6584 /* DHTaskPodHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B62AF924C2AE64000D6584 /* DHTaskPodHandler.m */; };
+		65B62B0024C2B114000D6584 /* DHTaskArchiveHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B62AFF24C2B114000D6584 /* DHTaskArchiveHandler.m */; };
+		65B62B0324C2B4DC000D6584 /* DHTaskProjectHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B62B0224C2B4DC000D6584 /* DHTaskProjectHandler.m */; };
+		65B62B0624C2BFC2000D6584 /* DHTaskDistributeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B62B0524C2BFC2000D6584 /* DHTaskDistributeHandler.m */; };
+		65BF3D6D24C2EADF00BFD362 /* DHTaskHandlerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BF3D6C24C2EADF00BFD362 /* DHTaskHandlerManager.m */; };
+		65BF3D8024C32F9A00BFD362 /* DHLoggerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BF3D7F24C32F9A00BFD362 /* DHLoggerViewModel.m */; };
+		65BF3D8524C349A400BFD362 /* DHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BF3D8424C349A400BFD362 /* DHTextField.m */; };
+		65D393B924945C94002EBC68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D393B824945C94002EBC68 /* AppDelegate.m */; };
+		65D393BF24945C94002EBC68 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D393BE24945C94002EBC68 /* Document.m */; };
+		65D393C124945C98002EBC68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D393C024945C98002EBC68 /* Assets.xcassets */; };
+		65D393C424945C98002EBC68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D393C224945C98002EBC68 /* Main.storyboard */; };
+		65D393C724945C98002EBC68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D393C624945C98002EBC68 /* main.m */; };
+		65D394892495C0F2002EBC68 /* DHConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D394882495C0F2002EBC68 /* DHConstant.m */; };
+		65D3948C2495E4B8002EBC68 /* DHCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D3948B2495E4B8002EBC68 /* DHCommonTools.m */; };
+		65D3949E2496045B002EBC68 /* DHTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D3949D2496045B002EBC68 /* DHTaskModel.m */; };
+		65D394A924962274002EBC68 /* DHGlobalConfigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D394A824962274002EBC68 /* DHGlobalConfigration.m */; };
+		65E0ED8224CC798500DAEDBB /* DHTaskConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED8124CC798500DAEDBB /* DHTaskConfiguration.m */; };
+		65E0ED8624CC8CD200DAEDBB /* DHTaskSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED8524CC8CD200DAEDBB /* DHTaskSetter.m */; };
+		65E0ED8924CCFF9800DAEDBB /* DHTaskUpdator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED8824CCFF9800DAEDBB /* DHTaskUpdator.m */; };
+		65E0ED9024CD2DF600DAEDBB /* NSDate+DHDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED8F24CD2DF600DAEDBB /* NSDate+DHDateFormat.m */; };
+		65E0ED9624CD7E1100DAEDBB /* DHMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED9524CD7E1100DAEDBB /* DHMineViewController.m */; };
+		65E0ED9924CD7F4B00DAEDBB /* DHMineRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED9824CD7F4B00DAEDBB /* DHMineRowView.m */; };
+		65E0ED9C24CD7F6800DAEDBB /* DHImageTextCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED9B24CD7F6800DAEDBB /* DHImageTextCellView.m */; };
+		65E0EDA024CD804200DAEDBB /* DHMineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0ED9F24CD804200DAEDBB /* DHMineViewModel.m */; };
+		65E0EDA324CD819F00DAEDBB /* DHImageTextCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0EDA224CD819F00DAEDBB /* DHImageTextCellViewModel.m */; };
+		65E0EDA624CDBD2800DAEDBB /* DHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0EDA524CDBD2800DAEDBB /* DHAlert.m */; };
+		65E0EDAC24CEF85200DAEDBB /* DHLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E0EDAB24CEF85200DAEDBB /* DHLogFormatter.m */; };
+		65F6875E24A4916B005F90B1 /* DHTaskCreatorPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6875D24A4916B005F90B1 /* DHTaskCreatorPanel.m */; };
+		65F6876224A49203005F90B1 /* DHTaskCreatorPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F6876124A49203005F90B1 /* DHTaskCreatorPanel.xib */; };
+		65F687DE24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F687DD24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.m */; };
+		65F687E024A4AB62005F90B1 /* DHTaskCreatorDetailPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F687DF24A4AB62005F90B1 /* DHTaskCreatorDetailPanel.xib */; };
+		65F6881724A5F231005F90B1 /* DHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6881624A5F231005F90B1 /* DHMainViewController.m */; };
+		65F6882A24A63032005F90B1 /* DHSettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6882924A63032005F90B1 /* DHSettingsViewModel.m */; };
+		65F6882D24A6305B005F90B1 /* DHSettingsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6882C24A6305B005F90B1 /* DHSettingsPanel.m */; };
+		65F6882F24A63067005F90B1 /* DHSettingsPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F6882E24A63067005F90B1 /* DHSettingsPanel.xib */; };
+		65F6883224A633B3005F90B1 /* DHTaskArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6883124A633B3005F90B1 /* DHTaskArchiver.m */; };
+		65F6883B24A63C96005F90B1 /* DHCheckColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6883A24A63C96005F90B1 /* DHCheckColumn.m */; };
+		65F6884424A66C57005F90B1 /* DHTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6884324A66C57005F90B1 /* DHTableRowView.m */; };
+		65F6884D24A73DD0005F90B1 /* DHGlobalArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6884C24A73DD0005F90B1 /* DHGlobalArchiver.m */; };
+		65F6888C24A7588D005F90B1 /* DHTaskExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6888B24A7588D005F90B1 /* DHTaskExecutor.m */; };
+		65F6888F24A76269005F90B1 /* NSMutableArray+DHQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6888E24A76269005F90B1 /* NSMutableArray+DHQueue.m */; };
+		65FFCD1724B337710027AAA1 /* DHTaskCreatorGitItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD1524B337710027AAA1 /* DHTaskCreatorGitItem.m */; };
+		65FFCD1824B337710027AAA1 /* DHTaskCreatorGitItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FFCD1624B337710027AAA1 /* DHTaskCreatorGitItem.xib */; };
+		65FFCD2124B3462A0027AAA1 /* DHTaskCreatorDistributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD1F24B3462A0027AAA1 /* DHTaskCreatorDistributeItem.m */; };
+		65FFCD2224B3462A0027AAA1 /* DHTaskCreatorDistributeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FFCD2024B3462A0027AAA1 /* DHTaskCreatorDistributeItem.xib */; };
+		65FFCD2624B346600027AAA1 /* DHTaskCreatorArchiveItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD2424B346600027AAA1 /* DHTaskCreatorArchiveItem.m */; };
+		65FFCD2724B346600027AAA1 /* DHTaskCreatorArchiveItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FFCD2524B346600027AAA1 /* DHTaskCreatorArchiveItem.xib */; };
+		65FFCD2B24B34AAF0027AAA1 /* DHTaskCreatorPodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD2924B34AAF0027AAA1 /* DHTaskCreatorPodItem.m */; };
+		65FFCD2C24B34AAF0027AAA1 /* DHTaskCreatorPodItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FFCD2A24B34AAF0027AAA1 /* DHTaskCreatorPodItem.xib */; };
+		65FFCD2F24B563210027AAA1 /* NSView+DHViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD2E24B563210027AAA1 /* NSView+DHViewExtension.m */; };
+		65FFCD3324B5CA9E0027AAA1 /* DHDistributePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD3224B5CA9E0027AAA1 /* DHDistributePanel.m */; };
+		65FFCD3524B5CAB50027AAA1 /* DHDistributePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FFCD3424B5CAB50027AAA1 /* DHDistributePanel.xib */; };
+		65FFCD3824B5FF330027AAA1 /* DHTaskDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCD3724B5FF330027AAA1 /* DHTaskDetailViewModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		657CD11324D5BA5D00D3F233 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				657CD11224D5BA5D00D3F233 /* DHXcodeSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3D54452F24C6B21B00290046 /* DHLoggerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLoggerViewController.h; sourceTree = "<group>"; };
+		3D54453024C6B21B00290046 /* DHLoggerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLoggerViewController.m; sourceTree = "<group>"; };
+		3D54453324C6B36D00290046 /* DHVerticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHVerticalViewController.h; sourceTree = "<group>"; };
+		3D54453424C6B36D00290046 /* DHVerticalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHVerticalViewController.m; sourceTree = "<group>"; };
+		3D54453624C6B39E00290046 /* DHHorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHHorizontalViewController.h; sourceTree = "<group>"; };
+		3D54453724C6B39E00290046 /* DHHorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHHorizontalViewController.m; sourceTree = "<group>"; };
+		3D54453924C6B99700290046 /* DHVerticalSplitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHVerticalSplitView.h; sourceTree = "<group>"; };
+		3D54453A24C6B99700290046 /* DHVerticalSplitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHVerticalSplitView.m; sourceTree = "<group>"; };
+		3DDA6FEB24A86B5600F72E48 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3DDA701A24A870EA00F72E48 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		3DDA701C24A870F500F72E48 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3DFE868B24C025980015BB11 /* DHCheckCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCheckCellView.h; sourceTree = "<group>"; };
+		3DFE868C24C025980015BB11 /* DHCheckCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHCheckCellView.m; sourceTree = "<group>"; };
+		3DFE868E24C025F20015BB11 /* DHCheckColumnHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCheckColumnHeaderCell.h; sourceTree = "<group>"; };
+		3DFE868F24C025F20015BB11 /* DHCheckColumnHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHCheckColumnHeaderCell.m; sourceTree = "<group>"; };
+		3DFE869124C026100015BB11 /* DHTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTableHeaderView.h; sourceTree = "<group>"; };
+		3DFE869224C026100015BB11 /* DHTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTableHeaderView.m; sourceTree = "<group>"; };
+		3DFE869424C026F70015BB11 /* DHTextCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTextCellView.h; sourceTree = "<group>"; };
+		3DFE869524C026F70015BB11 /* DHTextCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTextCellView.m; sourceTree = "<group>"; };
+		3DFE869B24C04B5D0015BB11 /* DHTaskListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskListViewModel.h; sourceTree = "<group>"; };
+		3DFE869C24C04B5D0015BB11 /* DHTaskListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskListViewModel.m; sourceTree = "<group>"; };
+		3DFE869E24C053760015BB11 /* NSArray+DHArrayExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+DHArrayExtension.h"; sourceTree = "<group>"; };
+		3DFE869F24C053760015BB11 /* NSArray+DHArrayExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DHArrayExtension.m"; sourceTree = "<group>"; };
+		3DFE86D524C55B1D0015BB11 /* DHCheckButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCheckButton.h; sourceTree = "<group>"; };
+		3DFE86D624C55B1D0015BB11 /* DHCheckButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHCheckButton.m; sourceTree = "<group>"; };
+		3DFE86D824C55E480015BB11 /* DHClickTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHClickTextField.h; sourceTree = "<group>"; };
+		3DFE86D924C55E480015BB11 /* DHClickTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHClickTextField.m; sourceTree = "<group>"; };
+		6517719624D6F0F60038B917 /* DHLogger+DHPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHLogger+DHPrivate.h"; sourceTree = "<group>"; };
+		6517719724D702820038B917 /* DHLogConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLogConfig.h; sourceTree = "<group>"; };
+		65234B4D24D5B092003113CF /* DHXcodeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DHXcodeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65451CAE24CC2AA60063A07B /* DHLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLogger.h; sourceTree = "<group>"; };
+		65451CAF24CC2AA60063A07B /* DHLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLogger.m; sourceTree = "<group>"; };
+		658F2E8C24A11C4300A9C6EA /* DHTaskCreatorViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorViewModel.h; sourceTree = "<group>"; };
+		658F2E8D24A11C4300A9C6EA /* DHTaskCreatorViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorViewModel.m; sourceTree = "<group>"; };
+		658F2E9224A23C1B00A9C6EA /* DHTaskCreatorProjectItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorProjectItem.h; sourceTree = "<group>"; };
+		658F2E9324A23C1B00A9C6EA /* DHTaskCreatorProjectItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorProjectItem.m; sourceTree = "<group>"; };
+		658F2E9424A23C1B00A9C6EA /* DHTaskCreatorProjectItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorProjectItem.xib; sourceTree = "<group>"; };
+		658F2E9724A24B9200A9C6EA /* DHTaskCreatorProfileItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorProfileItem.h; sourceTree = "<group>"; };
+		658F2E9824A24B9200A9C6EA /* DHTaskCreatorProfileItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorProfileItem.m; sourceTree = "<group>"; };
+		658F2E9924A24B9200A9C6EA /* DHTaskCreatorProfileItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorProfileItem.xib; sourceTree = "<group>"; };
+		658F2E9C24A24BA700A9C6EA /* DHTaskCreatorPathItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorPathItem.h; sourceTree = "<group>"; };
+		658F2E9D24A24BA700A9C6EA /* DHTaskCreatorPathItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorPathItem.m; sourceTree = "<group>"; };
+		658F2E9E24A24BA700A9C6EA /* DHTaskCreatorPathItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorPathItem.xib; sourceTree = "<group>"; };
+		658F2EAB24A254BB00A9C6EA /* DHCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCellProtocol.h; sourceTree = "<group>"; };
+		658F2EAC24A2617300A9C6EA /* DHTaskCreatorAppItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorAppItem.h; sourceTree = "<group>"; };
+		658F2EAD24A2617300A9C6EA /* DHTaskCreatorAppItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorAppItem.m; sourceTree = "<group>"; };
+		658F2EAE24A2617300A9C6EA /* DHTaskCreatorAppItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorAppItem.xib; sourceTree = "<group>"; };
+		658F2EB424A26D3900A9C6EA /* DHTaskUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskUtils.h; sourceTree = "<group>"; };
+		658F2EB524A26D3900A9C6EA /* DHTaskUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskUtils.m; sourceTree = "<group>"; };
+		6593AA0824CC7609006E8D77 /* DHTaskFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskFactory.h; sourceTree = "<group>"; };
+		6593AA0924CC7609006E8D77 /* DHTaskFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskFactory.m; sourceTree = "<group>"; };
+		65B3163624BCC7CD00E1A53F /* DHMainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMainWindowController.h; sourceTree = "<group>"; };
+		65B3163724BCC7CD00E1A53F /* DHMainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHMainWindowController.m; sourceTree = "<group>"; };
+		65B3163D24BDEE7B00E1A53F /* DHTaskListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskListViewController.h; sourceTree = "<group>"; };
+		65B3163E24BDEE7B00E1A53F /* DHTaskListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskListViewController.m; sourceTree = "<group>"; };
+		65B62AF424C29174000D6584 /* DHTaskHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskHandlerProtocol.h; sourceTree = "<group>"; };
+		65B62AF524C2A185000D6584 /* DHTaskGitHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskGitHandler.h; sourceTree = "<group>"; };
+		65B62AF624C2A185000D6584 /* DHTaskGitHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskGitHandler.m; sourceTree = "<group>"; };
+		65B62AF824C2AE64000D6584 /* DHTaskPodHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskPodHandler.h; sourceTree = "<group>"; };
+		65B62AF924C2AE64000D6584 /* DHTaskPodHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskPodHandler.m; sourceTree = "<group>"; };
+		65B62AFE24C2B114000D6584 /* DHTaskArchiveHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskArchiveHandler.h; sourceTree = "<group>"; };
+		65B62AFF24C2B114000D6584 /* DHTaskArchiveHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskArchiveHandler.m; sourceTree = "<group>"; };
+		65B62B0124C2B4DC000D6584 /* DHTaskProjectHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskProjectHandler.h; sourceTree = "<group>"; };
+		65B62B0224C2B4DC000D6584 /* DHTaskProjectHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskProjectHandler.m; sourceTree = "<group>"; };
+		65B62B0424C2BFC2000D6584 /* DHTaskDistributeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskDistributeHandler.h; sourceTree = "<group>"; };
+		65B62B0524C2BFC2000D6584 /* DHTaskDistributeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskDistributeHandler.m; sourceTree = "<group>"; };
+		65BF3D6B24C2EADE00BFD362 /* DHTaskHandlerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskHandlerManager.h; sourceTree = "<group>"; };
+		65BF3D6C24C2EADF00BFD362 /* DHTaskHandlerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskHandlerManager.m; sourceTree = "<group>"; };
+		65BF3D7E24C32F9A00BFD362 /* DHLoggerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLoggerViewModel.h; sourceTree = "<group>"; };
+		65BF3D7F24C32F9A00BFD362 /* DHLoggerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLoggerViewModel.m; sourceTree = "<group>"; };
+		65BF3D8324C349A400BFD362 /* DHTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTextField.h; sourceTree = "<group>"; };
+		65BF3D8424C349A400BFD362 /* DHTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTextField.m; sourceTree = "<group>"; };
+		65D393B424945C94002EBC68 /* XcodeAutoPackage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeAutoPackage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D393B724945C94002EBC68 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65D393B824945C94002EBC68 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		65D393BD24945C94002EBC68 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		65D393BE24945C94002EBC68 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		65D393C024945C98002EBC68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65D393C324945C98002EBC68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65D393C524945C98002EBC68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65D393C624945C98002EBC68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65D393C824945C98002EBC68 /* XcodeAutoPackage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XcodeAutoPackage.entitlements; sourceTree = "<group>"; };
+		65D393F824946A69002EBC68 /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		65D393F924946AF6002EBC68 /* DHPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHPrefixHeader.pch; sourceTree = "<group>"; };
+		65D394872495C0F2002EBC68 /* DHConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHConstant.h; sourceTree = "<group>"; };
+		65D394882495C0F2002EBC68 /* DHConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHConstant.m; sourceTree = "<group>"; };
+		65D3948A2495E4B8002EBC68 /* DHCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCommonTools.h; sourceTree = "<group>"; };
+		65D3948B2495E4B8002EBC68 /* DHCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCommonTools.m; sourceTree = "<group>"; };
+		65D3949C2496045B002EBC68 /* DHTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTaskModel.h; sourceTree = "<group>"; };
+		65D3949D2496045B002EBC68 /* DHTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTaskModel.m; sourceTree = "<group>"; };
+		65D394A624961E7E002EBC68 /* DHConfigurationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHConfigurationProtocol.h; sourceTree = "<group>"; };
+		65D394A724962274002EBC68 /* DHGlobalConfigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHGlobalConfigration.h; sourceTree = "<group>"; };
+		65D394A824962274002EBC68 /* DHGlobalConfigration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHGlobalConfigration.m; sourceTree = "<group>"; };
+		65E0ED8024CC798500DAEDBB /* DHTaskConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskConfiguration.h; sourceTree = "<group>"; };
+		65E0ED8124CC798500DAEDBB /* DHTaskConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskConfiguration.m; sourceTree = "<group>"; };
+		65E0ED8324CC8BE200DAEDBB /* DHTaskModel+DHTaskParseInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHTaskModel+DHTaskParseInfo.h"; sourceTree = "<group>"; };
+		65E0ED8424CC8CD200DAEDBB /* DHTaskSetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskSetter.h; sourceTree = "<group>"; };
+		65E0ED8524CC8CD200DAEDBB /* DHTaskSetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskSetter.m; sourceTree = "<group>"; };
+		65E0ED8724CCFF9800DAEDBB /* DHTaskUpdator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskUpdator.h; sourceTree = "<group>"; };
+		65E0ED8824CCFF9800DAEDBB /* DHTaskUpdator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskUpdator.m; sourceTree = "<group>"; };
+		65E0ED8E24CD2DF600DAEDBB /* NSDate+DHDateFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+DHDateFormat.h"; sourceTree = "<group>"; };
+		65E0ED8F24CD2DF600DAEDBB /* NSDate+DHDateFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DHDateFormat.m"; sourceTree = "<group>"; };
+		65E0ED9424CD7E1100DAEDBB /* DHMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMineViewController.h; sourceTree = "<group>"; };
+		65E0ED9524CD7E1100DAEDBB /* DHMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHMineViewController.m; sourceTree = "<group>"; };
+		65E0ED9724CD7F4B00DAEDBB /* DHMineRowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMineRowView.h; sourceTree = "<group>"; };
+		65E0ED9824CD7F4B00DAEDBB /* DHMineRowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHMineRowView.m; sourceTree = "<group>"; };
+		65E0ED9A24CD7F6800DAEDBB /* DHImageTextCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHImageTextCellView.h; sourceTree = "<group>"; };
+		65E0ED9B24CD7F6800DAEDBB /* DHImageTextCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHImageTextCellView.m; sourceTree = "<group>"; };
+		65E0ED9E24CD804200DAEDBB /* DHMineViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMineViewModel.h; sourceTree = "<group>"; };
+		65E0ED9F24CD804200DAEDBB /* DHMineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHMineViewModel.m; sourceTree = "<group>"; };
+		65E0EDA124CD819F00DAEDBB /* DHImageTextCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHImageTextCellViewModel.h; sourceTree = "<group>"; };
+		65E0EDA224CD819F00DAEDBB /* DHImageTextCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHImageTextCellViewModel.m; sourceTree = "<group>"; };
+		65E0EDA424CDBD2800DAEDBB /* DHAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHAlert.h; sourceTree = "<group>"; };
+		65E0EDA524CDBD2800DAEDBB /* DHAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHAlert.m; sourceTree = "<group>"; };
+		65E0EDAA24CEF85200DAEDBB /* DHLogFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLogFormatter.h; sourceTree = "<group>"; };
+		65E0EDAB24CEF85200DAEDBB /* DHLogFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLogFormatter.m; sourceTree = "<group>"; };
+		65F6875C24A4916B005F90B1 /* DHTaskCreatorPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorPanel.h; sourceTree = "<group>"; };
+		65F6875D24A4916B005F90B1 /* DHTaskCreatorPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorPanel.m; sourceTree = "<group>"; };
+		65F6876124A49203005F90B1 /* DHTaskCreatorPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorPanel.xib; sourceTree = "<group>"; };
+		65F687DC24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorDetailPanel.h; sourceTree = "<group>"; };
+		65F687DD24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorDetailPanel.m; sourceTree = "<group>"; };
+		65F687DF24A4AB62005F90B1 /* DHTaskCreatorDetailPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorDetailPanel.xib; sourceTree = "<group>"; };
+		65F6881524A5F231005F90B1 /* DHMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMainViewController.h; sourceTree = "<group>"; };
+		65F6881624A5F231005F90B1 /* DHMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHMainViewController.m; sourceTree = "<group>"; };
+		65F6882824A63032005F90B1 /* DHSettingsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHSettingsViewModel.h; sourceTree = "<group>"; };
+		65F6882924A63032005F90B1 /* DHSettingsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHSettingsViewModel.m; sourceTree = "<group>"; };
+		65F6882B24A6305B005F90B1 /* DHSettingsPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHSettingsPanel.h; sourceTree = "<group>"; };
+		65F6882C24A6305B005F90B1 /* DHSettingsPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHSettingsPanel.m; sourceTree = "<group>"; };
+		65F6882E24A63067005F90B1 /* DHSettingsPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHSettingsPanel.xib; sourceTree = "<group>"; };
+		65F6883024A633B3005F90B1 /* DHTaskArchiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskArchiver.h; sourceTree = "<group>"; };
+		65F6883124A633B3005F90B1 /* DHTaskArchiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskArchiver.m; sourceTree = "<group>"; };
+		65F6883924A63C96005F90B1 /* DHCheckColumn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCheckColumn.h; sourceTree = "<group>"; };
+		65F6883A24A63C96005F90B1 /* DHCheckColumn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHCheckColumn.m; sourceTree = "<group>"; };
+		65F6884224A66C57005F90B1 /* DHTableRowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTableRowView.h; sourceTree = "<group>"; };
+		65F6884324A66C57005F90B1 /* DHTableRowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTableRowView.m; sourceTree = "<group>"; };
+		65F6884B24A73DD0005F90B1 /* DHGlobalArchiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHGlobalArchiver.h; sourceTree = "<group>"; };
+		65F6884C24A73DD0005F90B1 /* DHGlobalArchiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHGlobalArchiver.m; sourceTree = "<group>"; };
+		65F6888A24A7588D005F90B1 /* DHTaskExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskExecutor.h; sourceTree = "<group>"; };
+		65F6888B24A7588D005F90B1 /* DHTaskExecutor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskExecutor.m; sourceTree = "<group>"; };
+		65F6888D24A76269005F90B1 /* NSMutableArray+DHQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+DHQueue.h"; sourceTree = "<group>"; };
+		65F6888E24A76269005F90B1 /* NSMutableArray+DHQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+DHQueue.m"; sourceTree = "<group>"; };
+		65FFCD1424B337710027AAA1 /* DHTaskCreatorGitItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorGitItem.h; sourceTree = "<group>"; };
+		65FFCD1524B337710027AAA1 /* DHTaskCreatorGitItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorGitItem.m; sourceTree = "<group>"; };
+		65FFCD1624B337710027AAA1 /* DHTaskCreatorGitItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorGitItem.xib; sourceTree = "<group>"; };
+		65FFCD1E24B3462A0027AAA1 /* DHTaskCreatorDistributeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorDistributeItem.h; sourceTree = "<group>"; };
+		65FFCD1F24B3462A0027AAA1 /* DHTaskCreatorDistributeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorDistributeItem.m; sourceTree = "<group>"; };
+		65FFCD2024B3462A0027AAA1 /* DHTaskCreatorDistributeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorDistributeItem.xib; sourceTree = "<group>"; };
+		65FFCD2324B346600027AAA1 /* DHTaskCreatorArchiveItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorArchiveItem.h; sourceTree = "<group>"; };
+		65FFCD2424B346600027AAA1 /* DHTaskCreatorArchiveItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorArchiveItem.m; sourceTree = "<group>"; };
+		65FFCD2524B346600027AAA1 /* DHTaskCreatorArchiveItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorArchiveItem.xib; sourceTree = "<group>"; };
+		65FFCD2824B34AAF0027AAA1 /* DHTaskCreatorPodItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskCreatorPodItem.h; sourceTree = "<group>"; };
+		65FFCD2924B34AAF0027AAA1 /* DHTaskCreatorPodItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskCreatorPodItem.m; sourceTree = "<group>"; };
+		65FFCD2A24B34AAF0027AAA1 /* DHTaskCreatorPodItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHTaskCreatorPodItem.xib; sourceTree = "<group>"; };
+		65FFCD2D24B563200027AAA1 /* NSView+DHViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSView+DHViewExtension.h"; sourceTree = "<group>"; };
+		65FFCD2E24B563210027AAA1 /* NSView+DHViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSView+DHViewExtension.m"; sourceTree = "<group>"; };
+		65FFCD3024B563A50027AAA1 /* DHMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMacro.h; sourceTree = "<group>"; };
+		65FFCD3124B5CA9E0027AAA1 /* DHDistributePanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHDistributePanel.h; sourceTree = "<group>"; };
+		65FFCD3224B5CA9E0027AAA1 /* DHDistributePanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHDistributePanel.m; sourceTree = "<group>"; };
+		65FFCD3424B5CAB50027AAA1 /* DHDistributePanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DHDistributePanel.xib; sourceTree = "<group>"; };
+		65FFCD3624B5FF330027AAA1 /* DHTaskDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHTaskDetailViewModel.h; sourceTree = "<group>"; };
+		65FFCD3724B5FF330027AAA1 /* DHTaskDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHTaskDetailViewModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65D393B124945C94002EBC68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				657CD11524D5BDC400D3F233 /* libz.tbd in Frameworks */,
+				657CD11424D5BDBF00D3F233 /* libiconv.tbd in Frameworks */,
+				657CD11124D5BA5D00D3F233 /* DHXcodeSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D54452E24C6B20400290046 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D54452F24C6B21B00290046 /* DHLoggerViewController.h */,
+				3D54453024C6B21B00290046 /* DHLoggerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D54453224C6B35900290046 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65F6881524A5F231005F90B1 /* DHMainViewController.h */,
+				65F6881624A5F231005F90B1 /* DHMainViewController.m */,
+				65B3163624BCC7CD00E1A53F /* DHMainWindowController.h */,
+				65B3163724BCC7CD00E1A53F /* DHMainWindowController.m */,
+				3D54453624C6B39E00290046 /* DHHorizontalViewController.h */,
+				3D54453724C6B39E00290046 /* DHHorizontalViewController.m */,
+				3D54453324C6B36D00290046 /* DHVerticalViewController.h */,
+				3D54453424C6B36D00290046 /* DHVerticalViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3DDA6FEA24A86B5600F72E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65234B4D24D5B092003113CF /* DHXcodeSDK.framework */,
+				3DDA701C24A870F500F72E48 /* Security.framework */,
+				3DDA701A24A870EA00F72E48 /* libiconv.tbd */,
+				3DDA6FEB24A86B5600F72E48 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DFE869A24C04B4D0015BB11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DFE869B24C04B5D0015BB11 /* DHTaskListViewModel.h */,
+				3DFE869C24C04B5D0015BB11 /* DHTaskListViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		65451CBC24CC72130063A07B /* TaskExecute */ = {
+			isa = PBXGroup;
+			children = (
+				65F6888A24A7588D005F90B1 /* DHTaskExecutor.h */,
+				65F6888B24A7588D005F90B1 /* DHTaskExecutor.m */,
+				65B62AF424C29174000D6584 /* DHTaskHandlerProtocol.h */,
+				65BF3D6B24C2EADE00BFD362 /* DHTaskHandlerManager.h */,
+				65BF3D6C24C2EADF00BFD362 /* DHTaskHandlerManager.m */,
+				65B62AF524C2A185000D6584 /* DHTaskGitHandler.h */,
+				65B62AF624C2A185000D6584 /* DHTaskGitHandler.m */,
+				65B62AF824C2AE64000D6584 /* DHTaskPodHandler.h */,
+				65B62AF924C2AE64000D6584 /* DHTaskPodHandler.m */,
+				65B62AFE24C2B114000D6584 /* DHTaskArchiveHandler.h */,
+				65B62AFF24C2B114000D6584 /* DHTaskArchiveHandler.m */,
+				65B62B0124C2B4DC000D6584 /* DHTaskProjectHandler.h */,
+				65B62B0224C2B4DC000D6584 /* DHTaskProjectHandler.m */,
+				65B62B0424C2BFC2000D6584 /* DHTaskDistributeHandler.h */,
+				65B62B0524C2BFC2000D6584 /* DHTaskDistributeHandler.m */,
+			);
+			path = TaskExecute;
+			sourceTree = "<group>";
+		};
+		658F2E29249A517000A9C6EA /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				65BF3D7024C301FB00BFD362 /* Logger */,
+				65B62AEF24C284D7000D6584 /* Category */,
+				65D394A524961E50002EBC68 /* Configuration */,
+				65D3949B2496042D002EBC68 /* Task */,
+				65451CBC24CC72130063A07B /* TaskExecute */,
+				65B62AEE24C28481000D6584 /* TaskExtension */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		658F2E2F249A558900A9C6EA /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				65BF3D8124C3498300BFD362 /* Main */,
+				65BF3D6E24C3019A00BFD362 /* Logger */,
+				65F6882224A62AF9005F90B1 /* TaskList */,
+				65F6882524A62FF5005F90B1 /* Settings */,
+				658F2E8524A1153600A9C6EA /* CreateTask */,
+				65E0ED9124CD7D9000DAEDBB /* Mine */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		658F2E8524A1153600A9C6EA /* CreateTask */ = {
+			isa = PBXGroup;
+			children = (
+				658F2E8A24A11C2000A9C6EA /* ViewModel */,
+				658F2E8624A1155900A9C6EA /* View */,
+			);
+			path = CreateTask;
+			sourceTree = "<group>";
+		};
+		658F2E8624A1155900A9C6EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65F6875C24A4916B005F90B1 /* DHTaskCreatorPanel.h */,
+				65F6875D24A4916B005F90B1 /* DHTaskCreatorPanel.m */,
+				65F6876124A49203005F90B1 /* DHTaskCreatorPanel.xib */,
+				65F687DC24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.h */,
+				65F687DD24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.m */,
+				65F687DF24A4AB62005F90B1 /* DHTaskCreatorDetailPanel.xib */,
+				658F2E9C24A24BA700A9C6EA /* DHTaskCreatorPathItem.h */,
+				658F2E9D24A24BA700A9C6EA /* DHTaskCreatorPathItem.m */,
+				658F2E9E24A24BA700A9C6EA /* DHTaskCreatorPathItem.xib */,
+				658F2E9224A23C1B00A9C6EA /* DHTaskCreatorProjectItem.h */,
+				658F2E9324A23C1B00A9C6EA /* DHTaskCreatorProjectItem.m */,
+				658F2E9424A23C1B00A9C6EA /* DHTaskCreatorProjectItem.xib */,
+				658F2E9724A24B9200A9C6EA /* DHTaskCreatorProfileItem.h */,
+				658F2E9824A24B9200A9C6EA /* DHTaskCreatorProfileItem.m */,
+				658F2E9924A24B9200A9C6EA /* DHTaskCreatorProfileItem.xib */,
+				658F2EAC24A2617300A9C6EA /* DHTaskCreatorAppItem.h */,
+				658F2EAD24A2617300A9C6EA /* DHTaskCreatorAppItem.m */,
+				658F2EAE24A2617300A9C6EA /* DHTaskCreatorAppItem.xib */,
+				65FFCD1424B337710027AAA1 /* DHTaskCreatorGitItem.h */,
+				65FFCD1524B337710027AAA1 /* DHTaskCreatorGitItem.m */,
+				65FFCD1624B337710027AAA1 /* DHTaskCreatorGitItem.xib */,
+				65FFCD2824B34AAF0027AAA1 /* DHTaskCreatorPodItem.h */,
+				65FFCD2924B34AAF0027AAA1 /* DHTaskCreatorPodItem.m */,
+				65FFCD2A24B34AAF0027AAA1 /* DHTaskCreatorPodItem.xib */,
+				65FFCD1E24B3462A0027AAA1 /* DHTaskCreatorDistributeItem.h */,
+				65FFCD1F24B3462A0027AAA1 /* DHTaskCreatorDistributeItem.m */,
+				65FFCD2024B3462A0027AAA1 /* DHTaskCreatorDistributeItem.xib */,
+				65FFCD2324B346600027AAA1 /* DHTaskCreatorArchiveItem.h */,
+				65FFCD2424B346600027AAA1 /* DHTaskCreatorArchiveItem.m */,
+				65FFCD2524B346600027AAA1 /* DHTaskCreatorArchiveItem.xib */,
+				3DFE86D524C55B1D0015BB11 /* DHCheckButton.h */,
+				3DFE86D624C55B1D0015BB11 /* DHCheckButton.m */,
+				3DFE86D824C55E480015BB11 /* DHClickTextField.h */,
+				3DFE86D924C55E480015BB11 /* DHClickTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		658F2E8A24A11C2000A9C6EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				658F2E8C24A11C4300A9C6EA /* DHTaskCreatorViewModel.h */,
+				658F2E8D24A11C4300A9C6EA /* DHTaskCreatorViewModel.m */,
+				65FFCD3624B5FF330027AAA1 /* DHTaskDetailViewModel.h */,
+				65FFCD3724B5FF330027AAA1 /* DHTaskDetailViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		65B3163C24BDEE5E00E1A53F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				65B3163D24BDEE7B00E1A53F /* DHTaskListViewController.h */,
+				65B3163E24BDEE7B00E1A53F /* DHTaskListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		65B62AEE24C28481000D6584 /* TaskExtension */ = {
+			isa = PBXGroup;
+			children = (
+				658F2EB424A26D3900A9C6EA /* DHTaskUtils.h */,
+				658F2EB524A26D3900A9C6EA /* DHTaskUtils.m */,
+				65F6883024A633B3005F90B1 /* DHTaskArchiver.h */,
+				65F6883124A633B3005F90B1 /* DHTaskArchiver.m */,
+				6593AA0824CC7609006E8D77 /* DHTaskFactory.h */,
+				6593AA0924CC7609006E8D77 /* DHTaskFactory.m */,
+				65E0ED8024CC798500DAEDBB /* DHTaskConfiguration.h */,
+				65E0ED8124CC798500DAEDBB /* DHTaskConfiguration.m */,
+				65E0ED8724CCFF9800DAEDBB /* DHTaskUpdator.h */,
+				65E0ED8824CCFF9800DAEDBB /* DHTaskUpdator.m */,
+				65E0ED8424CC8CD200DAEDBB /* DHTaskSetter.h */,
+				65E0ED8524CC8CD200DAEDBB /* DHTaskSetter.m */,
+			);
+			path = TaskExtension;
+			sourceTree = "<group>";
+		};
+		65B62AEF24C284D7000D6584 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				65F6888D24A76269005F90B1 /* NSMutableArray+DHQueue.h */,
+				65F6888E24A76269005F90B1 /* NSMutableArray+DHQueue.m */,
+				65E0ED8E24CD2DF600DAEDBB /* NSDate+DHDateFormat.h */,
+				65E0ED8F24CD2DF600DAEDBB /* NSDate+DHDateFormat.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		65BF3D6E24C3019A00BFD362 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3D54452E24C6B20400290046 /* Controller */,
+				65BF3D7D24C32F8600BFD362 /* ViewModel */,
+				65BF3D7724C3291300BFD362 /* View */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		65BF3D7024C301FB00BFD362 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				65451CAE24CC2AA60063A07B /* DHLogger.h */,
+				65451CAF24CC2AA60063A07B /* DHLogger.m */,
+				65E0EDAA24CEF85200DAEDBB /* DHLogFormatter.h */,
+				65E0EDAB24CEF85200DAEDBB /* DHLogFormatter.m */,
+				6517719724D702820038B917 /* DHLogConfig.h */,
+				6517719624D6F0F60038B917 /* DHLogger+DHPrivate.h */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		65BF3D7724C3291300BFD362 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65BF3D7D24C32F8600BFD362 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				65BF3D7E24C32F9A00BFD362 /* DHLoggerViewModel.h */,
+				65BF3D7F24C32F9A00BFD362 /* DHLoggerViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		65BF3D8124C3498300BFD362 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3D54453224C6B35900290046 /* Controller */,
+				65BF3D8224C3499200BFD362 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		65BF3D8224C3499200BFD362 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D54453924C6B99700290046 /* DHVerticalSplitView.h */,
+				3D54453A24C6B99700290046 /* DHVerticalSplitView.m */,
+				65BF3D8324C349A400BFD362 /* DHTextField.h */,
+				65BF3D8424C349A400BFD362 /* DHTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65D393AB24945C94002EBC68 = {
+			isa = PBXGroup;
+			children = (
+				65D393B624945C94002EBC68 /* XcodeAutoPackage */,
+				65D393B524945C94002EBC68 /* Products */,
+				3DDA6FEA24A86B5600F72E48 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		65D393B524945C94002EBC68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65D393B424945C94002EBC68 /* XcodeAutoPackage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65D393B624945C94002EBC68 /* XcodeAutoPackage */ = {
+			isa = PBXGroup;
+			children = (
+				65D393B724945C94002EBC68 /* AppDelegate.h */,
+				65D393B824945C94002EBC68 /* AppDelegate.m */,
+				65D393BD24945C94002EBC68 /* Document.h */,
+				65D393BE24945C94002EBC68 /* Document.m */,
+				65D393C224945C98002EBC68 /* Main.storyboard */,
+				658F2E2F249A558900A9C6EA /* PresentationLayer */,
+				658F2E29249A517000A9C6EA /* ApplicationLayer */,
+				65D393F324946709002EBC68 /* General */,
+				65D393D124945E32002EBC68 /* Tools */,
+				65D39482249538D9002EBC68 /* Resource */,
+				65D394522494CC9D002EBC68 /* Vendors */,
+				65D393CF24945DDD002EBC68 /* Supports */,
+			);
+			path = XcodeAutoPackage;
+			sourceTree = "<group>";
+		};
+		65D393CF24945DDD002EBC68 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				65D393C024945C98002EBC68 /* Assets.xcassets */,
+				65D393C524945C98002EBC68 /* Info.plist */,
+				65D393C624945C98002EBC68 /* main.m */,
+				65D393C824945C98002EBC68 /* XcodeAutoPackage.entitlements */,
+				65D393F924946AF6002EBC68 /* DHPrefixHeader.pch */,
+			);
+			name = Supports;
+			sourceTree = "<group>";
+		};
+		65D393D124945E32002EBC68 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				65D3948A2495E4B8002EBC68 /* DHCommonTools.h */,
+				65D3948B2495E4B8002EBC68 /* DHCommonTools.m */,
+				65FFCD2D24B563200027AAA1 /* NSView+DHViewExtension.h */,
+				65FFCD2E24B563210027AAA1 /* NSView+DHViewExtension.m */,
+				3DFE869E24C053760015BB11 /* NSArray+DHArrayExtension.h */,
+				3DFE869F24C053760015BB11 /* NSArray+DHArrayExtension.m */,
+				65E0EDA424CDBD2800DAEDBB /* DHAlert.h */,
+				65E0EDA524CDBD2800DAEDBB /* DHAlert.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		65D393F324946709002EBC68 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				65D393F824946A69002EBC68 /* AppConfig.h */,
+				65D394872495C0F2002EBC68 /* DHConstant.h */,
+				65D394882495C0F2002EBC68 /* DHConstant.m */,
+				658F2EAB24A254BB00A9C6EA /* DHCellProtocol.h */,
+				65FFCD3024B563A50027AAA1 /* DHMacro.h */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		65D394522494CC9D002EBC68 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		65D39482249538D9002EBC68 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		65D3949B2496042D002EBC68 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				65D3949C2496045B002EBC68 /* DHTaskModel.h */,
+				65D3949D2496045B002EBC68 /* DHTaskModel.m */,
+				65E0ED8324CC8BE200DAEDBB /* DHTaskModel+DHTaskParseInfo.h */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		65D394A524961E50002EBC68 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				65D394A624961E7E002EBC68 /* DHConfigurationProtocol.h */,
+				65D394A724962274002EBC68 /* DHGlobalConfigration.h */,
+				65D394A824962274002EBC68 /* DHGlobalConfigration.m */,
+				65F6884B24A73DD0005F90B1 /* DHGlobalArchiver.h */,
+				65F6884C24A73DD0005F90B1 /* DHGlobalArchiver.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		65E0ED9124CD7D9000DAEDBB /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				65E0ED9224CD7DA000DAEDBB /* Controller */,
+				65E0ED9D24CD803300DAEDBB /* ViewModel */,
+				65E0ED9324CD7DA500DAEDBB /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		65E0ED9224CD7DA000DAEDBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65E0ED9424CD7E1100DAEDBB /* DHMineViewController.h */,
+				65E0ED9524CD7E1100DAEDBB /* DHMineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		65E0ED9324CD7DA500DAEDBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65E0ED9724CD7F4B00DAEDBB /* DHMineRowView.h */,
+				65E0ED9824CD7F4B00DAEDBB /* DHMineRowView.m */,
+				65E0ED9A24CD7F6800DAEDBB /* DHImageTextCellView.h */,
+				65E0ED9B24CD7F6800DAEDBB /* DHImageTextCellView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65E0ED9D24CD803300DAEDBB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				65E0ED9E24CD804200DAEDBB /* DHMineViewModel.h */,
+				65E0ED9F24CD804200DAEDBB /* DHMineViewModel.m */,
+				65E0EDA124CD819F00DAEDBB /* DHImageTextCellViewModel.h */,
+				65E0EDA224CD819F00DAEDBB /* DHImageTextCellViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		65F6882224A62AF9005F90B1 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				65B3163C24BDEE5E00E1A53F /* ViewController */,
+				3DFE869A24C04B4D0015BB11 /* ViewModel */,
+				65F6882424A62B18005F90B1 /* View */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		65F6882424A62B18005F90B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DFE869124C026100015BB11 /* DHTableHeaderView.h */,
+				3DFE869224C026100015BB11 /* DHTableHeaderView.m */,
+				3DFE868E24C025F20015BB11 /* DHCheckColumnHeaderCell.h */,
+				3DFE868F24C025F20015BB11 /* DHCheckColumnHeaderCell.m */,
+				65F6883924A63C96005F90B1 /* DHCheckColumn.h */,
+				65F6883A24A63C96005F90B1 /* DHCheckColumn.m */,
+				65F6884224A66C57005F90B1 /* DHTableRowView.h */,
+				65F6884324A66C57005F90B1 /* DHTableRowView.m */,
+				3DFE868B24C025980015BB11 /* DHCheckCellView.h */,
+				3DFE868C24C025980015BB11 /* DHCheckCellView.m */,
+				3DFE869424C026F70015BB11 /* DHTextCellView.h */,
+				3DFE869524C026F70015BB11 /* DHTextCellView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65F6882524A62FF5005F90B1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				65F6882724A6300A005F90B1 /* ViewModel */,
+				65F6882624A63003005F90B1 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		65F6882624A63003005F90B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65F6882B24A6305B005F90B1 /* DHSettingsPanel.h */,
+				65F6882C24A6305B005F90B1 /* DHSettingsPanel.m */,
+				65F6882E24A63067005F90B1 /* DHSettingsPanel.xib */,
+				65FFCD3124B5CA9E0027AAA1 /* DHDistributePanel.h */,
+				65FFCD3224B5CA9E0027AAA1 /* DHDistributePanel.m */,
+				65FFCD3424B5CAB50027AAA1 /* DHDistributePanel.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65F6882724A6300A005F90B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				65F6882824A63032005F90B1 /* DHSettingsViewModel.h */,
+				65F6882924A63032005F90B1 /* DHSettingsViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65D393B324945C94002EBC68 /* XcodeAutoPackage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65D393CB24945C98002EBC68 /* Build configuration list for PBXNativeTarget "XcodeAutoPackage" */;
+			buildPhases = (
+				65D393B024945C94002EBC68 /* Sources */,
+				65D393B124945C94002EBC68 /* Frameworks */,
+				65D393B224945C94002EBC68 /* Resources */,
+				657CD11324D5BA5D00D3F233 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XcodeAutoPackage;
+			productName = XcodeAutoPackage;
+			productReference = 65D393B424945C94002EBC68 /* XcodeAutoPackage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65D393AC24945C94002EBC68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DH;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Daniel;
+				TargetAttributes = {
+					65D393B324945C94002EBC68 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 65D393AF24945C94002EBC68 /* Build configuration list for PBXProject "XcodeAutoPackage" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65D393AB24945C94002EBC68;
+			productRefGroup = 65D393B524945C94002EBC68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65D393B324945C94002EBC68 /* XcodeAutoPackage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65D393B224945C94002EBC68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D393C124945C98002EBC68 /* Assets.xcassets in Resources */,
+				65FFCD3524B5CAB50027AAA1 /* DHDistributePanel.xib in Resources */,
+				65F6882F24A63067005F90B1 /* DHSettingsPanel.xib in Resources */,
+				65F6876224A49203005F90B1 /* DHTaskCreatorPanel.xib in Resources */,
+				658F2EB024A2617300A9C6EA /* DHTaskCreatorAppItem.xib in Resources */,
+				65FFCD2C24B34AAF0027AAA1 /* DHTaskCreatorPodItem.xib in Resources */,
+				658F2EA024A24BA700A9C6EA /* DHTaskCreatorPathItem.xib in Resources */,
+				65D393C424945C98002EBC68 /* Main.storyboard in Resources */,
+				65F687E024A4AB62005F90B1 /* DHTaskCreatorDetailPanel.xib in Resources */,
+				658F2E9624A23C1B00A9C6EA /* DHTaskCreatorProjectItem.xib in Resources */,
+				65FFCD2724B346600027AAA1 /* DHTaskCreatorArchiveItem.xib in Resources */,
+				65FFCD1824B337710027AAA1 /* DHTaskCreatorGitItem.xib in Resources */,
+				65FFCD2224B3462A0027AAA1 /* DHTaskCreatorDistributeItem.xib in Resources */,
+				658F2E9B24A24B9200A9C6EA /* DHTaskCreatorProfileItem.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65D393B024945C94002EBC68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658F2E9524A23C1B00A9C6EA /* DHTaskCreatorProjectItem.m in Sources */,
+				65B3163F24BDEE7B00E1A53F /* DHTaskListViewController.m in Sources */,
+				65FFCD1724B337710027AAA1 /* DHTaskCreatorGitItem.m in Sources */,
+				65FFCD3324B5CA9E0027AAA1 /* DHDistributePanel.m in Sources */,
+				3DFE869324C026100015BB11 /* DHTableHeaderView.m in Sources */,
+				65E0EDAC24CEF85200DAEDBB /* DHLogFormatter.m in Sources */,
+				658F2EAF24A2617300A9C6EA /* DHTaskCreatorAppItem.m in Sources */,
+				65D393BF24945C94002EBC68 /* Document.m in Sources */,
+				658F2E9F24A24BA700A9C6EA /* DHTaskCreatorPathItem.m in Sources */,
+				65B62B0624C2BFC2000D6584 /* DHTaskDistributeHandler.m in Sources */,
+				65D393C724945C98002EBC68 /* main.m in Sources */,
+				65F687DE24A4AB57005F90B1 /* DHTaskCreatorDetailPanel.m in Sources */,
+				65F6883B24A63C96005F90B1 /* DHCheckColumn.m in Sources */,
+				658F2EB624A26D3900A9C6EA /* DHTaskUtils.m in Sources */,
+				65451CB024CC2AA60063A07B /* DHLogger.m in Sources */,
+				65B62B0024C2B114000D6584 /* DHTaskArchiveHandler.m in Sources */,
+				65F6884424A66C57005F90B1 /* DHTableRowView.m in Sources */,
+				65BF3D8524C349A400BFD362 /* DHTextField.m in Sources */,
+				65E0EDA024CD804200DAEDBB /* DHMineViewModel.m in Sources */,
+				658F2E9A24A24B9200A9C6EA /* DHTaskCreatorProfileItem.m in Sources */,
+				65BF3D6D24C2EADF00BFD362 /* DHTaskHandlerManager.m in Sources */,
+				65D394892495C0F2002EBC68 /* DHConstant.m in Sources */,
+				6593AA0A24CC7609006E8D77 /* DHTaskFactory.m in Sources */,
+				65F6882A24A63032005F90B1 /* DHSettingsViewModel.m in Sources */,
+				65F6888C24A7588D005F90B1 /* DHTaskExecutor.m in Sources */,
+				65E0ED9624CD7E1100DAEDBB /* DHMineViewController.m in Sources */,
+				3DFE868D24C025980015BB11 /* DHCheckCellView.m in Sources */,
+				65E0ED8624CC8CD200DAEDBB /* DHTaskSetter.m in Sources */,
+				65E0ED8924CCFF9800DAEDBB /* DHTaskUpdator.m in Sources */,
+				65FFCD3824B5FF330027AAA1 /* DHTaskDetailViewModel.m in Sources */,
+				3DFE86A024C053760015BB11 /* NSArray+DHArrayExtension.m in Sources */,
+				65D393B924945C94002EBC68 /* AppDelegate.m in Sources */,
+				65E0ED9924CD7F4B00DAEDBB /* DHMineRowView.m in Sources */,
+				3DFE869D24C04B5D0015BB11 /* DHTaskListViewModel.m in Sources */,
+				3D54453524C6B36D00290046 /* DHVerticalViewController.m in Sources */,
+				65FFCD2624B346600027AAA1 /* DHTaskCreatorArchiveItem.m in Sources */,
+				65D3948C2495E4B8002EBC68 /* DHCommonTools.m in Sources */,
+				3D54453124C6B21B00290046 /* DHLoggerViewController.m in Sources */,
+				65E0ED9C24CD7F6800DAEDBB /* DHImageTextCellView.m in Sources */,
+				65E0ED9024CD2DF600DAEDBB /* NSDate+DHDateFormat.m in Sources */,
+				3D54453B24C6B99700290046 /* DHVerticalSplitView.m in Sources */,
+				65B62AF724C2A185000D6584 /* DHTaskGitHandler.m in Sources */,
+				65E0EDA324CD819F00DAEDBB /* DHImageTextCellViewModel.m in Sources */,
+				3DFE869024C025F20015BB11 /* DHCheckColumnHeaderCell.m in Sources */,
+				3D54453824C6B39E00290046 /* DHHorizontalViewController.m in Sources */,
+				65F6888F24A76269005F90B1 /* NSMutableArray+DHQueue.m in Sources */,
+				65D394A924962274002EBC68 /* DHGlobalConfigration.m in Sources */,
+				65F6884D24A73DD0005F90B1 /* DHGlobalArchiver.m in Sources */,
+				65FFCD2F24B563210027AAA1 /* NSView+DHViewExtension.m in Sources */,
+				658F2E8E24A11C4300A9C6EA /* DHTaskCreatorViewModel.m in Sources */,
+				3DFE86DA24C55E480015BB11 /* DHClickTextField.m in Sources */,
+				65D3949E2496045B002EBC68 /* DHTaskModel.m in Sources */,
+				65E0ED8224CC798500DAEDBB /* DHTaskConfiguration.m in Sources */,
+				65F6882D24A6305B005F90B1 /* DHSettingsPanel.m in Sources */,
+				3DFE86D724C55B1D0015BB11 /* DHCheckButton.m in Sources */,
+				65E0EDA624CDBD2800DAEDBB /* DHAlert.m in Sources */,
+				65F6881724A5F231005F90B1 /* DHMainViewController.m in Sources */,
+				65FFCD2124B3462A0027AAA1 /* DHTaskCreatorDistributeItem.m in Sources */,
+				3DFE869624C026F70015BB11 /* DHTextCellView.m in Sources */,
+				65BF3D8024C32F9A00BFD362 /* DHLoggerViewModel.m in Sources */,
+				65B3163824BCC7CD00E1A53F /* DHMainWindowController.m in Sources */,
+				65F6875E24A4916B005F90B1 /* DHTaskCreatorPanel.m in Sources */,
+				65B62B0324C2B4DC000D6584 /* DHTaskProjectHandler.m in Sources */,
+				65F6883224A633B3005F90B1 /* DHTaskArchiver.m in Sources */,
+				65B62AFA24C2AE64000D6584 /* DHTaskPodHandler.m in Sources */,
+				65FFCD2B24B34AAF0027AAA1 /* DHTaskCreatorPodItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		65D393C224945C98002EBC68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65D393C324945C98002EBC68 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65D393C924945C98002EBC68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		65D393CA24945C98002EBC68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		65D393CC24945C98002EBC68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XcodeAutoPackage/XcodeAutoPackage.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/XcodeAutoPackage/DHPrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					HAVE_ZLIB,
+					HAVE_WZAES,
+					HAVE_STDINT_H,
+					HAVE_INTTYPES_H,
+					HAVE_PKCRYPT,
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/XcodeAutoPackage/Vendors/SSZipArchive/minizip";
+				INFOPLIST_FILE = XcodeAutoPackage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XcodeAutoPackage/Vendors/chilkat-9.5.0-macosx-objc/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.XcodeAutoPackage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		65D393CD24945C98002EBC68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XcodeAutoPackage/XcodeAutoPackageRelease.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/XcodeAutoPackage/DHPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/XcodeAutoPackage/Vendors/SSZipArchive/minizip";
+				INFOPLIST_FILE = XcodeAutoPackage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XcodeAutoPackage/Vendors/chilkat-9.5.0-macosx-objc/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.XcodeAutoPackage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65D393AF24945C94002EBC68 /* Build configuration list for PBXProject "XcodeAutoPackage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65D393C924945C98002EBC68 /* Debug */,
+				65D393CA24945C98002EBC68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65D393CB24945C98002EBC68 /* Build configuration list for PBXNativeTarget "XcodeAutoPackage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65D393CC24945C98002EBC68 /* Debug */,
+				65D393CD24945C98002EBC68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65D393AC24945C94002EBC68 /* Project object */;
+}

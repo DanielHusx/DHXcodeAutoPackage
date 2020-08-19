@@ -1,0 +1,21 @@
+//
+//  DHPrefixHeader.pch
+//  XcodeAutoPackage
+//
+//  Created by Daniel on 2020/6/13.
+//  Copyright © 2020 Daniel. All rights reserved.
+//
+
+#ifndef DHPrefixHeader_pch
+#define DHPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import "AppConfig.h"
+#import "DHCommonTools.h"
+#import "DHConstant.h"
+//#import "DHDBMacro.h"
+#import "DHMacro.h"
+#endif
+#endif /* DHPrefixHeader_pch */

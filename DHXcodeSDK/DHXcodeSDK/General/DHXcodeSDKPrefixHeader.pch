@@ -1,0 +1,21 @@
+//
+//  DHXcodeSDKPrefixHeader.pch
+//  DHXcodeSDK
+//
+//  Created by Daniel on 2020/7/30.
+//  Copyright © 2020 Daniel. All rights reserved.
+//
+
+#ifndef DHXcodeSDKPrefixHeader_pch
+#define DHXcodeSDKPrefixHeader_pch
+
+#ifdef __OBJC__
+#import "DHXcodeSDKError.h"
+#import "DHXcodeSDKConfig.h"
+#import "DHXcodeSDKConstant.h"
+#import "DHObjectTools.h"
+#import "DHPathTools.h"
+#import "DHPathUtils.h"
+#endif
+
+#endif /* DHXcodeSDKPrefixHeader_pch */

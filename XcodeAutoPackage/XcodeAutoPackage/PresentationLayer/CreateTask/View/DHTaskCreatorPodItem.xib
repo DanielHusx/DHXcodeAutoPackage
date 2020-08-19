@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DHTaskCreatorPodItem">
+            <connections>
+                <outlet property="contentView" destination="GP0-lz-AKN" id="Qgc-Yi-uBf"/>
+                <outlet property="podInstallSwitch" destination="Go6-jw-wNB" id="Peu-ip-8Hd"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="GP0-lz-AKN">
+                    <rect key="frame" x="10" y="10" width="460" height="55"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-ix-3tc">
+                            <rect key="frame" x="-2" y="9" width="114" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="Hqb-5Z-y2q"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="RrX-Hs-dSr"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Need Pod Install:" id="SpG-CU-NiY">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FlC-mn-11e">
+                            <rect key="frame" x="-2" y="39" width="102" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="POD SETTINGS" id="6Ga-jh-Aeq">
+                                <font key="font" metaFont="systemBold"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-jw-wNB">
+                            <rect key="frame" x="118" y="5" width="42" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="sFN-re-6dk"/>
+                                <constraint firstAttribute="width" constant="38" id="urc-Iw-jGh"/>
+                            </constraints>
+                            <connections>
+                                <action selector="podInstallAction:" target="-2" id="H8w-cU-VJ9"/>
+                            </connections>
+                        </switch>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Go6-jw-wNB" firstAttribute="centerY" secondItem="5xG-ix-3tc" secondAttribute="centerY" id="CaX-RM-CT8"/>
+                        <constraint firstItem="5xG-ix-3tc" firstAttribute="top" secondItem="GP0-lz-AKN" secondAttribute="top" constant="30" id="LDg-ua-fp6"/>
+                        <constraint firstItem="FlC-mn-11e" firstAttribute="top" secondItem="GP0-lz-AKN" secondAttribute="top" id="Qch-jE-aDL"/>
+                        <constraint firstItem="FlC-mn-11e" firstAttribute="leading" secondItem="GP0-lz-AKN" secondAttribute="leading" id="doB-Xu-d6c"/>
+                        <constraint firstItem="5xG-ix-3tc" firstAttribute="leading" secondItem="GP0-lz-AKN" secondAttribute="leading" id="imf-FX-GCa"/>
+                        <constraint firstItem="Go6-jw-wNB" firstAttribute="leading" secondItem="5xG-ix-3tc" secondAttribute="trailing" constant="10" id="kzZ-5E-3Cb"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="GP0-lz-AKN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="LxB-gg-Jaf"/>
+                <constraint firstAttribute="trailing" secondItem="GP0-lz-AKN" secondAttribute="trailing" constant="10" id="czU-dX-dDM"/>
+                <constraint firstItem="GP0-lz-AKN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="g5X-JS-syO"/>
+                <constraint firstAttribute="bottom" secondItem="GP0-lz-AKN" secondAttribute="bottom" constant="10" id="toB-sV-Ter"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="55.5"/>
+        </customView>
+        <collectionViewItem id="08r-AG-9Ac" customClass="DHTaskCreatorPodItem"/>
+    </objects>
+</document>

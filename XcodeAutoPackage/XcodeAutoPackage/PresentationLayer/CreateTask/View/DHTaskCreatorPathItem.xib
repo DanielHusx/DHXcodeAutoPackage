@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DHTaskCreatorPathItem">
+            <connections>
+                <outlet property="contentView" destination="pe2-ty-P0L" id="5zo-ve-6og"/>
+                <outlet property="pathTextField" destination="L50-3w-FrV" id="9ZU-lk-Jbh"/>
+                <outlet property="taskNameTextField" destination="EfN-Hx-0So" id="An5-uE-Cl4"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="DHTaskCreatorPathItem" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="pe2-ty-P0L">
+                    <rect key="frame" x="10" y="10" width="385" height="77"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9uc-fP-NQ5">
+                            <rect key="frame" x="-2" y="41" width="114" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="tBL-E0-tnf"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Path:" id="phy-9V-36X">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L50-3w-FrV">
+                            <rect key="frame" x="120" y="39" width="255" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="directory/.xcarchive/.ipa" drawsBackground="YES" id="alr-Ji-Bff">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <action selector="pathAction:" target="-2" id="940-ay-R2V"/>
+                                <outlet property="delegate" destination="-2" id="XYY-lw-EZg"/>
+                            </connections>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-A2-pVd">
+                            <rect key="frame" x="-2" y="15" width="114" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Task Name:" id="lEx-hu-RIT">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EfN-Hx-0So">
+                            <rect key="frame" x="120" y="13" width="255" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="iJC-i1-XnD">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <action selector="taskNameAction:" target="-2" id="q8e-mN-B7Y"/>
+                            </connections>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZH7-kn-gZV">
+                            <rect key="frame" x="-2" y="61" width="40" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="BASE" id="bgC-Xl-XvG">
+                                <font key="font" metaFont="systemBold"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Cww-A2-pVd" firstAttribute="width" secondItem="9uc-fP-NQ5" secondAttribute="width" id="1xC-bC-Fef"/>
+                        <constraint firstItem="ZH7-kn-gZV" firstAttribute="top" secondItem="pe2-ty-P0L" secondAttribute="top" id="AmD-C3-6cP"/>
+                        <constraint firstItem="9uc-fP-NQ5" firstAttribute="leading" secondItem="pe2-ty-P0L" secondAttribute="leading" id="B2h-Qg-PAp"/>
+                        <constraint firstItem="Cww-A2-pVd" firstAttribute="leading" secondItem="9uc-fP-NQ5" secondAttribute="leading" id="LNe-fq-onv"/>
+                        <constraint firstItem="9uc-fP-NQ5" firstAttribute="top" secondItem="pe2-ty-P0L" secondAttribute="top" constant="20" id="LQc-Ny-MV6"/>
+                        <constraint firstAttribute="trailing" secondItem="L50-3w-FrV" secondAttribute="trailing" constant="10" id="QWn-kh-1hP"/>
+                        <constraint firstItem="EfN-Hx-0So" firstAttribute="centerY" secondItem="Cww-A2-pVd" secondAttribute="centerY" id="UVQ-1K-bTS"/>
+                        <constraint firstItem="ZH7-kn-gZV" firstAttribute="leading" secondItem="pe2-ty-P0L" secondAttribute="leading" id="YfB-oL-1lN"/>
+                        <constraint firstAttribute="trailing" secondItem="EfN-Hx-0So" secondAttribute="trailing" constant="10" id="Z5G-Jm-pl2"/>
+                        <constraint firstItem="Cww-A2-pVd" firstAttribute="top" secondItem="9uc-fP-NQ5" secondAttribute="bottom" constant="10" id="Zml-Y0-njF"/>
+                        <constraint firstItem="EfN-Hx-0So" firstAttribute="leading" secondItem="Cww-A2-pVd" secondAttribute="trailing" constant="10" id="ZzR-KI-Yct"/>
+                        <constraint firstItem="L50-3w-FrV" firstAttribute="centerY" secondItem="9uc-fP-NQ5" secondAttribute="centerY" id="drx-ux-gyz"/>
+                        <constraint firstItem="L50-3w-FrV" firstAttribute="leading" secondItem="9uc-fP-NQ5" secondAttribute="trailing" constant="10" id="gKp-h5-lhm"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="pe2-ty-P0L" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="W5m-Ye-geX"/>
+                <constraint firstAttribute="bottom" secondItem="pe2-ty-P0L" secondAttribute="bottom" constant="10" id="YuW-07-ZYb"/>
+                <constraint firstItem="pe2-ty-P0L" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="a3x-XZ-vch"/>
+                <constraint firstAttribute="trailing" secondItem="pe2-ty-P0L" secondAttribute="trailing" constant="10" id="jto-g3-f0o"/>
+            </constraints>
+            <point key="canvasLocation" x="101.5" y="169.5"/>
+        </customView>
+        <collectionViewItem id="4QC-Nf-rPE" customClass="DHTaskCreatorPathItem"/>
+    </objects>
+</document>
