@@ -828,6 +828,44 @@
 }
 
 
+// MARK: - 上传IPA至AppStore
+/// 验证ipa包的正确性
++ (DHScriptModel *)fetchXcrunValidateIPACommand:(NSString *)ipaFile
+                                         apiKey:(NSString *)apiKey
+                                      apiIssuer:(NSString *)apiIssuer {
+    DHScriptModel *command = [[DHScriptModel alloc] init];
+    command.scriptCommand = @"xcrun";
+    
+    NSMutableArray *component = [NSMutableArray array];
+    [component addObject:@"altool"];
+    [component addObject:[NSString stringWithFormat:@"--validate-app -f %@", ipaFile]];
+    [component addObject:[NSString stringWithFormat:@"--apiKey %@", apiKey]];
+    [component addObject:[NSString stringWithFormat:@"--apiIssuer %@", apiIssuer]];
+    [component addObject:@"--verbose"];
+    command.scriptComponent = [component copy];
+    
+    return command;
+}
+
+/// 上传ipa包
++ (DHScriptModel *)fetchXcrunUploadIPACommand:(NSString *)ipaFile
+                                       apiKey:(NSString *)apiKey
+                                    apiIssuer:(NSString *)apiIssuer {
+    DHScriptModel *command = [[DHScriptModel alloc] init];
+    command.scriptCommand = @"xcrun";
+    
+    NSMutableArray *component = [NSMutableArray array];
+    [component addObject:@"altool"];
+    [component addObject:[NSString stringWithFormat:@"--upload-app -f %@", ipaFile]];
+    [component addObject:[NSString stringWithFormat:@"--apiKey %@", apiKey]];
+    [component addObject:[NSString stringWithFormat:@"--apiIssuer %@", apiIssuer]];
+    [component addObject:@"--verbose"];
+    command.scriptComponent = [component copy];
+    
+    return command;
+}
+
+
 // MARK: - other
 + (DHScriptModel *)fetchOtoolEnableBitcodeCommand:(NSString *)executableFile {
     DHScriptModel *command = [DHScriptFactory scriptModelForOtool];

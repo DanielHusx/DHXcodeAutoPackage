@@ -157,6 +157,33 @@ NS_ASSUME_NONNULL_BEGIN
 + (DHScriptModel *)fetchPlistDelAttibuteCommand:(NSString *)infoPlist
                                   attributeName:(NSString *)attributeName;
 
+
+// MARK: - 上传IPA至AppStore
+/// 验证ipa包的正确性
+/// @discussion 上传前需要用此方法进行验证ipa文件
+/// @attention 在生成密钥完成后可下载api密钥文件（只能下载一次），需放置 ~/.private_keys/ 下
+///
+/// @param ipaFile .ipa文件路径
+/// @param apiKey itunesconnect.apple.com=>用户和访问=>密钥=>App Store Connect API=>密钥ID
+/// @param apiIssuer itunesconnect.apple.com=>用户和访问=>密钥=>App Store Connect API=>IssuerID
+/// @return 命令对象
++ (DHScriptModel *)fetchXcrunValidateIPACommand:(NSString *)ipaFile
+                                         apiKey:(NSString *)apiKey
+                                      apiIssuer:(NSString *)apiIssuer;
+
+/// 上传ipa包至AppStore
+/// @discussion 必须使用验证ipa文件方法验证后才可调用此命令上传
+/// @attention 在生成密钥完成后可下载api密钥文件（只能下载一次），需放置 ~/.private_keys/ 下
+///
+/// @param ipaFile .ipa文件路径
+/// @param apiKey itunesconnect.apple.com=>用户和访问=>密钥=>App Store Connect API=>密钥ID
+/// @param apiIssuer itunesconnect.apple.com=>用户和访问=>密钥=>App Store Connect API=>IssuerID
+/// @return 命令对象
++ (DHScriptModel *)fetchXcrunUploadIPACommand:(NSString *)ipaFile
+                                       apiKey:(NSString *)apiKey
+                                    apiIssuer:(NSString *)apiIssuer;
+
+
 // MARK: - other
 /// 归档后的.app文件内的可执行文件才可解析出来，只反馈得到数字：0：即NO; 其他：即YES
 /// 单纯编译(command+b得到.app文件)后的是一定没有的，即无法正确解析
