@@ -5,6 +5,9 @@
       location = "group:XcodeAutoPackage/XcodeAutoPackage.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:XAPSDK/XAPSDK.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DHXcodeSDK/DHXcodeSDK.xcodeproj">
    </FileRef>
 </Workspace>
