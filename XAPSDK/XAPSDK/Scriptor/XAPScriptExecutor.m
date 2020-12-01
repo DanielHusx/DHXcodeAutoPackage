@@ -92,7 +92,7 @@ static NSErrorDomain const kXAPScriptErrorDomain = @"daniel.script.error";
     // 线程执行命令
     dispatch_async(_taskQueue, ^{
         __weak typeof(weakself) strongself = weakself;
-        if (scriptModel.scriptType == XAPScriptModelTypeDelay) {
+        if (scriptModel.scriptType == XAPScriptTypeDelay) {
             // 延迟命令
             result = [strongself executeDelayCommand:scriptModel error:error];
         } else {

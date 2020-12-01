@@ -8,11 +8,11 @@
 #import <Foundation/Foundation.h>
 
 /// 命令类型
-typedef NS_ENUM(NSInteger, XAPScriptModelType) {
-    /// 默认命令类型
-    XAPScriptModelTypeDefault,
+typedef NS_ENUM(NSInteger, XAPScriptType) {
+    /// 默认命令类型：即时命令
+    XAPScriptTypeDefault,
     /// 延时命令类型
-    XAPScriptModelTypeDelay,
+    XAPScriptTypeDelay,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,7 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否需要作为管理员执行
 @property (nonatomic, assign, getter=isAsAdministrator) BOOL asAdministrator;
 /// 命令类型
-@property (nonatomic, assign) XAPScriptModelType scriptType;
+@property (nonatomic, assign) XAPScriptType scriptType;
+
+/// 构造方法
++ (instancetype)scriptModelWithScriptPath:(NSString *)scriptPath;
 
 @end
 

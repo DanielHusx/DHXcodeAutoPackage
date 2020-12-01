@@ -40,6 +40,7 @@
 		65F16A89257524550095C607 /* XAPMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPMacro.h; sourceTree = "<group>"; };
 		65F16A8B25753FB20095C607 /* XAPScriptPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPScriptPathManager.h; sourceTree = "<group>"; };
 		65F16A8C25753FB20095C607 /* XAPScriptPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPScriptPathManager.m; sourceTree = "<group>"; };
+		F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPErrorMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 				65F16A832575236E0095C607 /* XAPConstant.h */,
 				65F16A842575236E0095C607 /* XAPConstant.m */,
 				65F16A89257524550095C607 /* XAPMacro.h */,
+				F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";

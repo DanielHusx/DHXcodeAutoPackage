@@ -8,7 +8,10 @@
 #ifndef XAPPrefixHeader_pch
 #define XAPPrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+/// 通用常量
+#import "XAPConstant.h"
+
+#endif
 
 #endif /* XAPPrefixHeader_pch */
