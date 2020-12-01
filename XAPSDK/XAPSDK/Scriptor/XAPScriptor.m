@@ -50,15 +50,6 @@
 }
 
 
-#pragma mark - private method
-+ (NSString *)pbxprojFileWithXcodeprojFile:(NSString *)xcodeprojFile {
-    if ([xcodeprojFile.pathExtension isEqualToString:@".pbxproj"]) {
-        return xcodeprojFile;
-    }
-    return [xcodeprojFile stringByAppendingPathComponent:@"project.pbxproj"];
-}
-
-
 // MARK: - 编译项目相关
 - (void)cleanProjectWithXcworkspaceOrXcodeprojFile:(NSString *)xcworkspaceOrXcodeprojFile
                                    engineeringType:(XAPEngineeringType)engineeringType
@@ -166,7 +157,7 @@
 
 // MARK: - project相关
 - (NSArray * _Nullable)fetchProjectTargetIdListWithPBXProjFile:(NSString *)pbxprojFile
-                                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = nil;
     NSString *output = nil;
     
@@ -188,8 +179,8 @@
 }
 
 - (NSString * _Nullable)fetchProjectTargetNameWithPBXProjFile:(NSString *)pbxprojFile
-                                           targetId:(NSString *)targetId
-                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+                                                     targetId:(NSString *)targetId
+                                                        error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = [XAPScriptResposity fetchPBXProjTargetNameCommand:pbxprojFile
                                                                        targetId:targetId];
     NSString *result = [self executeScriptWithCommand:command
@@ -319,7 +310,7 @@
 
 // MARK: - profile相关
 - (NSString * _Nullable)fetchProfileCreateTimestampWithProfile:(NSString *)profile
-                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = nil;
     NSString *output = nil;
     
@@ -337,122 +328,105 @@
     return output;
 }
 
-- (BOOL)fetchProfileExpireTimestampWithProfile:(NSString *)profile
-                                        
-                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+- (NSString * _Nullable)fetchProfileExpireTimestampWithProfile:(NSString *)profile
+                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = nil;
-    BOOL ret = NO;
-    NSString *oput = nil;
+    NSString *output = nil;
     
     // 获取ExpireTime
     command = [XAPScriptResposity fetchProfileExpireTimeCommand:profile];
-    ret = [self executeScriptWithCommand:command
-                                  output:&oput
-                                   error:error];
-    if (!ret) { return NO; }
+    output = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return nil; }
     // 时间转化时间戳
-    command = [XAPScriptResposity fetchTimestampCommand:oput];
-    ret = [self executeScriptWithCommand:command
-                                  output:&oput
-                                   error:error];
-    if (!ret) { return NO; }
-    if (output) { *output = oput; }
+    command = [XAPScriptResposity fetchTimestampCommand:output];
+    output = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return nil; }
     
-    return ret;
+    return output;
 }
 
-- (BOOL)fetchProfileNameWithProfile:(NSString *)profile
-                             
-                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchProfileNameCommand:profile]
-                                       output:output
+- (NSString * _Nullable)fetchProfileNameWithProfile:(NSString *)profile
+                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchProfileNameCommand:profile];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
+}
+
+- (NSString * _Nullable)fetchProfileAppIdentifierWithProfile:(NSString *)profile
+                                                       error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchProfileAppIdentifierCommand:profile];
+    NSString *result = [self executeScriptWithCommand:command
                                         error:error];
-    return ret;
+    return result;
 }
 
-- (BOOL)fetchProfileAppIdentifierWithProfile:(NSString *)profile
-                                      
-                                       error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchProfileAppIdentifierCommand:profile]
-                                       output:output
-                                        error:error];
-    return ret;
-}
-
-- (BOOL)fetchProfileBundleIdentifierWithProfile:(NSString *)profile
-                                         
-                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+- (NSString * _Nullable)fetchProfileBundleIdentifierWithProfile:(NSString *)profile
+                                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = nil;
-    BOOL ret = NO;
     NSString *appId = nil;
     NSString *teamId = nil;
+    NSString *result;
     
     // 获取appId
     command = [XAPScriptResposity fetchProfileAppIdentifierCommand:profile];
-    ret = [self executeScriptWithCommand:command
-                                  output:output
+    appId = [self executeScriptWithCommand:command
                                    error:error];
-    if (!ret) { return NO; }
-    appId = *output;
+    if (*error) { return nil; }
     
     // 获取team id
     command = [XAPScriptResposity fetchProfileTeamIdentifierCommand:profile];
-    ret = [self executeScriptWithCommand:command
-                                  output:output
-                                   error:error];
-    if (!ret) { return NO; }
-    teamId = *output;
+    teamId = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return nil; }
     
     // 拆分
     // 理论上格式是 appid: <teamid>.<bundleid>
     if (appId.length > (teamId.length+1)) {
-        *output = [appId substringFromIndex:teamId.length+1];
-        return ret;
+        result = [appId substringFromIndex:teamId.length+1];
+        return result;
     }
     // 理论上不可能执行到此处，以防万一
     // 以 . 分割排除第一项
     NSArray *components = [appId componentsSeparatedByString:@"."];
     if (components.count > 2) {
-        *output = [[components subarrayWithRange:NSMakeRange(1, components.count-1)] componentsJoinedByString:@"."];
+        result = [[components subarrayWithRange:NSMakeRange(1, components.count-1)] componentsJoinedByString:@"."];
     } else {
-        *output = appId;
+        result = appId;
     }
     
-    return ret;
+    return result;
 }
 
-- (BOOL)fetchProfileTeamIdentifierWithProfile:(NSString *)profile
-                                       
-                                        error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchProfileTeamIdentifierCommand:profile]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchProfileTeamIdentifierWithProfile:(NSString *)profile
+                                                        error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchProfileTeamIdentifierCommand:profile];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchProfileTeamNameWithProfile:(NSString *)profile
-                                 
-                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchProfileTeamNameCommand:profile]
-                                          output:output
-                                           error:error];
-    return ret;
+- (NSString * _Nullable)fetchProfileTeamNameWithProfile:(NSString *)profile
+                                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchProfileTeamNameCommand:profile];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchProfileUUIDWithProfile:(NSString *)profile
-                             
-                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchProfileUUIDCommand:profile]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchProfileUUIDWithProfile:(NSString *)profile
+                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchProfileUUIDCommand:profile];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchProfileChannelWithProfile:(NSString *)profile
-                              output:(XAPChannel *)output
-                               error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+- (XAPChannel)fetchProfileChannelWithProfile:(NSString *)profile
+                                       error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = nil;
-    BOOL ret = NO;
     NSString *output = nil;
     
     // 判别channel类型
@@ -463,309 +437,294 @@
     //          或 ProvisionedDevices与ProvisionsAllDevices都不存在
     
     command = [XAPScriptResposity fetchProfileIsProvisionedDevicesExistedCommand:profile];
-    ret = [self executeScriptWithCommand:command
-                                  output:&output
-                                   error:error];
-    if (!ret) { *output = kXAPChannelUnknown; return NO; }
+    output = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return kXAPChannelUnknown; }
     
     if (output) {
         command = [XAPScriptResposity fetchProfileGetTaskAllowCommand:profile];
-        ret = [self executeScriptWithCommand:command
-                                         output:&output
+        output = [self executeScriptWithCommand:command
                                           error:error];
-        if (!ret) { *output = kXAPChannelUnknown; return NO; }
+        if (*error) { return kXAPChannelUnknown; }
         
         if ([output isEqualToString:@"true"]) {
-            *output = kXAPChannelDevelopment;
-        } else {
-            *output = kXAPChannelAXAPoc;
+            return kXAPChannelDevelopment;
         }
-        return YES;
+        
+        return kXAPChannelAdHoc;
     }
     
     command = [XAPScriptResposity fetchProfileIsProvisionedAllDevicesExistedCommand:profile];
-    ret = [self executeScriptWithCommand:command
-                                  output:&output
-                                   error:error];
-    if (!ret) { *output = kXAPChannelUnknown; return NO; }
+    output = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return kXAPChannelUnknown; }
     
     if (output) {
         command = [XAPScriptResposity fetchProfileProvisionedAllDevicesCommand:profile];
-        ret = [self executeScriptWithCommand:command
-                                        output:&output
-                                         error:error];
+        output = [self executeScriptWithCommand:command
+                                          error:error];
         
-        if (!ret) { *output = kXAPChannelUnknown; return NO; }
+        if (*error) { return kXAPChannelUnknown; }
         
         if ([output isEqualToString:@"true"]) {
-            *output = kXAPChannelEnterprise;
-        } else {
-            *output = kXAPChannelAppStore;
+            return kXAPChannelEnterprise;
         }
-        return YES;
+        
+        return kXAPChannelAppStore;
     }
     
-    *output = kXAPChannelAppStore;
-    return YES;
+    return kXAPChannelAppStore;
 }
 
 
 // MARK: - git相关
-- (BOOL)gitCurrentBranchWithGitDirectory:(NSString *)gitDirectory
-                                  
-                                   error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitCurrentBranchCommand:gitDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)gitCurrentBranchWithGitDirectory:(NSString *)gitDirectory
+                                                   error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchGitCurrentBranchCommand:gitDirectory];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)gitStatusWithGitDirectory:(NSString *)gitDirectory
-                           
-                            error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitStatusCommand:gitDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)gitStatusWithGitDirectory:(NSString *)gitDirectory
+                                            error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchGitStatusCommand:gitDirectory];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
 - (BOOL)gitAddAllWithGitDirectory:(NSString *)gitDirectory
-                           
                             error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitAddAllCommand:gitDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchGitAddAllCommand:gitDirectory];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
 - (BOOL)gitStashWithGitDirectory:(NSString *)gitDirectory
-                          
-                           error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitStashCommand:gitDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+                                           error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchGitStashCommand:gitDirectory];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
 - (BOOL)gitResetToHeadWithGitDirectory:(NSString *)gitDirectory
-                                
                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitResetToHeadCommand:gitDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchGitResetToHeadCommand:gitDirectory];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
-- (BOOL)gitPullWithGitDirectory:(NSString *)gitDirectory
-                         
-                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitPullCommand:gitDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)gitPullWithGitDirectory:(NSString *)gitDirectory
+                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchGitPullCommand:gitDirectory];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)gitCheckoutBranchWithGitDirectory:(NSString *)gitDirectory
-                               branchName:(NSString *)branchName
-                                   
-                                    error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitCheckoutBranchCommand:gitDirectory branchName:branchName]
-                                          output:output
-                                           error:error];
-    return ret;
+- (NSString * _Nullable)gitCheckoutBranchWithGitDirectory:(NSString *)gitDirectory
+                                               branchName:(NSString *)branchName
+                                                    error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchGitCheckoutBranchCommand:gitDirectory branchName:branchName];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchGitBranchListWithGitDirectory:(NSString *)gitDirectory
-                                    output:(NSArray * _Nullable __autoreleasing * _Nullable)output
-                                     error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = NO;
+- (NSArray * _Nullable)fetchGitBranchListWithGitDirectory:(NSString *)gitDirectory
+                                                    error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = nil;
     NSString *output = nil;
     
     // 获取branch list
-    ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitBranchListCommand:gitDirectory]
-                                  output:&output
-                                   error:error];
-    if (!ret) { return NO; }
+    command = [XAPScriptResposity fetchGitBranchListCommand:gitDirectory];
+    output = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return nil; }
     
     NSArray *branchNameList = [output componentsSeparatedByString:@"\r"];
-    if (output) { *output = branchNameList; }
-    
-    return ret;
+    return branchNameList;
 }
 
-- (BOOL)fetchGitTagListWithGitDirectory:(NSString *)gitDirectory
-                                 output:(NSArray * _Nullable __autoreleasing * _Nullable)output
-                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = NO;
+- (NSArray * _Nullable)fetchGitTagListWithGitDirectory:(NSString *)gitDirectory
+                                                 error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = nil;
     NSString *output = nil;
     
     // 获取tag list
-    ret = [self executeScriptWithCommand:[XAPScriptResposity fetchGitTagListCommand:gitDirectory]
-                                  output:&output
-                                   error:error];
-    if (!ret) { return NO; }
+    command = [XAPScriptResposity fetchGitTagListCommand:gitDirectory];
+    output = [self executeScriptWithCommand:command
+                                      error:error];
+    if (*error) { return nil; }
     
     NSArray *tagList = [output componentsSeparatedByString:@"\r"];
-    if (output) { *output = tagList; }
     
-    return ret;
+    return tagList;
+}
+
+- (NSArray * _Nullable)fetchGitBranchsWithGitDirectory:(NSString *)gitDirectory
+                                                 error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    NSMutableArray *result = [NSMutableArray array];
+    NSArray *branchList = [self fetchGitBranchListWithGitDirectory:gitDirectory error:error];
+    if (*error) { return nil; }
+    
+    [result addObjectsFromArray:branchList];
+    
+    NSArray *tagList = [self fetchGitTagListWithGitDirectory:gitDirectory error:error];
+    if (*error) { return nil; }
+    
+    [result addObjectsFromArray:tagList];
+    return [result copy];
 }
 
 
 // MARK: - pod相关
 - (BOOL)podInstallWithPodfileDirectory:(NSString *)podfileDirectory
-                                
                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPodInstallCommand:podfileDirectory]
-                                       output:output
-                                        error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchPodInstallCommand:podfileDirectory];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
 
 // MARK: - info.plist相关
-- (BOOL)fetchInfoPlistProductNameWithInfoPlist:(NSString *)infoPlist
-                                
-                                 error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistProductNameCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
-}
-- (BOOL)fetchInfoPlistDisplayNameWithInfoPlist:(NSString *)infoPlist
-                                
-                                 error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistDisplayNameCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
-}
-- (BOOL)fetchInfoPlistBundleIdentifierWithInfoPlist:(NSString *)infoPlist
-                                             
-                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistBundleIdentifierCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
-}
-- (BOOL)fetchInfoPlistShortVersionWithInfoPlist:(NSString *)infoPlist
-                                         
-                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistShortVersionCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchInfoPlistProductNameWithInfoPlist:(NSString *)infoPlist
+                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistProductNameCommand:infoPlist];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchInfoPlistBuildVersionWithInfoPlist:(NSString *)infoPlist
-                                 
-                                  error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistBuildVersionCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchInfoPlistDisplayNameWithInfoPlist:(NSString *)infoPlist
+                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistDisplayNameCommand:infoPlist];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchInfoPlistExecutableFileWithInfoPlist:(NSString *)infoPlist
-                                           
-                                            error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistExecutableFileCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchInfoPlistBundleIdentifierWithInfoPlist:(NSString *)infoPlist
+                                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistBundleIdentifierCommand:infoPlist];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchInfoPlistMinimumOSVersionWithInfoPlist:(NSString *)infoPlist
-                                             
-                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistMinimumOSVersionCommand:infoPlist]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchInfoPlistShortVersionWithInfoPlist:(NSString *)infoPlist
+                                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistShortVersionCommand:infoPlist];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)plistFetchAttributeWithInfoPlist:(NSString *)infoPlist
-                            attributeKey:(NSString *)attributeKey
-                                  
-                                   error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                                                           attributeName:attributeKey]
-                                       output:output
+- (NSString * _Nullable)fetchInfoPlistVersionWithInfoPlist:(NSString *)infoPlist
+                                                     error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistVersionCommand:infoPlist];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
+}
+
+- (NSString * _Nullable)fetchInfoPlistExecutableFileWithInfoPlist:(NSString *)infoPlist
+                                                            error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistExecutableFileCommand:infoPlist];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
+}
+
+- (NSString * _Nullable)plistFetchAttributeWithInfoPlist:(NSString *)infoPlist
+                                            attributeKey:(NSString *)attributeKey
+                                                   error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
+                                                              attributeName:attributeKey];
+    NSString *result = [self executeScriptWithCommand:command
                                         error:error];
-    return ret;
+    return result;
 }
 
 - (BOOL)plistAppendAttributeWithInfoPlist:(NSString *)infoPlist
                              attributeKey:(NSString *)attributeKey
                            attributeValue:(NSString *)attributeValue
                                     error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistAddAttibuteCommand:infoPlist
-                                                                              attributeName:attributeKey
-                                                                             attributeValue:attributeValue]
-                                          output:nil
-                                           error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistAddAttibuteCommand:infoPlist
+                                                                 attributeName:attributeKey
+                                                                attributeValue:attributeValue];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
 - (BOOL)plistDeleteAttributeWithInfoPlist:(NSString *)infoPlist
                              attributeKey:(NSString *)attributeKey
                                     error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistDelAttibuteCommand:infoPlist
-                                                                              attributeName:attributeKey]
-                                          output:nil
-                                           error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistDelAttibuteCommand:infoPlist
+                                                                 attributeName:attributeKey];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
 - (BOOL)plistModifyAttributeWithInfoPlist:(NSString *)infoPlist
                              attributeKey:(NSString *)attributeKey
                            attributeValue:(NSString *)attributeValue
                                     error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                                                              attributeName:attributeKey
-                                                                             attributeValue:attributeValue]
-                                          output:nil
-                                           error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
+                                                                 attributeName:attributeKey
+                                                                attributeValue:attributeValue];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return NO; }
+    
+    return YES;
 }
 
 
 #pragma mark - app相关
-- (BOOL)fetchAppEnableBitcodeWithExecutableFile:(NSString *)executableFile
-                                         
-                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchOtoolEnableBitcodeCommand:executableFile]
-                                       output:output
-                                        error:error];
-    if (!ret) { return NO; }
+- (XAPEnableBitcode)fetchAppEnableBitcodeWithExecutableFile:(NSString *)executableFile
+                                                      error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchOtoolEnableBitcodeCommand:executableFile];
+    NSString *output = [self executeScriptWithCommand:command
+                                                error:error];
+    if (*error) { return nil; }
+    
     // 0: NO; 其他: YES
-    NSString *enableBitcodeIntegerString = *output;
+    NSString *enableBitcodeIntegerString = output;
     enableBitcodeIntegerString = [enableBitcodeIntegerString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([enableBitcodeIntegerString isEqualToString:@"0"]) {
-        *output = kXAPEnableBitcodeNO;
-    } else {
-        *output = kXAPEnableBitcodeYES;
+        return kXAPEnableBitcodeNO;
     }
-    
-    return ret;
+         
+    return kXAPEnableBitcodeYES;
 }
 
-- (BOOL)fetchAppCodesignIdentifierWithAppFile:(NSString *)appFile
-                                       
-                                        error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchCodesignAuthorityCommand:appFile]
-                                       output:output
-                                        error:error];
-    return ret;
+- (NSString * _Nullable)fetchAppCodesignIdentifierWithAppFile:(NSString *)appFile
+                                                        error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchCodesignAuthorityCommand:appFile];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
-- (BOOL)fetchAppArchitecturesWithExecutableFile:(NSString *)executableFile
-                                         
+- (NSString * _Nullable)fetchAppArchitecturesWithExecutableFile:(NSString *)executableFile
                                           error:(NSError * _Nullable __autoreleasing * _Nullable)error {
-    BOOL ret = [self executeScriptWithCommand:[XAPScriptResposity fetchLipoArchitecturesCommand:executableFile]
-                                       output:output
-                                        error:error];
-    return ret;
+    XAPScriptModel *command = [XAPScriptResposity fetchLipoArchitecturesCommand:executableFile];
+    NSString *result = [self executeScriptWithCommand:command
+                                                error:error];
+    return result;
 }
 
 @end

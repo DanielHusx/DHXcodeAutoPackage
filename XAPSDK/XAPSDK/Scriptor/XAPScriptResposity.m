@@ -589,6 +589,7 @@
 // MARK: pod相关
 + (XAPScriptModel *)fetchPodInstallCommand:(NSString *)podfileDirectory {
     XAPScriptModel *command = [XAPScriptResposity scriptModelForPod];
+    command.scriptType = XAPScriptTypeDelay;
     
     NSMutableArray *component = [NSMutableArray array];
     [component addObject:@"install"];
@@ -617,36 +618,36 @@
 
 + (XAPScriptModel *)fetchPlistProductNameCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyProductName];
+                                           attributeName:kXAPPlistKeyProductName];
 }
 
 + (XAPScriptModel *)fetchPlistDisplayNameCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyDisplayName];
+                                           attributeName:kXAPPlistKeyDisplayName];
 }
 
 + (XAPScriptModel *)fetchPlistBundleIdentifierCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyBundleIdentifier];
+                                           attributeName:kXAPPlistKeyBundleIdentifier];
 }
 
 + (XAPScriptModel *)fetchPlistShortVersionCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyVersion];
+                                           attributeName:kXAPPlistKeyShortVersion];
 }
-+ (XAPScriptModel *)fetchPlistBuildVersionCommand:(NSString *)infoPlist {
++ (XAPScriptModel *)fetchPlistVersionCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyBuildVersion];
+                                           attributeName:kXAPPlistKeyVersion];
 }
 
 + (XAPScriptModel *)fetchPlistMinimumOSVersionCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyMinimumOSVersion];
+                                           attributeName:kXAPPlistKeyMinimumOSVersion];
 }
 
 + (XAPScriptModel *)fetchPlistExecutableFileCommand:(NSString *)infoPlist {
     return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                        attributeName:kXAPPlistKeyExecutableFile];
+                                           attributeName:kXAPPlistKeyExecutableFile];
 }
 
 // MARK: - info.plist设置
@@ -688,18 +689,18 @@
                                              attributeValue:bundleId];
 }
 
++ (XAPScriptModel *)fetchPlistSetShortVersionCommand:(NSString *)infoPlist
+                                        shortVersion:(NSString *)shortVersion {
+    return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
+                                              attributeName:kXAPPlistKeyShortVersion
+                                             attributeValue:shortVersion];
+}
+
 + (XAPScriptModel *)fetchPlistSetVersionCommand:(NSString *)infoPlist
                                         version:(NSString *)version {
     return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
                                               attributeName:kXAPPlistKeyVersion
                                              attributeValue:version];
-}
-
-+ (XAPScriptModel *)fetchPlistSetBuildVersionCommand:(NSString *)infoPlist
-                                        buildVersion:(NSString *)buildVersion {
-    return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                              attributeName:kXAPPlistKeyBuildVersion
-                                             attributeValue:buildVersion];
 }
 
 // MARK: - info.plist增加属性

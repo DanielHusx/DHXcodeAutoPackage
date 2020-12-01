@@ -128,7 +128,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (XAPScriptModel *)fetchPlistDisplayNameCommand:(NSString *)infoPlist;
 + (XAPScriptModel *)fetchPlistBundleIdentifierCommand:(NSString *)infoPlist;
 + (XAPScriptModel *)fetchPlistShortVersionCommand:(NSString *)infoPlist;
-+ (XAPScriptModel *)fetchPlistBuildVersionCommand:(NSString *)infoPlist;
++ (XAPScriptModel *)fetchPlistVersionCommand:(NSString *)infoPlist;
 /// 归档后的.app文件内的info.plist才有此值
 + (XAPScriptModel *)fetchPlistMinimumOSVersionCommand:(NSString *)infoPlist;
 /// 归档后的.app文件内的info.plist才有此值
@@ -144,10 +144,10 @@ NS_ASSUME_NONNULL_BEGIN
                                         displayName:(NSString *)displayName;
 + (XAPScriptModel *)fetchPlistSetBundleIdCommand:(NSString *)infoPlist
                                        bundleId:(NSString *)bundleId;
++ (XAPScriptModel *)fetchPlistSetShortVersionCommand:(NSString *)infoPlist
+                                        shortVersion:(NSString *)shortVersion;
 + (XAPScriptModel *)fetchPlistSetVersionCommand:(NSString *)infoPlist
-                                       version:(NSString *)version;
-+ (XAPScriptModel *)fetchPlistSetBuildVersionCommand:(NSString *)infoPlist
-                                       buildVersion:(NSString *)buildVersion;
+                                        version:(NSString *)version;
 
 // MARK: - info.plist增加
 + (XAPScriptModel *)fetchPlistAddAttibuteCommand:(NSString *)infoPlist

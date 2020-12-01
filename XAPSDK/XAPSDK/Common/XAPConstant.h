@@ -35,9 +35,9 @@ FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyProductName;
 /// plist BundleId标识
 FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyBundleIdentifier;
 /// plist 版本号标识
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyVersion;
+FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyShortVersion;
 /// plist Build号标识
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyBuildVersion;
+FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyVersion;
 
 /// plist EnableBitcode标识 —— 只能用于创建
 FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyEnableBitcode;
@@ -63,8 +63,8 @@ typedef NSString * XAPRelativeValue NS_STRING_ENUM;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueTargetName;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueProductName;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueBundleIdentifier;
+FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueShortVersion;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueVersion;
-FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueBuildVersion;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueExecutableFile;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValueSRCROOT;
 FOUNDATION_EXTERN XAPRelativeValue const kXAPRelativeValuePROJECT_DIR;
