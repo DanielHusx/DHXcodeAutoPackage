@@ -1,0 +1,357 @@
+//
+//  XAPTools.m
+//  XAPSDK
+//
+//  Created by 菲凡数据 on 2020/12/2.
+//
+
+#import "XAPTools.h"
+
+@implementation XAPTools
+
++ (BOOL)isPathExist:(NSString *)path {
+    if (![self isValidString:path]) { return NO; }
+    BOOL isDir = NO;
+    BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:path
+                                                       isDirectory:&isDir];
+    return result;
+}
+
+/// 路径是否是目录
++ (BOOL)isDirectoryPath:(NSString *)path {
+    if (![self isValidString:path]) { return NO; }
+    BOOL isDir = NO;
+    BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:path
+                                                       isDirectory:&isDir];
+    return isDir && result;
+}
+
+/// 路径是否是文件
++ (BOOL)isFilePath:(NSString *)path {
+    if (![self isValidString:path]) { return NO; }
+    BOOL isDir = NO;
+    BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:path
+                                                       isDirectory:&isDir];
+    return !isDir && result;
+}
+
++ (BOOL)isValidString:(NSString *)string {
+    if ([string isKindOfClass:[NSString class]]) {
+        return string.length != 0;
+    }
+    return NO;
+}
+
++ (BOOL)isValidArray:(NSArray *)object {
+    if ([object isKindOfClass:[NSArray class]]) {
+        return [object count] != 0;
+    }
+    return NO;
+}
+
++ (BOOL)isValidDictionary:(NSDictionary *)object {
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        return [object count] != 0;
+    }
+    return NO;
+}
+
++ (NSString *)directoryPathWithFilePath:(NSString *)filePath {
+    return [filePath stringByDeletingLastPathComponent];
+}
+
+@end
+
+
+@implementation XAPTools (FileTypeValidate)
++ (BOOL)isXcworkspaceFile:(NSString *)path {
+    if (![self isDirectoryPath:path]) { return NO; }
+    if (![path containsString:@".xcworkspace"]) { return NO; }
+    if ([path containsString:@".xcodeproj"]) { return NO; }
+    BOOL isDir = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:[self xcworkspacedataFileWithXcworkspaceFile:path]
+                                                        isDirectory:&isDir];
+    return !isDir && isExist;
+}
+
++ (BOOL)isXcodeprojFile:(NSString *)path {
+    if (![self isDirectoryPath:path]) { return NO; }
+    if (![path containsString:@".xcodeproj"]) { return NO; }
+    BOOL isDir = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:[self pbxprojFileWithXcodeprojFile:path]
+                                                        isDirectory:&isDir];
+    return !isDir && isExist;
+}
+
++ (BOOL)isGitFile:(NSString *)path {
+    if (![self isDirectoryPath:path]) { return NO; }
+    if (![path containsString:@".git"]) { return NO; }
+    BOOL isDir = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path
+                                                        isDirectory:&isDir];
+    return isDir && isExist;
+}
+
++ (BOOL)isPodfileFile:(NSString *)path {
+    if (![self isFilePath:path]) { return NO; }
+    if (![path.lastPathComponent isEqualToString:@"Podfile"]) { return NO; }
+    BOOL isDir = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path
+                                                        isDirectory:&isDir];
+    return !isDir && isExist;
+}
+
++ (BOOL)isProfile:(NSString *)path {
+    if (![self isFilePath:path]) { return NO; }
+    if (![path.pathExtension isEqualToString:@"mobileprovision"]) { return NO; }
+    BOOL isDir = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path
+                                                        isDirectory:&isDir];
+    return !isDir && isExist;
+}
+
++ (BOOL)isXcarchiveFile:(NSString *)path {
+    if (![self isDirectoryPath:path]) { return NO; }
+    if (![path.pathExtension isEqualToString:@"xcarchive"]) { return NO; }
+    // 获取.app文件路径
+    NSString *appFile = [self appFileWithXcarchiveFile:path];
+    if (![self isAppFile:appFile]) { return NO; }
+    
+    return YES;
+}
+
++ (BOOL)isIPAFile:(NSString *)path {
+    if (![self isFilePath:path]) { return NO; }
+    if (![path.pathExtension isEqualToString:@"ipa"]) { return NO; }
+    
+    return YES;
+}
+
++ (BOOL)isAppFile:(NSString *)path {
+    if (![self isDirectoryPath:path]) { return NO; }
+    if (![path.pathExtension isEqualToString:@"app"]) { return NO; }
+    BOOL isDir = NO;
+    BOOL isExist = NO;
+    // 判定embedded.mobileprovision文件是否存在
+    NSString *embeddedProfile = [self embeddedProvisionFileWithAppFile:path];
+    isExist = [[NSFileManager defaultManager] fileExistsAtPath:embeddedProfile
+                                                   isDirectory:&isDir];
+    if (!(!isDir && isExist)) { return NO; }
+    // 判定info.plist文件是否存在
+    NSString *infoPlist = [self infoPlistFileWithAppFile:path];
+    isExist = [[NSFileManager defaultManager] fileExistsAtPath:infoPlist
+                                                   isDirectory:&isDir];
+    if (!(!isDir && isExist)) { return NO; }
+    
+    return YES;
+}
+
++ (BOOL)isPlistFile:(NSString *)path {
+    if (![self isFilePath:path]) { return NO; }
+    if (![path.pathExtension isEqualToString:@"plist"]) { return NO; }
+    return YES;
+}
+
+@end
+
+
+@implementation XAPTools (EngineerExtension)
+#pragma mark XCWORKSPACE/XCODEPROJ
++ (NSString *)xcworkspacedataFileWithXcworkspaceFile:(NSString *)xcworkspaceFile {
+    return [xcworkspaceFile stringByAppendingPathComponent:@"contents.xcworkspacedata"];
+}
+
++ (NSString *)pbxprojFileWithXcodeprojFile:(NSString *)xcodeprojFile {
+    return [xcodeprojFile stringByAppendingPathComponent:@"project.pbxproj"];
+}
+
++ (NSString *)PROJECT_DIRWithXcodeprojFile:(NSString *)xcodeprojFile {
+    return [self directoryPathWithFilePath:xcodeprojFile];
+}
+
++ (NSString *)SRCROOTWithXcodeprojFile:(NSString *)xcodeprojFile {
+    return [self directoryPathWithFilePath:xcodeprojFile];
+}
+
++ (NSString *)absolutePathWithXcodeprojFile:(NSString *)xcodeprojFile
+                               relativePath:(NSString *)relativePath {
+    NSString *directory = [self directoryPathWithFilePath:xcodeprojFile];
+    NSString *path = relativePath;
+    if ([relativePath hasPrefix:kXAPRelativeValueSRCROOT]) {
+        path = [relativePath substringFromIndex:kXAPRelativeValueSRCROOT.length+1];
+    } else if ([relativePath hasPrefix:kXAPRelativeValuePROJECT_DIR]) {
+        path = [relativePath substringFromIndex:kXAPRelativeValuePROJECT_DIR.length+1];
+    }
+    while ([path hasPrefix:@"../"]) {
+        directory = [directory stringByDeletingLastPathComponent];
+        path = [path substringFromIndex:3];
+    }
+    return [directory stringByAppendingPathComponent:path];
+}
+
+#pragma mark XCARCHIVE FILE
++ (NSString *)infoPlistFileWithXcarchiveFile:(NSString *)xcarchiveFile {
+    return [xcarchiveFile stringByAppendingPathComponent:@"info.plist"];
+}
+
++ (NSString *)appFileWithXcarchiveFile:(NSString *)xcarchiveFile {
+    BOOL isDir = NO;
+    BOOL isExist = NO;
+    // 判定info.plist文件是否存在
+    NSString *infoPlistFile = [self infoPlistFileWithXcarchiveFile:xcarchiveFile];
+    isExist = [[NSFileManager defaultManager] fileExistsAtPath:infoPlistFile
+                                                   isDirectory:&isDir];
+    if (!(!isDir && isExist)) { return nil; }
+    // 解析info.plist内的ApplicationProperties=>ApplicationPath的值得到.app文件路径
+    NSDictionary *infoPlistDictionary = [NSDictionary dictionaryWithContentsOfFile:infoPlistFile];
+    NSDictionary *applicationProperties = [infoPlistDictionary objectForKey:kXAPPlistKeyApplicationProperties];
+    if (![applicationProperties isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+    NSString *applicationPath = [applicationProperties objectForKey:kXAPPlistKeyApplicationPath];
+    if (![applicationPath isKindOfClass:[NSString class]]) {
+        return nil;
+    }
+    NSString *products = [xcarchiveFile stringByAppendingPathComponent:@"Products"];
+    NSString *appFile = [products stringByAppendingPathComponent:applicationPath];
+    return appFile;
+}
+
+#pragma mark APP FILE
++ (NSString *)embeddedProvisionFileWithAppFile:(NSString *)appFile {
+    return [appFile stringByAppendingPathComponent:@"embedded.mobileprovision"];
+}
+
++ (NSString *)infoPlistFileWithAppFile:(NSString *)appFile {
+    return [appFile stringByAppendingPathComponent:@"info.plist"];
+}
+
++ (NSString *)executableFileAbsolutePathWithAppFile:(NSString *)appFile
+                             relativeExecutableFile:(NSString *)relativeExecutableFile {
+    return [appFile stringByAppendingPathComponent:relativeExecutableFile];
+}
+
+#pragma mark IPA FILE
++ (NSString *)appFileWithIPAFile:(NSString *)ipaFile
+                    unzippedPath:(NSString *__autoreleasing  _Nullable *)unzippedPath {
+    if (![self isIPAFile:ipaFile]) { return nil; }
+    // 解压ipa，只能拿到所在目录下的文件
+    NSString *unzipPath = [DHZIPUtils unzipIPAFile:ipaFile];
+    if (unzippedPath) { *unzippedPath = unzipPath; }
+    if (!unzippedPath) { return nil; }
+    if (![self isDirectoryPath:unzipPath]) { return nil; }
+
+    // 查找解压文件夹下.app文件
+    NSArray *contents = [self absoluteContentsOfDirectory:unzipPath];
+    for (NSString *path in contents) {
+        if ([self isAppFile:path]) {
+            return path;
+        }
+    }
+    return nil;
+}
+
+@end
+
+
+@implementation XAPTools (TraverseExtension)
+
+/// 文件夹下所有文件绝对路径——深度优先
++ (nullable NSArray *)absoluteSubpathsOfDirectory:(NSString *)path {
+    NSError *error;
+    NSArray *subpaths = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:path
+                                                                            error:&error];
+    if (error) { return nil; }
+    if ([subpaths count] == 0) { return nil; }
+    
+    __block NSMutableArray *result = [NSMutableArray array];
+    [subpaths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        @autoreleasepool {
+            [result addObject:[path stringByAppendingPathComponent:obj]];
+        }
+    }];
+    
+    return result;
+}
+
+/// 文件夹下一级目录文件绝对路径
++ (nullable NSArray *)absoluteContentsOfDirectory:(NSString *)path {
+    NSError *error;
+    NSArray *subpaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path
+                                                                            error:&error];
+    if (error) { return nil; }
+    if ([subpaths count] == 0) { return nil; }
+    
+    __block NSMutableArray *result = [NSMutableArray array];
+    [subpaths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        @autoreleasepool {
+            [result addObject:[path stringByAppendingPathComponent:obj]];
+        }
+    }];
+    
+    return result;
+}
+
+@end
+
+@implementation XAPTools (DirectoryExtension)
+
+/// 是否开启沙盒模式
++ (BOOL)isSandboxMode {
+    NSString *home = NSHomeDirectory();
+    // 沙盒模式下：/Users/用户名/Library/Containers/com.daniel.DHXcodeAutoPackage/Data
+    // 非沙盒模式下：/Users/用户名
+    if ([[home componentsSeparatedByString:@"/"] count] > 3) {
+        return YES;
+    }
+    return NO;
+}
+
++ (NSString *)systemUserDirectory {
+    if ([self isSandboxMode]) {
+        return [@"/Users/" stringByAppendingString:NSUserName()];
+    }
+    return NSHomeDirectory();
+}
+
++ (NSString *)systemUserDirectoryAppendingPath:(NSString *)path {
+    return [[self systemUserDirectory] stringByAppendingPathComponent:path];
+}
+
++ (NSString *)systemSandboxDirectory {
+    if (![self isSandboxMode]) {
+        NSString *relativePath = [NSString stringWithFormat:@"Library/Containers/%@/Data",[[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleIdentifier"]];
+        return [NSHomeDirectory() stringByAppendingPathComponent:relativePath];
+    }
+    return NSHomeDirectory();
+}
+
++ (NSString *)systemSandboxDirectoryAppendingPath:(NSString *)path {
+    return [[self systemSandboxDirectory] stringByAppendingPathComponent:path];
+}
+
++ (NSString *)systemSandboxDocumentDirectory {
+        return [self systemSandboxDirectoryAppendingPath:@"Documents"];
+}
+
++ (NSString *)systemUserDocumentsDirectory {
+    return [self systemUserDirectoryAppendingPath:@"Documents"];
+}
+
++ (NSString *)systemSandboxCachesDirectory {
+    return [self systemSandboxDirectoryAppendingPath:@"Library/Caches"];
+}
+
++ (NSString *)systemUserCachesDirectory {
+    return [self systemUserDirectoryAppendingPath:@"Library/Caches"];
+}
+
++ (NSString *)systemUserDesktopDirectory {
+    return [self systemUserDirectoryAppendingPath:@"Desktop"];
+}
+
++ (NSString *)systemSandboxDesktopDirectory {
+    return [self systemSandboxDirectoryAppendingPath:@"Desktop"];
+}
+
+@end

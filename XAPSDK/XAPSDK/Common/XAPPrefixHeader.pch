@@ -11,6 +11,8 @@
 #ifdef __OBJC__
 /// 通用常量
 #import "XAPConstant.h"
+/// 通用工具
+#import "XAPTools.h"
 
 #endif
 
