@@ -20,6 +20,46 @@
 		65F16A862575236E0095C607 /* XAPConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A842575236E0095C607 /* XAPConstant.m */; };
 		65F16A8D25753FB20095C607 /* XAPScriptPathManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A8B25753FB20095C607 /* XAPScriptPathManager.h */; };
 		65F16A8E25753FB20095C607 /* XAPScriptPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A8C25753FB20095C607 /* XAPScriptPathManager.m */; };
+		65F16A952577F10D0095C607 /* XAPZipTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A932577F10D0095C607 /* XAPZipTools.h */; };
+		65F16A962577F10D0095C607 /* XAPZipTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A942577F10D0095C607 /* XAPZipTools.m */; };
+		65F16ABC2577F1390095C607 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A992577F1390095C607 /* ZipArchive.h */; };
+		65F16ABD2577F1390095C607 /* mz_strm_os_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A9B2577F1390095C607 /* mz_strm_os_posix.c */; };
+		65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A9C2577F1390095C607 /* mz_strm_pkcrypt.c */; };
+		65F16ABF2577F1390095C607 /* mz_strm_wzaes.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A9D2577F1390095C607 /* mz_strm_wzaes.h */; };
+		65F16AC02577F1390095C607 /* mz_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A9E2577F1390095C607 /* mz_compat.h */; };
+		65F16AC12577F1390095C607 /* mz_strm_zlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A9F2577F1390095C607 /* mz_strm_zlib.c */; };
+		65F16AC22577F1390095C607 /* mz_zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AA02577F1390095C607 /* mz_zip.c */; };
+		65F16AC32577F1390095C607 /* mz_os.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AA12577F1390095C607 /* mz_os.h */; };
+		65F16AC42577F1390095C607 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 65F16AA22577F1390095C607 /* LICENSE */; };
+		65F16AC52577F13A0095C607 /* mz_zip_rw.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AA32577F1390095C607 /* mz_zip_rw.c */; };
+		65F16AC62577F13A0095C607 /* mz_strm_split.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AA42577F1390095C607 /* mz_strm_split.h */; };
+		65F16AC72577F13A0095C607 /* mz_strm_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AA52577F1390095C607 /* mz_strm_buf.h */; };
+		65F16AC82577F13A0095C607 /* mz_crypt_apple.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AA62577F1390095C607 /* mz_crypt_apple.c */; };
+		65F16AC92577F13A0095C607 /* mz_strm.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AA72577F1390095C607 /* mz_strm.h */; };
+		65F16ACA2577F13A0095C607 /* mz_strm_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AA82577F1390095C607 /* mz_strm_mem.c */; };
+		65F16ACB2577F13A0095C607 /* mz_crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AA92577F1390095C607 /* mz_crypt.c */; };
+		65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AAA2577F1390095C607 /* mz_strm_wzaes.c */; };
+		65F16ACD2577F13A0095C607 /* mz_strm_zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AAB2577F1390095C607 /* mz_strm_zlib.h */; };
+		65F16ACE2577F13A0095C607 /* mz_compat.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AAC2577F1390095C607 /* mz_compat.c */; };
+		65F16ACF2577F13A0095C607 /* mz_strm_pkcrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AAD2577F1390095C607 /* mz_strm_pkcrypt.h */; };
+		65F16AD02577F13A0095C607 /* mz_zip_rw.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AAE2577F1390095C607 /* mz_zip_rw.h */; };
+		65F16AD12577F13A0095C607 /* mz_os.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AAF2577F1390095C607 /* mz_os.c */; };
+		65F16AD22577F13A0095C607 /* mz_zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB02577F1390095C607 /* mz_zip.h */; };
+		65F16AD32577F13A0095C607 /* mz_os_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AB12577F1390095C607 /* mz_os_posix.c */; };
+		65F16AD42577F13A0095C607 /* mz.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB22577F1390095C607 /* mz.h */; };
+		65F16AD52577F13A0095C607 /* mz_strm_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AB32577F1390095C607 /* mz_strm_buf.c */; };
+		65F16AD62577F13A0095C607 /* mz_strm_split.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AB42577F1390095C607 /* mz_strm_split.c */; };
+		65F16AD72577F13A0095C607 /* mz_crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB52577F1390095C607 /* mz_crypt.h */; };
+		65F16AD82577F13A0095C607 /* mz_strm_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB62577F1390095C607 /* mz_strm_mem.h */; };
+		65F16AD92577F13A0095C607 /* mz_strm.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AB72577F1390095C607 /* mz_strm.c */; };
+		65F16ADA2577F13A0095C607 /* mz_strm_os.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB82577F1390095C607 /* mz_strm_os.h */; };
+		65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB92577F1390095C607 /* SSZipArchive.h */; };
+		65F16ADC2577F13A0095C607 /* SSZipCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16ABA2577F1390095C607 /* SSZipCommon.h */; };
+		65F16ADD2577F13A0095C607 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16ABB2577F1390095C607 /* SSZipArchive.m */; };
+		65F16AF72578065F0095C607 /* XAPProvisioningProfileModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AF52578065F0095C607 /* XAPProvisioningProfileModel.h */; };
+		65F16AF82578065F0095C607 /* XAPProvisioningProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */; };
+		65F16AFD25780A1C0095C607 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFC25780A1C0095C607 /* libiconv.tbd */; };
+		65F16B0025780A230095C607 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFF25780A230095C607 /* libz.tbd */; };
 		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; };
 		F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */; };
 		F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7EE2577387200C5C893 /* XAPTools.h */; };
@@ -44,6 +84,46 @@
 		65F16A89257524550095C607 /* XAPMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPMacro.h; sourceTree = "<group>"; };
 		65F16A8B25753FB20095C607 /* XAPScriptPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPScriptPathManager.h; sourceTree = "<group>"; };
 		65F16A8C25753FB20095C607 /* XAPScriptPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPScriptPathManager.m; sourceTree = "<group>"; };
+		65F16A932577F10D0095C607 /* XAPZipTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPZipTools.h; sourceTree = "<group>"; };
+		65F16A942577F10D0095C607 /* XAPZipTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPZipTools.m; sourceTree = "<group>"; };
+		65F16A992577F1390095C607 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		65F16A9B2577F1390095C607 /* mz_strm_os_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_os_posix.c; sourceTree = "<group>"; };
+		65F16A9C2577F1390095C607 /* mz_strm_pkcrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_pkcrypt.c; sourceTree = "<group>"; };
+		65F16A9D2577F1390095C607 /* mz_strm_wzaes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_wzaes.h; sourceTree = "<group>"; };
+		65F16A9E2577F1390095C607 /* mz_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_compat.h; sourceTree = "<group>"; };
+		65F16A9F2577F1390095C607 /* mz_strm_zlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_zlib.c; sourceTree = "<group>"; };
+		65F16AA02577F1390095C607 /* mz_zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_zip.c; sourceTree = "<group>"; };
+		65F16AA12577F1390095C607 /* mz_os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_os.h; sourceTree = "<group>"; };
+		65F16AA22577F1390095C607 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		65F16AA32577F1390095C607 /* mz_zip_rw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_zip_rw.c; sourceTree = "<group>"; };
+		65F16AA42577F1390095C607 /* mz_strm_split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_split.h; sourceTree = "<group>"; };
+		65F16AA52577F1390095C607 /* mz_strm_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_buf.h; sourceTree = "<group>"; };
+		65F16AA62577F1390095C607 /* mz_crypt_apple.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_crypt_apple.c; sourceTree = "<group>"; };
+		65F16AA72577F1390095C607 /* mz_strm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm.h; sourceTree = "<group>"; };
+		65F16AA82577F1390095C607 /* mz_strm_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_mem.c; sourceTree = "<group>"; };
+		65F16AA92577F1390095C607 /* mz_crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_crypt.c; sourceTree = "<group>"; };
+		65F16AAA2577F1390095C607 /* mz_strm_wzaes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_wzaes.c; sourceTree = "<group>"; };
+		65F16AAB2577F1390095C607 /* mz_strm_zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_zlib.h; sourceTree = "<group>"; };
+		65F16AAC2577F1390095C607 /* mz_compat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_compat.c; sourceTree = "<group>"; };
+		65F16AAD2577F1390095C607 /* mz_strm_pkcrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_pkcrypt.h; sourceTree = "<group>"; };
+		65F16AAE2577F1390095C607 /* mz_zip_rw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_zip_rw.h; sourceTree = "<group>"; };
+		65F16AAF2577F1390095C607 /* mz_os.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_os.c; sourceTree = "<group>"; };
+		65F16AB02577F1390095C607 /* mz_zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_zip.h; sourceTree = "<group>"; };
+		65F16AB12577F1390095C607 /* mz_os_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_os_posix.c; sourceTree = "<group>"; };
+		65F16AB22577F1390095C607 /* mz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz.h; sourceTree = "<group>"; };
+		65F16AB32577F1390095C607 /* mz_strm_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_buf.c; sourceTree = "<group>"; };
+		65F16AB42577F1390095C607 /* mz_strm_split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_split.c; sourceTree = "<group>"; };
+		65F16AB52577F1390095C607 /* mz_crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_crypt.h; sourceTree = "<group>"; };
+		65F16AB62577F1390095C607 /* mz_strm_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_mem.h; sourceTree = "<group>"; };
+		65F16AB72577F1390095C607 /* mz_strm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm.c; sourceTree = "<group>"; };
+		65F16AB82577F1390095C607 /* mz_strm_os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_os.h; sourceTree = "<group>"; };
+		65F16AB92577F1390095C607 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		65F16ABA2577F1390095C607 /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
+		65F16ABB2577F1390095C607 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		65F16AF52578065F0095C607 /* XAPProvisioningProfileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProvisioningProfileModel.h; sourceTree = "<group>"; };
+		65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileModel.m; sourceTree = "<group>"; };
+		65F16AFC25780A1C0095C607 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		65F16AFF25780A230095C607 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPErrorMacro.h; sourceTree = "<group>"; };
 		F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProvisioningProfileManager.h; sourceTree = "<group>"; };
 		F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileManager.m; sourceTree = "<group>"; };
@@ -56,6 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F16B0025780A230095C607 /* libz.tbd in Frameworks */,
+				65F16AFD25780A1C0095C607 /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +149,7 @@
 			children = (
 				65F16A57257521110095C607 /* XAPSDK */,
 				65F16A56257521110095C607 /* Products */,
+				65F16AFB25780A1B0095C607 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +166,7 @@
 			children = (
 				65F16A58257521110095C607 /* XAPSDK.h */,
 				65F16A62257521F50095C607 /* Common */,
+				65F16AF3257806150095C607 /* Models */,
 				F6F8B7ED2577385800C5C893 /* Tools */,
 				F6F8B7E5257736CC00C5C893 /* Manager */,
 				65F16A63257522050095C607 /* Scriptor */,
@@ -95,6 +179,7 @@
 		65F16A61257521D50095C607 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				65F16A982577F1390095C607 /* SSZipArchive */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -128,6 +213,81 @@
 			path = Scriptor;
 			sourceTree = "<group>";
 		};
+		65F16A982577F1390095C607 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				65F16A9A2577F1390095C607 /* minizip */,
+				65F16AB92577F1390095C607 /* SSZipArchive.h */,
+				65F16ABB2577F1390095C607 /* SSZipArchive.m */,
+				65F16ABA2577F1390095C607 /* SSZipCommon.h */,
+				65F16A992577F1390095C607 /* ZipArchive.h */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		65F16A9A2577F1390095C607 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				65F16A9B2577F1390095C607 /* mz_strm_os_posix.c */,
+				65F16A9C2577F1390095C607 /* mz_strm_pkcrypt.c */,
+				65F16A9D2577F1390095C607 /* mz_strm_wzaes.h */,
+				65F16A9E2577F1390095C607 /* mz_compat.h */,
+				65F16A9F2577F1390095C607 /* mz_strm_zlib.c */,
+				65F16AA02577F1390095C607 /* mz_zip.c */,
+				65F16AA12577F1390095C607 /* mz_os.h */,
+				65F16AA22577F1390095C607 /* LICENSE */,
+				65F16AA32577F1390095C607 /* mz_zip_rw.c */,
+				65F16AA42577F1390095C607 /* mz_strm_split.h */,
+				65F16AA52577F1390095C607 /* mz_strm_buf.h */,
+				65F16AA62577F1390095C607 /* mz_crypt_apple.c */,
+				65F16AA72577F1390095C607 /* mz_strm.h */,
+				65F16AA82577F1390095C607 /* mz_strm_mem.c */,
+				65F16AA92577F1390095C607 /* mz_crypt.c */,
+				65F16AAA2577F1390095C607 /* mz_strm_wzaes.c */,
+				65F16AAB2577F1390095C607 /* mz_strm_zlib.h */,
+				65F16AAC2577F1390095C607 /* mz_compat.c */,
+				65F16AAD2577F1390095C607 /* mz_strm_pkcrypt.h */,
+				65F16AAE2577F1390095C607 /* mz_zip_rw.h */,
+				65F16AAF2577F1390095C607 /* mz_os.c */,
+				65F16AB02577F1390095C607 /* mz_zip.h */,
+				65F16AB12577F1390095C607 /* mz_os_posix.c */,
+				65F16AB22577F1390095C607 /* mz.h */,
+				65F16AB32577F1390095C607 /* mz_strm_buf.c */,
+				65F16AB42577F1390095C607 /* mz_strm_split.c */,
+				65F16AB52577F1390095C607 /* mz_crypt.h */,
+				65F16AB62577F1390095C607 /* mz_strm_mem.h */,
+				65F16AB72577F1390095C607 /* mz_strm.c */,
+				65F16AB82577F1390095C607 /* mz_strm_os.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		65F16AF3257806150095C607 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65F16AF42578063D0095C607 /* ProvisioningProfile */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65F16AF42578063D0095C607 /* ProvisioningProfile */ = {
+			isa = PBXGroup;
+			children = (
+				65F16AF52578065F0095C607 /* XAPProvisioningProfileModel.h */,
+				65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */,
+			);
+			path = ProvisioningProfile;
+			sourceTree = "<group>";
+		};
+		65F16AFB25780A1B0095C607 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65F16AFF25780A230095C607 /* libz.tbd */,
+				65F16AFC25780A1C0095C607 /* libiconv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6F8B7E5257736CC00C5C893 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +310,8 @@
 			children = (
 				F6F8B7EE2577387200C5C893 /* XAPTools.h */,
 				F6F8B7EF2577387200C5C893 /* XAPTools.m */,
+				65F16A932577F10D0095C607 /* XAPZipTools.h */,
+				65F16A942577F10D0095C607 /* XAPZipTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -161,14 +323,33 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F16AC62577F13A0095C607 /* mz_strm_split.h in Headers */,
 				65F16A852575236E0095C607 /* XAPConstant.h in Headers */,
 				F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */,
+				65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */,
 				65F16A7F257522EC0095C607 /* XAPScriptExecutor.h in Headers */,
 				65F16A8D25753FB20095C607 /* XAPScriptPathManager.h in Headers */,
+				65F16AD82577F13A0095C607 /* mz_strm_mem.h in Headers */,
+				65F16AC02577F1390095C607 /* mz_compat.h in Headers */,
+				65F16AC32577F1390095C607 /* mz_os.h in Headers */,
 				65F16A70257522C10095C607 /* XAPScriptModel.h in Headers */,
+				65F16AD72577F13A0095C607 /* mz_crypt.h in Headers */,
+				65F16ADC2577F13A0095C607 /* SSZipCommon.h in Headers */,
+				65F16AC92577F13A0095C607 /* mz_strm.h in Headers */,
+				65F16ABC2577F1390095C607 /* ZipArchive.h in Headers */,
 				65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */,
+				65F16AD22577F13A0095C607 /* mz_zip.h in Headers */,
+				65F16A952577F10D0095C607 /* XAPZipTools.h in Headers */,
+				65F16AC72577F13A0095C607 /* mz_strm_buf.h in Headers */,
+				65F16ACF2577F13A0095C607 /* mz_strm_pkcrypt.h in Headers */,
 				F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */,
 				65F16A5A257521110095C607 /* XAPSDK.h in Headers */,
+				65F16AF72578065F0095C607 /* XAPProvisioningProfileModel.h in Headers */,
+				65F16ABF2577F1390095C607 /* mz_strm_wzaes.h in Headers */,
+				65F16ACD2577F13A0095C607 /* mz_strm_zlib.h in Headers */,
+				65F16AD42577F13A0095C607 /* mz.h in Headers */,
+				65F16AD02577F13A0095C607 /* mz_zip_rw.h in Headers */,
+				65F16ADA2577F13A0095C607 /* mz_strm_os.h in Headers */,
 				65F16A7A257522DD0095C607 /* XAPScriptResposity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F16AC42577F1390095C607 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,13 +424,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				65F16A8E25753FB20095C607 /* XAPScriptPathManager.m in Sources */,
+				65F16ADD2577F13A0095C607 /* SSZipArchive.m in Sources */,
 				65F16A71257522C10095C607 /* XAPScriptModel.m in Sources */,
 				65F16A6B257522B10095C607 /* XAPScriptor.m in Sources */,
+				65F16AC12577F1390095C607 /* mz_strm_zlib.c in Sources */,
 				F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */,
+				65F16AF82578065F0095C607 /* XAPProvisioningProfileModel.m in Sources */,
+				65F16AC52577F13A0095C607 /* mz_zip_rw.c in Sources */,
+				65F16AC22577F1390095C607 /* mz_zip.c in Sources */,
 				65F16A862575236E0095C607 /* XAPConstant.m in Sources */,
+				65F16ACA2577F13A0095C607 /* mz_strm_mem.c in Sources */,
+				65F16AD32577F13A0095C607 /* mz_os_posix.c in Sources */,
+				65F16AD62577F13A0095C607 /* mz_strm_split.c in Sources */,
+				65F16ACB2577F13A0095C607 /* mz_crypt.c in Sources */,
+				65F16A962577F10D0095C607 /* XAPZipTools.m in Sources */,
+				65F16ABD2577F1390095C607 /* mz_strm_os_posix.c in Sources */,
+				65F16AD92577F13A0095C607 /* mz_strm.c in Sources */,
 				65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */,
+				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
 				65F16A7B257522DD0095C607 /* XAPScriptResposity.m in Sources */,
+				65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */,
+				65F16AD12577F13A0095C607 /* mz_os.c in Sources */,
+				65F16AC82577F13A0095C607 /* mz_crypt_apple.c in Sources */,
 				F6F8B7F12577387200C5C893 /* XAPTools.m in Sources */,
+				65F16AD52577F13A0095C607 /* mz_strm_buf.c in Sources */,
+				65F16ACE2577F13A0095C607 /* mz_compat.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

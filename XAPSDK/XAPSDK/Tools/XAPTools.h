@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// podfile
 + (BOOL)isPodfileFile:(NSString *)path;
 /// .mobileprovision
-+ (BOOL)isProfile:(NSString *)path;
++ (BOOL)isProvisioningProfile:(NSString *)path;
 /// .xcarchive
 + (BOOL)isXcarchiveFile:(NSString *)path;
 /// .ipa
@@ -119,6 +119,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)systemSandboxDesktopDirectory;
 /// 沙盒 Library/Caches
 + (NSString *)systemSandboxCachesDirectory;
+
+/// 系统默认存储.mobileprovision的文档
++ (NSString *)systemProvisioningProfilesDirectory;
 
 @end
 

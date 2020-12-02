@@ -6,6 +6,7 @@
 //
 
 #import "XAPTools.h"
+#import "XAPZipTools.h"
 
 @implementation XAPTools
 
@@ -101,7 +102,7 @@
     return !isDir && isExist;
 }
 
-+ (BOOL)isProfile:(NSString *)path {
++ (BOOL)isProvisioningProfile:(NSString *)path {
     if (![self isFilePath:path]) { return NO; }
     if (![path.pathExtension isEqualToString:@"mobileprovision"]) { return NO; }
     BOOL isDir = NO;
@@ -123,6 +124,15 @@
 + (BOOL)isIPAFile:(NSString *)path {
     if (![self isFilePath:path]) { return NO; }
     if (![path.pathExtension isEqualToString:@"ipa"]) { return NO; }
+    NSString *unzippedPath;
+    // 解压ipa文件获取.app文件路径，得到返回即存在
+    NSString *appFile = [self appFileWithIPAFile:path
+                                    unzippedPath:&unzippedPath];
+    // 验证后移除已解压文件
+    if (unzippedPath) {
+        [[NSFileManager defaultManager] removeItemAtPath:unzippedPath error:nil];
+    }
+    if (!appFile) { return NO; }
     
     return YES;
 }
@@ -234,11 +244,16 @@
 #pragma mark IPA FILE
 + (NSString *)appFileWithIPAFile:(NSString *)ipaFile
                     unzippedPath:(NSString *__autoreleasing  _Nullable *)unzippedPath {
-    if (![self isIPAFile:ipaFile]) { return nil; }
+    BOOL isDir = NO;
+    BOOL isExist = NO;
+    isExist = [[NSFileManager defaultManager] fileExistsAtPath:ipaFile
+                                                   isDirectory:&isDir];
+    if (!(!isDir && isExist)) { return nil; }
+    
     // 解压ipa，只能拿到所在目录下的文件
-    NSString *unzipPath = [DHZIPUtils unzipIPAFile:ipaFile];
+    NSString *unzipPath = [XAPZipTools unzipIPAFile:ipaFile];
+    if (!unzipPath) { return nil; }
     if (unzippedPath) { *unzippedPath = unzipPath; }
-    if (!unzippedPath) { return nil; }
     if (![self isDirectoryPath:unzipPath]) { return nil; }
 
     // 查找解压文件夹下.app文件
@@ -352,6 +367,10 @@
 
 + (NSString *)systemSandboxDesktopDirectory {
     return [self systemSandboxDirectoryAppendingPath:@"Desktop"];
+}
+
++ (NSString *)systemProvisioningProfilesDirectory {
+    return [self systemUserDirectoryAppendingPath:@"Library/MobileDevice/Provisioning Profiles"];
 }
 
 @end

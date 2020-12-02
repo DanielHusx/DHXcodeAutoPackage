@@ -9,6 +9,7 @@
 #import "XAPScriptor.h"
 #import "XAPScriptModel.h"
 #import "XAPTools.h"
+#import "XAPProvisioningProfileModel.h"
 
 @implementation XAPProvisioningProfileManager
 
@@ -21,112 +22,89 @@
     });
     return _instance;
 }
+// TODO: 遍历缓存解析到沙盒，hash比对
 
 #pragma mark - parse
-/// 组装描述文件信息
-+ (DHProfileModel *)fetchProfileWithProfile:(NSString *)profile
-                                    error:(NSError **)error {
-    if (![DHPathUtils isProfile:profile]) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_MOBILEPROVISION_INVALID, @".mobileprovision路径异常");
+/// 解析描述文件
+- (XAPProvisioningProfileModel *)parseProvisioningProfileWithPath:(NSString *)path
+                                                            error:(NSError * __autoreleasing _Nonnull *)error {
+    if (![XAPTools isProvisioningProfile:path]) {
         return nil;
     }
-    DHProfileModel *model = [[DHProfileModel alloc] init];
-    model.profilePath = profile;
+    XAPProvisioningProfileModel *model = [[XAPProvisioningProfileModel alloc] init];
+    model.profilePath = path;
     
-    
-    BOOL ret = NO;
     NSString *output = nil;
-    NSError *err;
     // 获取名称
-    ret = [DHScriptCommand fetchProfileNameWithProfile:profile
-                                                output:&output
-                                                 error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_NAME_FAILED, err);
-        return model;
-    }
+    output = [[XAPScriptor sharedInstance] fetchProfileNameWithProfile:path
+                                                                 error:error];
+    if (error) { return nil; }
     model.name = output;
     
-    // 获取Bundle id
-    ret = [DHScriptCommand fetchProfileBundleIdentifierWithProfile:profile
-                                                            output:&output
-                                                             error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_BUNDLEID_FAILED, err);
-        return model;
+    
+    // 获取bundle id
+    output = [[XAPScriptor sharedInstance] fetchProfileBundleIdentifierWithProfile:path
+                                                                             error:error];
+    if (error) {
+        return nil;
     }
-    model.bundleId = output;
+    model.bundleIdentifier = output;
     
     // 获取app id
-    ret = [DHScriptCommand fetchProfileAppIdentifierWithProfile:profile
-                                                         output:&output
-                                                          error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_APPID_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileAppIdentifierWithProfile:path
+                                                                          error:error];
+    if (error) {
+        return nil;
     }
-    model.appId = output;
+    model.applicationIdentifier = output;
     
     // 获取team id
-    ret = [DHScriptCommand fetchProfileTeamIdentifierWithProfile:profile
-                                                          output:&output
-                                                           error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_TEAMID_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileTeamIdentifierWithProfile:path
+                                                                        error:error];
+    if (error) {
+        return nil;
     }
-    model.teamId = output;
+    model.teamIdentifier = output;
     
     // 获取team name
-    ret = [DHScriptCommand fetchProfileTeamNameWithProfile:profile
-                                                  output:&output
-                                                   error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_TEAMNAME_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileTeamNameWithProfile:path
+                                                                     error:error];
+    if (error) {
+        return nil;
     }
     model.teamName = output;
     
     // 获取uuid
-    ret = [DHScriptCommand fetchProfileUUIDWithProfile:profile
-                                              output:&output
-                                               error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_UUID_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileUUIDWithProfile:path
+                                                                 error:error];
+    if (error) {
+        return nil;
     }
     model.uuid = output;
     
     // 获取createTimestamp
-    ret = [DHScriptCommand fetchProfileCreateTimestampWithProfile:profile
-                                                         output:&output
-                                                          error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_CREATED_TIMESTAMP_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileCreateTimestampWithProfile:path
+                                                                            error:error];
+    if (error) {
+        return nil;
     }
     model.createTimestamp = output;
     
     // 获取ExpireTimestamp
-    ret = [DHScriptCommand fetchProfileExpireTimestampWithProfile:profile
-                                                         output:&output
-                                                          error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_EXPIRE_TIMESTAMP_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileExpireTimestampWithProfile:path
+                                                                            error:error];
+    if (error) {
+        return nil;
     }
     model.expireTimestamp = output;
     
     // 渠道类型
-    DHChannel outputChannel;
-    ret = [DHScriptCommand fetchProfileChannelWithProfile:profile
-                                                 output:&outputChannel
-                                                  error:&err];
-    if (!ret) {
-        DH_ERROR_MAKER_CONVINENT(DHERROR_PARSER_PROFILE_PARSE_CHANNEL_FAILED, err);
-        return model;
+    output = [[XAPScriptor sharedInstance] fetchProfileChannelWithProfile:path
+                                                                    error:error];
+    if (error) {
+        return nil;
     }
-    model.channel = outputChannel;
+    model.channel = output;
     
     return model;
 }
