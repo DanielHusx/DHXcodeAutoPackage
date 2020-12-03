@@ -159,6 +159,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (XAPChannel)fetchProfileChannelWithProfile:(NSString *)profile
                                        error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
+- (void)fetchKeychainCertificatesOfTeamNames:(NSArray <NSString *> * __autoreleasing _Nullable * _Nullable)teamNames
+                                       uuids:(NSArray <NSString *> * __autoreleasing _Nullable * _Nullable)uuids
+                             teamIdentifiers:(NSArray <NSString *> * __autoreleasing _Nullable * _Nullable)teamIdentifiers
+                                       error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 // MARK: - git相关
 - (NSString * _Nullable)gitCurrentBranchWithGitDirectory:(NSString *)gitDirectory

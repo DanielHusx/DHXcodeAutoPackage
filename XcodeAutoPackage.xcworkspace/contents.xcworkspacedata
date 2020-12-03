@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:XAPDemo/XAPDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:XcodeAutoPackage/XcodeAutoPackage.xcodeproj">
    </FileRef>
    <FileRef

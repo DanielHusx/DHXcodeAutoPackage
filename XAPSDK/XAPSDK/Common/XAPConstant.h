@@ -55,6 +55,8 @@ FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyApplicationPath;
 FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyApplicationProperties;
 /// plist team id —— 只在.xcarchive的info.plist
 FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyTeam;
+/// plist uuid —— 只在解析的profile中
+FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyUUID;
 /// plist 签名 —— 只在xcarchive的info.plist
 FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeySigningIdentity;
 

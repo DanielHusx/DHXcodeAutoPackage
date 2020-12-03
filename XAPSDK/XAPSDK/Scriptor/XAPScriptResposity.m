@@ -879,6 +879,19 @@
     return command;
 }
 
++ (XAPScriptModel *)fetchKeychainCertificatesCommand {
+    XAPScriptModel *command = [XAPScriptResposity scriptModelForSecurity];
+    
+    NSMutableArray *component = [NSMutableArray array];
+    [component addObject:@"find-identity"];
+    [component addObject:@"-v"];
+    [component addObject:@"-p"];
+    [component addObject:@"codesigning"];
+    command.scriptArguments = [component copy];
+    
+    return command;
+}
+
 + (XAPScriptModel *)fetchUnzipCommand:(NSString *)sourceFile
                      destinationFile:(NSString *)destinationFile {
     XAPScriptModel *command = [XAPScriptResposity scriptModelForUnzip];

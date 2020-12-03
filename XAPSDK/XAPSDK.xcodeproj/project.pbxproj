@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		65F16A5A257521110095C607 /* XAPSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A58257521110095C607 /* XAPSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A68257522B10095C607 /* XAPScriptor.h */; };
+		65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A68257522B10095C607 /* XAPScriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65F16A6B257522B10095C607 /* XAPScriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A69257522B10095C607 /* XAPScriptor.m */; };
 		65F16A70257522C10095C607 /* XAPScriptModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A6E257522C10095C607 /* XAPScriptModel.h */; };
 		65F16A71257522C10095C607 /* XAPScriptModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A6F257522C10095C607 /* XAPScriptModel.m */; };
@@ -16,7 +16,7 @@
 		65F16A7B257522DD0095C607 /* XAPScriptResposity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A79257522DD0095C607 /* XAPScriptResposity.m */; };
 		65F16A7F257522EC0095C607 /* XAPScriptExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A7D257522EC0095C607 /* XAPScriptExecutor.h */; };
 		65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A7E257522EC0095C607 /* XAPScriptExecutor.m */; };
-		65F16A852575236E0095C607 /* XAPConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A832575236E0095C607 /* XAPConstant.h */; };
+		65F16A852575236E0095C607 /* XAPConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A832575236E0095C607 /* XAPConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65F16A862575236E0095C607 /* XAPConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A842575236E0095C607 /* XAPConstant.m */; };
 		65F16A8D25753FB20095C607 /* XAPScriptPathManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A8B25753FB20095C607 /* XAPScriptPathManager.h */; };
 		65F16A8E25753FB20095C607 /* XAPScriptPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A8C25753FB20095C607 /* XAPScriptPathManager.m */; };
@@ -56,11 +56,11 @@
 		65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AB92577F1390095C607 /* SSZipArchive.h */; };
 		65F16ADC2577F13A0095C607 /* SSZipCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16ABA2577F1390095C607 /* SSZipCommon.h */; };
 		65F16ADD2577F13A0095C607 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16ABB2577F1390095C607 /* SSZipArchive.m */; };
-		65F16AF72578065F0095C607 /* XAPProvisioningProfileModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AF52578065F0095C607 /* XAPProvisioningProfileModel.h */; };
+		65F16AF72578065F0095C607 /* XAPProvisioningProfileModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16AF52578065F0095C607 /* XAPProvisioningProfileModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65F16AF82578065F0095C607 /* XAPProvisioningProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */; };
 		65F16AFD25780A1C0095C607 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFC25780A1C0095C607 /* libiconv.tbd */; };
 		65F16B0025780A230095C607 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFF25780A230095C607 /* libz.tbd */; };
-		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; };
+		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */; };
 		F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7EE2577387200C5C893 /* XAPTools.h */; };
 		F6F8B7F12577387200C5C893 /* XAPTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8B7EF2577387200C5C893 /* XAPTools.m */; };

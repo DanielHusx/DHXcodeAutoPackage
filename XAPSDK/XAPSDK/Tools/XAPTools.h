@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 根据文件路径获取文档路径
 + (NSString *)directoryPathWithFilePath:(NSString *)filePath;
 
+/// 正则表达式匹配
++ (BOOL)validateWithRegExp:(NSString *)regExp text:(NSString *)text;
+
 @end
 
 #pragma mark - 工程路径文件类型验证

@@ -61,6 +61,11 @@
     return [filePath stringByDeletingLastPathComponent];
 }
 
++ (BOOL)validateWithRegExp:(NSString *)regExp text:(NSString *)text {
+    NSPredicate * predicate = [NSPredicate predicateWithFormat: @"SELF MATCHES %@", regExp];
+    return [predicate evaluateWithObject:text];
+}
+
 @end
 
 

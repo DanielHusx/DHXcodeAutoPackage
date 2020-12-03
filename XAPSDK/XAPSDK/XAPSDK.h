@@ -15,4 +15,7 @@ FOUNDATION_EXPORT const unsigned char XAPSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <XAPSDK/PublicHeader.h>
 
-
+#import <XAPSDK/XAPConstant.h>
+#import <XAPSDK/XAPProvisioningProfileModel.h>
+#import <XAPSDK/XAPProvisioningProfileManager.h>
+#import <XAPSDK/XAPScriptor.h>

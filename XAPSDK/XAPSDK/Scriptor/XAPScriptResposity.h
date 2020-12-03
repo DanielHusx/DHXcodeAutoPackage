@@ -203,6 +203,8 @@ NS_ASSUME_NONNULL_BEGIN
                                             profileName:(NSString *)profileName
                                           enableBitcode:(XAPXMLBoolean)enableBitcode
                                       stripSwiftSymbols:(XAPXMLBoolean)stripSwiftSymbols;
+/// 获取钥匙串中有效的证书
++ (XAPScriptModel *)fetchKeychainCertificatesCommand;
 /// 文件解压缩
 + (XAPScriptModel *)fetchUnzipCommand:(NSString *)sourceFile
                      destinationFile:(NSString *)destinationFile;

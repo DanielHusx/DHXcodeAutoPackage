@@ -22,7 +22,7 @@
 //    [DHGlobalArchiver unarchiveGlobalConfiguration];
 //    // 解档profiles
 //    [DHProfileArchiver unarchiveProfiles];
-    [NSUserDefaults standardUserDefaults]
+    
 //    DHLogInfo(@"我收到货覅啥地方是考虑对方收代理费\ndflkjsaldkfjlskdfj sdfskdfj ");
 }
 

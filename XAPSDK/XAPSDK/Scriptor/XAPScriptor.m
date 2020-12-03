@@ -578,6 +578,54 @@
     return kXAPChannelAppStore;
 }
 
+- (void)fetchKeychainCertificatesOfTeamNames:(NSArray <NSString *> * __autoreleasing _Nullable * _Nullable)teamNames
+                                       uuids:(NSArray <NSString *> * __autoreleasing _Nullable * _Nullable)uuids
+                             teamIdentifiers:(NSArray <NSString *> * __autoreleasing _Nullable * _Nullable)teamIdentifiers
+                                       error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    XAPScriptModel *command = [XAPScriptResposity fetchKeychainCertificatesCommand];
+    
+    NSString *output = [self executeScriptWithCommand:command error:error];
+    if (*error) { return ; }
+    
+    NSArray *list = [output componentsSeparatedByString:@"\r"];
+    /*
+     1) F7E1D505B4CAD8B016523F45A8FD6F4529A66AD7 "Apple Development: 数据 菲凡 (5V8CU4553V)" (CSSMERR_TP_CERT_REVOKED)
+     2) EBC2AF4662E58DAECA38698985BC4285D9D6176C "Apple Development: renfei song (9C2Q99VBH5)"
+     */
+    __block NSMutableArray *teamNamesResult = [NSMutableArray array];
+    __block NSMutableArray *uuidsResult = [NSMutableArray array];
+    __block NSMutableArray *teamIdentifiersResult = [NSMutableArray array];
+    [list enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *temp = [obj copy];
+        if ([temp containsString:@"("] && [temp containsString:@")"] && [temp containsString:@"\""] && [temp containsString:@":"]) {
+            NSRange r1 = [temp rangeOfString:@")"];
+            NSRange r2 = [temp rangeOfString:@"\""];
+            NSString *uuid = [temp substringWithRange:NSMakeRange(NSMaxRange(r1), r2.location-NSMaxRange(r1))];
+            uuid = [uuid stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            temp = [temp substringFromIndex:NSMaxRange(r2)];
+            r1 = [temp rangeOfString:@":"];
+            r2 = [temp rangeOfString:@"\""];
+            NSString *teamName = [temp substringWithRange:NSMakeRange(NSMaxRange(r1), r2.location-NSMaxRange(r1))];
+            teamName = [teamName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            r1 = [temp rangeOfString:@"("];
+            r2 = [temp rangeOfString:@")"];
+            NSString *teamIdentifier = [temp substringWithRange:NSMakeRange(NSMaxRange(r1), r2.location-NSMaxRange(r1))];
+            teamIdentifier = [teamIdentifier stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            [uuidsResult addObject:uuid];
+            [teamNamesResult addObject:teamName];
+            [teamIdentifiersResult addObject:teamIdentifier];
+        }
+    }];
+    
+    if (teamNames) { *teamNames = [teamNamesResult copy]; }
+    if (uuids) { *uuids = [uuidsResult copy]; }
+    if (teamIdentifiers) { *teamIdentifiers = [teamIdentifiersResult copy]; }
+    
+}
+
 
 // MARK: - git相关
 - (NSString * _Nullable)gitCurrentBranchWithGitDirectory:(NSString *)gitDirectory

@@ -20,7 +20,8 @@
 @property (nonatomic, strong) NSMutableArray *systemStorageProfileSubpaths;
 /// 系统路径下描述文件的解析结果集合
 @property (nonatomic, strong) NSMutableArray *systemStorageProfiles;
-
+/// 系统钥匙串的证书集合
+@property (nonatomic, strong) NSMutableArray *systemCertificates;
 @end
 
 @implementation XAPProvisioningProfileManager
@@ -38,9 +39,12 @@
 - (void)prepareConfig {
     // 解析系统缓存的描述文件到内存
     [self fetchProvisioningProfilesForSystemStoragePath];
+    // 解析系统配置的证书到内存
+    [self fetchKeychainCertificatesInfoForSystemConfigurated];
 }
 
-
+#pragma mark - public method
+/// 筛选
 - (NSArray <XAPProvisioningProfileModel *> *)filterProvisioningProfileByFilterModel:(XAPProvisioningProfileModel *)filterModel {
     NSArray *profiles = self.provisioningProfiles.allValues;
     if (!filterModel) { return profiles; }
@@ -56,6 +60,7 @@
     }];
     return [result allObjects];
 }
+
 
 /// 解析描述文件
 - (XAPProvisioningProfileModel *)fetchProvisioningProfilesWithPath:(NSString *)path {
@@ -84,12 +89,46 @@
     return result;
 }
 
+/// 获取系统缓存的证书的团队名
+- (NSArray <NSString *> *)fetchSystemConfiguratedCertificateOfTeamNames {
+    NSArray *certs = [self fetchKeychainCertificatesInfoForSystemConfigurated];
+    NSArray *teamNames = [certs mutableArrayValueForKeyPath:@"teamName"];
+    
+    return teamNames;
+}
+
 #pragma mark - filter method
 - (BOOL)checkEqualableWithModel:(XAPProvisioningProfileModel *)model
                   byFilterModel:(XAPProvisioningProfileModel *)filterModel {
     if (!filterModel) { return YES; }
-    
-    return NO;;
+    if (filterModel.teamIdentifier) {
+        if (![filterModel.teamIdentifier isEqualToString:model.teamIdentifier]) {
+            return NO;
+        }
+    }
+    if (filterModel.bundleIdentifier) {
+        NSString *reg = [model.bundleIdentifier stringByReplacingOccurrencesOfString:@"." withString:@"\\."];
+        reg = [reg stringByReplacingOccurrencesOfString:@"*" withString:@".*"];
+        if (![XAPTools validateWithRegExp:reg text:filterModel.bundleIdentifier]) {
+            return NO;
+        }
+    }
+    if (filterModel.teamName) {
+        if (![filterModel.teamName isEqualToString:model.teamName]) {
+            return NO;
+        }
+    }
+    if (filterModel.channel) {
+        if (![filterModel.channel isEqualToString:model.channel]) {
+            return NO;
+        }
+    }
+    if (filterModel.uuid) {
+        if (![filterModel.uuid isEqualToString:model.uuid]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 
@@ -114,24 +153,39 @@
     return result;
 }
 
+/// 解析路径集合为描述文件模型集合
 - (NSArray <XAPProvisioningProfileModel *> *)fetchProvisioningProfilesWithPaths:(NSArray *)paths {
     __block NSMutableArray *result = [NSMutableArray array];
     __block NSMutableDictionary *resultDict = [NSMutableDictionary dictionary];
     __weak typeof(self) weakself = self;
+    __block NSError *error;
     [paths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([XAPTools isProvisioningProfile:obj]) {
             @autoreleasepool {
-                XAPProvisioningProfileModel *model = [weakself parseProvisioningProfileWithPath:obj error:nil];
-                if (model) {
+                // FIXME:
+                XAPProvisioningProfileModel *model = [weakself parseProvisioningProfileWithPath:obj error:&error];
+                if (!error && model) {
                     [result addObject:model];
                     NSString *fileName = [weakself fileNameWithPath:obj];
                     [resultDict setObject:model forKey:fileName];
                 }
+                error = nil;
             }
         }
     }];
     
     [self.provisioningProfiles addEntriesFromDictionary:resultDict];
+    return result;
+}
+
+/// 系统钥匙串配置的有效证书信息
+- (NSArray <XAPProvisioningProfileModel *> *)fetchKeychainCertificatesInfoForSystemConfigurated {
+    // 生命周期下只解析一次
+    if (_systemCertificates) { return _systemCertificates; }
+    
+    NSArray *result = [self parseKeychainCertificatesInfo];
+    _systemCertificates = [NSMutableArray arrayWithArray:result];
+    
     return result;
 }
 
@@ -146,7 +200,7 @@
 #pragma mark - parse
 /// 解析描述文件
 - (XAPProvisioningProfileModel *)parseProvisioningProfileWithPath:(NSString *)path
-                                                            error:(NSError * __autoreleasing _Nonnull *)error {
+                                                            error:(NSError * _Nonnull *)error {
     if (![XAPTools isProvisioningProfile:path]) {
         return nil;
     }
@@ -187,8 +241,32 @@
     model.createTimestamp = createTimestamp;
     model.expireTimestamp = expireTimestamp;
     model.uuid = uuid;
-    
+    NSLog(@"%@", [model description]);
     return model;
+}
+
+/// 解析钥匙串支持的证书信息
+- (NSArray <XAPProvisioningProfileModel *> *)parseKeychainCertificatesInfo {
+    NSError *error;
+    NSArray *teamNames;
+    NSArray *uuids;
+    NSArray *teamIdentifiers;
+    [[XAPScriptor sharedInstance] fetchKeychainCertificatesOfTeamNames:&teamNames
+                                                                 uuids:&uuids
+                                                       teamIdentifiers:&teamIdentifiers
+                                                                 error:&error];
+    
+    if (error) { return nil; }
+    
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:teamNames.count];
+    for (NSInteger i = 0; i < teamNames.count; i++) {
+        XAPProvisioningProfileModel *model = [[XAPProvisioningProfileModel alloc] init];
+        model.teamName = teamNames[i];
+        model.uuid = uuids[i];
+        model.teamIdentifier = teamIdentifiers[i];
+        [result addObject:model];
+    }
+    return result;
 }
 
 

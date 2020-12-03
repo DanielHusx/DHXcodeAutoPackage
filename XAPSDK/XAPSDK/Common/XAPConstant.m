@@ -30,6 +30,7 @@ XAPPlistKey const kXAPPlistKeyExecutableFile = @"CFBundleExecutable";
 XAPPlistKey const kXAPPlistKeyApplicationPath = @"ApplicationPath";
 XAPPlistKey const kXAPPlistKeyApplicationProperties = @"ApplicationProperties";
 XAPPlistKey const kXAPPlistKeyTeam = @"Team";
+XAPPlistKey const kXAPPlistKeyUUID = @"UUID";
 XAPPlistKey const kXAPPlistKeySigningIdentity = @"SigningIdentity";
 
 
