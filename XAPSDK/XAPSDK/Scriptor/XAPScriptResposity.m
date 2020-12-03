@@ -324,6 +324,21 @@
     return command;
 }
 
++ (XAPScriptModel *)fetchProfileInfoCommand:(NSString *)profile
+                              infoPlistPath:(NSString *)plistPath {
+    XAPScriptModel *command = [XAPScriptResposity scriptModelForSecurity];
+    
+    NSMutableArray *component = [NSMutableArray array];
+    [component addObject:@"cms"];
+    [component addObject:@"-D"];
+    [component addObject:@"-i"];
+    [component addObject:[NSString stringWithFormat:@"'%@'", profile]];
+    [component addObject:@">"];
+    [component addObject:plistPath];
+    command.scriptArguments = [component copy];
+    return command;
+}
+
 + (XAPScriptModel *)fetchTimestampCommand:(NSString *)time {
     XAPScriptModel *command = [[XAPScriptModel alloc] init];
     command.scriptPath = @"date";

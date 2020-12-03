@@ -91,6 +91,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (XAPScriptModel *)fetchTimestampCommand:(NSString *)time;
 /// 解析profile为XML
 + (XAPScriptModel *)fetchProfileXMLCommand:(NSString *)profile;
++ (XAPScriptModel *)fetchProfileInfoCommand:(NSString *)profile
+                              infoPlistPath:(NSString *)plistPath;
 + (XAPScriptModel *)fetchProfileCreateTimeCommand:(NSString *)profile;
 + (XAPScriptModel *)fetchProfileExpireTimeCommand:(NSString *)profile;
 + (XAPScriptModel *)fetchProfileNameCommand:(NSString *)profile;

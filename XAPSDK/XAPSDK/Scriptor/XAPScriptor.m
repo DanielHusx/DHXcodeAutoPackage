@@ -309,6 +309,108 @@
 
 
 // MARK: - profile相关
+- (NSDictionary * _Nullable)fetchProfileInfoWithProfile:(NSString *)profile
+                                            profileName:(NSString * _Nullable __autoreleasing *)profileName
+                                       bundleIdentifier:(NSString * _Nullable __autoreleasing *)bundleIdentifier
+                                         teamIdentifier:(NSString * _Nullable __autoreleasing *)teamIdentifier
+                                  applicationIdentifier:(NSString * _Nullable __autoreleasing *)applicationIdentifier
+                                                   uuid:(NSString * _Nullable __autoreleasing *)uuid
+                                               teamName:(NSString * _Nullable __autoreleasing *)teamName
+                                                channel:(NSString * _Nullable __autoreleasing *)channel
+                                        createTimestamp:(NSString * _Nullable __autoreleasing *)createTimestamp
+                                        expireTimestamp:(NSString * _Nullable __autoreleasing *)expireTimestamp
+                                           entitlements:(NSDictionary * _Nullable __autoreleasing *)entitlements
+                                                  error:(NSError * _Nullable __autoreleasing *)error {
+    NSString *infoPlistPath = [[profile stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"XAP_profile_info.plist"];
+    XAPScriptModel *command = [XAPScriptResposity fetchProfileInfoCommand:profile infoPlistPath:infoPlistPath];
+    [self executeScriptWithCommand:command error:error];
+    if (*error) { return nil; }
+    // 解析为字典后删除
+    NSDictionary *result = [NSDictionary dictionaryWithContentsOfFile:infoPlistPath];
+    [[NSFileManager defaultManager] removeItemAtPath:infoPlistPath error:nil];
+    
+    if (profileName) { *profileName = result[@"Name"]; }
+    if (teamName) { *teamName = result[@"TeamName"]; }
+    if (entitlements) { *entitlements = result[@"Entitlements"]; }
+    if (uuid) { *uuid = result[@"UUID"]; }
+    
+    {
+        /*
+         Create timestamp, Expire timestamp
+         */
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"YYYY-MM-dd'T'HH:mm:ss'Z'";
+        
+        if (createTimestamp) {
+            NSString *time = result[@"CreationDate"];
+            NSDate *date = [formatter dateFromString:time];
+            *createTimestamp = [NSString stringWithFormat:@"%zd", (NSInteger)[date timeIntervalSince1970]];
+        }
+        
+        if (expireTimestamp) {
+            NSString *time = result[@"ExpirationDate"];
+            NSDate *date = [formatter dateFromString:time];
+            *expireTimestamp = [NSString stringWithFormat:@"%zd", (NSInteger)[date timeIntervalSince1970]];
+        }
+    }
+    
+    {
+        /*
+         Application Identifier, Team Identifier, Bundle Identifier
+         */
+        NSString *appId = result[@"Entitlements"][@"application-identifier"];
+        NSString *teamId = result[@"Entitlements"][@"com.apple.developer.team-identifier"];
+        if (applicationIdentifier) { *applicationIdentifier = appId; }
+        if (teamIdentifier) { *teamIdentifier = teamId; }
+        if (bundleIdentifier) {
+            NSString *bundleId;
+            // 拆分
+            // 理论上格式是 appid: <teamid>.<bundleid>
+            if (appId.length > (teamId.length+1)) {
+                bundleId = [appId substringFromIndex:teamId.length+1];
+            } else {
+                // 理论上不可能执行到此处，以防万一
+                // 以 . 分割排除第一项
+                NSArray *components = [appId componentsSeparatedByString:@"."];
+                if (components.count > 2) {
+                    bundleId = [[components subarrayWithRange:NSMakeRange(1, components.count-1)] componentsJoinedByString:@"."];
+                } else {
+                    bundleId = appId;
+                }
+            }
+            *bundleIdentifier = bundleId;
+        }
+    }
+    
+    {
+        /*
+         Channel
+         */
+        if (channel) {
+            BOOL isProvisionedDevicesExist = result[@"ProvisionedDevices"] ? YES : NO;
+            BOOL get_task_allow = [result[@"Entitlements"][@"get-task-allow"] boolValue];
+            BOOL isProvisionsAllDevicesExist = result[@"ProvisionsAllDevices"] ?  YES : NO;
+            
+            if (isProvisionedDevicesExist) {
+                if (get_task_allow) {
+                    *channel = kXAPChannelDevelopment;
+                } else {
+                    *channel = kXAPChannelAdHoc;
+                }
+            } else if (isProvisionsAllDevicesExist) {
+                BOOL isEnterprise = [result[@"ProvisionsAllDevices"] boolValue];
+                if (isEnterprise) {
+                    *channel = kXAPChannelEnterprise;
+                } else {
+                    *channel = kXAPChannelAppStore;
+                }
+            }
+        }
+    }
+    
+    return result;
+}
+
 - (NSString * _Nullable)fetchProfileCreateTimestampWithProfile:(NSString *)profile
                                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error {
     XAPScriptModel *command = nil;

@@ -165,6 +165,74 @@
 @end
 
 
+@implementation XAPTools (FindExtension)
+
+/// 查找.mobileprovision文件
++ (NSArray <NSString *> *)findProvisionProfiles:(NSString *)path {
+    if (![self isDirectoryPath:path]) {
+        if ([self isProvisioningProfile:path]) {
+            return @[path];
+        }
+        return nil;
+    }
+    
+    NSArray *subpaths = [self absoluteSubpathsOfDirectory:path];
+    __block NSMutableArray *result = [NSMutableArray array];
+    __weak typeof(self) weakself = self;
+    [subpaths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([weakself isProvisioningProfile:obj]) {
+            [result addObject:obj];
+        }
+    }];
+    
+    return [result copy];
+}
+
+/// 查找路径下所有xcworkspace文件路径
++ (nullable NSArray *)findXcworkspaceFiles:(NSString *)path {
+    if (![self isDirectoryPath:path]) {
+        if ([self isXcworkspaceFile:path]) {
+            return @[path];
+        }
+        return nil;
+    }
+    
+    NSArray *subpaths = [self absoluteSubpathsOfDirectory:path];
+    __block NSMutableArray *result = [NSMutableArray array];
+    __weak typeof(self) weakself = self;
+    [subpaths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([weakself isXcworkspaceFile:obj]) {
+            [result addObject:obj];
+        }
+    }];
+    
+    return [result copy];
+}
+
+/// 查找路径下所有的xcodeproj文件路径
++ (nullable NSArray *)findXcodeprojFiles:(NSString *)path {
+    if (![self isDirectoryPath:path]) {
+        if ([self isXcodeprojFile:path]) {
+            return @[path];
+        }
+        return nil;
+    }
+    
+    NSArray *subpaths = [self absoluteSubpathsOfDirectory:path];
+    __block NSMutableArray *result = [NSMutableArray array];
+    __weak typeof(self) weakself = self;
+    [subpaths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([weakself isXcodeprojFile:obj]) {
+            [result addObject:obj];
+        }
+    }];
+    
+    return [result copy];
+}
+
+@end
+
+
 @implementation XAPTools (EngineerExtension)
 #pragma mark XCWORKSPACE/XCODEPROJ
 + (NSString *)xcworkspacedataFileWithXcworkspaceFile:(NSString *)xcworkspaceFile {

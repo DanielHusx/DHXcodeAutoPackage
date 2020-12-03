@@ -54,6 +54,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface XAPTools (FindExtension)
+
+/// 查找.mobileprovision文件
++ (NSArray <NSString *> *)findProvisionProfiles:(NSString *)path;
+/// 查找路径下所有xcworkspace文件路径
++ (nullable NSArray *)findXcworkspaceFiles:(NSString *)path;
+/// 查找路径下所有的xcodeproj文件路径
++ (nullable NSArray *)findXcodeprojFiles:(NSString *)path;
+
+@end
+
 
 @interface XAPTools (EngineerExtension)
 
@@ -89,7 +100,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSString *)appFileWithIPAFile:(NSString *)ipaFile
                              unzippedPath:(NSString * __autoreleasing _Nullable * _Nullable)unzippedPath;
 
-
 @end
 
 @interface XAPTools (TraverseExtension)
@@ -124,6 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)systemProvisioningProfilesDirectory;
 
 @end
+
 
 
 
