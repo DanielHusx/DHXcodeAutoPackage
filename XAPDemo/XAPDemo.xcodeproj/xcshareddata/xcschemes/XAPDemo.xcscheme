@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1150"
+   LastUpgradeVersion = "1220"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65D393B324945C94002EBC68"
-               BuildableName = "XcodeAutoPackage.app"
-               BlueprintName = "XcodeAutoPackage"
-               ReferencedContainer = "container:XcodeAutoPackage.xcodeproj">
+               BlueprintIdentifier = "65F16B0D257938590095C607"
+               BuildableName = "XAPDemo.app"
+               BlueprintName = "XAPDemo"
+               ReferencedContainer = "container:XAPDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,19 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65D393B324945C94002EBC68"
-            BuildableName = "XcodeAutoPackage.app"
-            BlueprintName = "XcodeAutoPackage"
-            ReferencedContainer = "container:XcodeAutoPackage.xcodeproj">
+            BlueprintIdentifier = "65F16B0D257938590095C607"
+            BuildableName = "XAPDemo.app"
+            BlueprintName = "XAPDemo"
+            ReferencedContainer = "container:XAPDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-         <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </AdditionalOption>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -68,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65D393B324945C94002EBC68"
-            BuildableName = "XcodeAutoPackage.app"
-            BlueprintName = "XcodeAutoPackage"
-            ReferencedContainer = "container:XcodeAutoPackage.xcodeproj">
+            BlueprintIdentifier = "65F16B0D257938590095C607"
+            BuildableName = "XAPDemo.app"
+            BlueprintName = "XAPDemo"
+            ReferencedContainer = "container:XAPDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

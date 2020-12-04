@@ -13,7 +13,7 @@
     static NSDateFormatter *formater;
     if (!formater) {
         formater = [[NSDateFormatter alloc] init];
-        [formater setDateFormat:@"yyyy/MM/dd"];
+        [formater setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
     }
     
     NSMutableString *result = [NSMutableString string];

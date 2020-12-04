@@ -20,6 +20,25 @@
     [[XAPProvisioningProfileManager manager] prepareConfig];
 }
 
+- (void)mouseDown:(NSEvent *)event {
+    [self teamName];
+}
+- (void)teamName {
+    NSArray *result = [[XAPProvisioningProfileManager manager] fetchSystemConfiguratedCertificatesInfo];
+    
+    NSLog(@"---------------证书信息-----------------------");
+    NSLog(@"%@", result);
+}
+
+- (void)filter {
+    XAPProvisioningProfileModel *filter = [[XAPProvisioningProfileModel alloc] init];
+    filter.bundleIdentifier = @"com.cloudy.jun";
+//    filter.channel = kXAPChannelDevelopment;
+    NSLog(@"---------------筛选-----------------------");
+    NSArray *result = [[XAPProvisioningProfileManager manager] filterProvisioningProfileByFilterModel:filter];
+    NSLog(@"%@", result);
+    
+}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];

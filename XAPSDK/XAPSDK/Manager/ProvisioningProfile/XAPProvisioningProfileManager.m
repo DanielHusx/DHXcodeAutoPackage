@@ -37,10 +37,13 @@
 }
 
 - (void)prepareConfig {
-    // 解析系统缓存的描述文件到内存
-    [self fetchProvisioningProfilesForSystemStoragePath];
-    // 解析系统配置的证书到内存
-    [self fetchKeychainCertificatesInfoForSystemConfigurated];
+    __weak typeof(self) weakself = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 解析系统缓存的描述文件到内存
+        [weakself fetchProvisioningProfilesForSystemStoragePath];
+        // 解析系统配置的证书到内存
+        [weakself fetchKeychainCertificatesInfoForSystemConfigurated];
+    });
 }
 
 #pragma mark - public method
@@ -89,12 +92,11 @@
     return result;
 }
 
-/// 获取系统缓存的证书的团队名
-- (NSArray <NSString *> *)fetchSystemConfiguratedCertificateOfTeamNames {
-    NSArray *certs = [self fetchKeychainCertificatesInfoForSystemConfigurated];
-    NSArray *teamNames = [certs mutableArrayValueForKeyPath:@"teamName"];
+/// 获取系统缓存的证书信息
+- (NSArray <XAPProvisioningProfileModel *> *)fetchSystemConfiguratedCertificatesInfo {
+    NSArray *certsInfo = [self fetchKeychainCertificatesInfoForSystemConfigurated];
     
-    return teamNames;
+    return certsInfo;
 }
 
 #pragma mark - filter method
@@ -158,11 +160,12 @@
     __block NSMutableArray *result = [NSMutableArray array];
     __block NSMutableDictionary *resultDict = [NSMutableDictionary dictionary];
     __weak typeof(self) weakself = self;
-    __block NSError *error;
+//    __block NSError *error;
     [paths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([XAPTools isProvisioningProfile:obj]) {
             @autoreleasepool {
                 // FIXME:
+                NSError *error;
                 XAPProvisioningProfileModel *model = [weakself parseProvisioningProfileWithPath:obj error:&error];
                 if (!error && model) {
                     [result addObject:model];

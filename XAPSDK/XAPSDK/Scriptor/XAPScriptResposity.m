@@ -327,6 +327,7 @@
 + (XAPScriptModel *)fetchProfileInfoCommand:(NSString *)profile
                               infoPlistPath:(NSString *)plistPath {
     XAPScriptModel *command = [XAPScriptResposity scriptModelForSecurity];
+    command.scriptPath = [@"export LANG=\\\"en_US.UTF-8\\\"; " stringByAppendingString:command.scriptPath];
     
     NSMutableArray *component = [NSMutableArray array];
     [component addObject:@"cms"];
@@ -334,7 +335,7 @@
     [component addObject:@"-i"];
     [component addObject:[NSString stringWithFormat:@"'%@'", profile]];
     [component addObject:@">"];
-    [component addObject:plistPath];
+    [component addObject:[NSString stringWithFormat:@"'%@'", plistPath]];
     command.scriptArguments = [component copy];
     return command;
 }

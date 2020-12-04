@@ -325,35 +325,32 @@
     XAPScriptModel *command = [XAPScriptResposity fetchProfileInfoCommand:profile infoPlistPath:infoPlistPath];
     [self executeScriptWithCommand:command error:error];
     if (*error) { return nil; }
+    
     // 解析为字典后删除
     NSDictionary *result = [NSDictionary dictionaryWithContentsOfFile:infoPlistPath];
     [[NSFileManager defaultManager] removeItemAtPath:infoPlistPath error:nil];
-    
+
     if (profileName) { *profileName = result[@"Name"]; }
     if (teamName) { *teamName = result[@"TeamName"]; }
     if (entitlements) { *entitlements = result[@"Entitlements"]; }
     if (uuid) { *uuid = result[@"UUID"]; }
-    
+
     {
         /*
          Create timestamp, Expire timestamp
          */
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"YYYY-MM-dd'T'HH:mm:ss'Z'";
-        
+
         if (createTimestamp) {
-            NSString *time = result[@"CreationDate"];
-            NSDate *date = [formatter dateFromString:time];
+            NSDate *date = result[@"CreationDate"];
             *createTimestamp = [NSString stringWithFormat:@"%zd", (NSInteger)[date timeIntervalSince1970]];
         }
-        
+
         if (expireTimestamp) {
-            NSString *time = result[@"ExpirationDate"];
-            NSDate *date = [formatter dateFromString:time];
+            NSDate *date = result[@"ExpirationDate"];
             *expireTimestamp = [NSString stringWithFormat:@"%zd", (NSInteger)[date timeIntervalSince1970]];
         }
     }
-    
+
     {
         /*
          Application Identifier, Team Identifier, Bundle Identifier
@@ -381,7 +378,7 @@
             *bundleIdentifier = bundleId;
         }
     }
-    
+
     {
         /*
          Channel
@@ -390,7 +387,7 @@
             BOOL isProvisionedDevicesExist = result[@"ProvisionedDevices"] ? YES : NO;
             BOOL get_task_allow = [result[@"Entitlements"][@"get-task-allow"] boolValue];
             BOOL isProvisionsAllDevicesExist = result[@"ProvisionsAllDevices"] ?  YES : NO;
-            
+
             if (isProvisionedDevicesExist) {
                 if (get_task_allow) {
                     *channel = kXAPChannelDevelopment;
@@ -404,6 +401,8 @@
                 } else {
                     *channel = kXAPChannelAppStore;
                 }
+            } else {
+                *channel = kXAPChannelAppStore;
             }
         }
     }

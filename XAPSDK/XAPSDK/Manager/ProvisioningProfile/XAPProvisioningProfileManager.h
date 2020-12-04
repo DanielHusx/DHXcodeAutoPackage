@@ -20,11 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 解析描述文件
 - (XAPProvisioningProfileModel *)fetchProvisioningProfilesWithPath:(NSString *)path;
+
 /// 获取路径下所有可解析的描述文件
 - (NSArray <XAPProvisioningProfileModel *> *)fetchProvisioningProfilesWithDirectory:(NSString *)directory;
 
+/// 获取系统缓存的证书信息
+- (NSArray <XAPProvisioningProfileModel *> *)fetchSystemConfiguratedCertificatesInfo;
+
 /// 筛选已缓存解析的描述文件模型
 - (NSArray <XAPProvisioningProfileModel *> *)filterProvisioningProfileByFilterModel:(XAPProvisioningProfileModel *)filterModel;
+
 
 @end
 
