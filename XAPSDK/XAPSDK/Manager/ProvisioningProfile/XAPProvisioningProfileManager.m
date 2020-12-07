@@ -2,7 +2,7 @@
 //  XAPProvisioningProfileManager.m
 //  XAPSDK
 //
-//  Created by 菲凡数据 on 2020/12/2.
+//  Created by Daniel on 2020/12/2.
 //
 
 #import "XAPProvisioningProfileManager.h"
@@ -160,11 +160,10 @@
     __block NSMutableArray *result = [NSMutableArray array];
     __block NSMutableDictionary *resultDict = [NSMutableDictionary dictionary];
     __weak typeof(self) weakself = self;
-//    __block NSError *error;
+    
     [paths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([XAPTools isProvisioningProfile:obj]) {
             @autoreleasepool {
-                // FIXME:
                 NSError *error;
                 XAPProvisioningProfileModel *model = [weakself parseProvisioningProfileWithPath:obj error:&error];
                 if (!error && model) {

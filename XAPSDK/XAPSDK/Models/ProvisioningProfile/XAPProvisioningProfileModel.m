@@ -29,4 +29,20 @@
     return [result copy];
 }
 
+- (BOOL)isEqual:(id)object {
+    if (![object isKindOfClass:[XAPProvisioningProfileModel class]]) {
+        return NO;
+    }
+    
+    XAPProvisioningProfileModel *model = object;
+    if (![model.uuid isKindOfClass:[NSString class]]) {
+        return NO;
+    }
+    if (![model.uuid isEqualToString:self.uuid]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

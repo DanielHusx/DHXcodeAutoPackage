@@ -2,7 +2,7 @@
 //  XAPProvisioningProfileManager.h
 //  XAPSDK
 //
-//  Created by 菲凡数据 on 2020/12/2.
+//  Created by Daniel on 2020/12/2.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,7 +2,7 @@
 //  XAPErrorMacro.h
 //  XAPSDK
 //
-//  Created by 菲凡数据 on 2020/12/1.
+//  Created by Daniel on 2020/12/1.
 //
 
 #ifndef XAPErrorMacro_h
