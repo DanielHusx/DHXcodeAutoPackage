@@ -632,40 +632,6 @@
     
 }
 
-+ (XAPScriptModel *)fetchPlistProductNameCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyProductName];
-}
-
-+ (XAPScriptModel *)fetchPlistDisplayNameCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyDisplayName];
-}
-
-+ (XAPScriptModel *)fetchPlistBundleIdentifierCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyBundleIdentifier];
-}
-
-+ (XAPScriptModel *)fetchPlistShortVersionCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyShortVersion];
-}
-+ (XAPScriptModel *)fetchPlistVersionCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyVersion];
-}
-
-+ (XAPScriptModel *)fetchPlistMinimumOSVersionCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyMinimumOSVersion];
-}
-
-+ (XAPScriptModel *)fetchPlistExecutableFileCommand:(NSString *)infoPlist {
-    return [XAPScriptResposity fetchPlistAttibuteCommand:infoPlist
-                                           attributeName:kXAPPlistKeyExecutableFile];
-}
-
 // MARK: - info.plist设置
 + (XAPScriptModel *)fetchPlistSetAttibuteCommand:(NSString *)infoPlist
                                   attributeName:(NSString *)attributeName
@@ -686,7 +652,7 @@
 + (XAPScriptModel *)fetchPlistSetProductNameCommand:(NSString *)infoPlist
                                         productName:(NSString *)productName {
     return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                              attributeName:kXAPPlistKeyProductName
+                                              attributeName:kXAPKeyBundleName
                                              attributeValue:productName];
 }
 
@@ -694,28 +660,28 @@
 + (XAPScriptModel *)fetchPlistSetDisplaytNameCommand:(NSString *)infoPlist
                                          displayName:(NSString *)displayName {
     return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                              attributeName:kXAPPlistKeyDisplayName
+                                              attributeName:kXAPKeyDisplayName
                                              attributeValue:displayName];
 }
 
 + (XAPScriptModel *)fetchPlistSetBundleIdCommand:(NSString *)infoPlist
                                         bundleId:(NSString *)bundleId {
     return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                              attributeName:kXAPPlistKeyBundleIdentifier
+                                              attributeName:kXAPKeyBundleIdentifier
                                              attributeValue:bundleId];
 }
 
 + (XAPScriptModel *)fetchPlistSetShortVersionCommand:(NSString *)infoPlist
                                         shortVersion:(NSString *)shortVersion {
     return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                              attributeName:kXAPPlistKeyShortVersion
+                                              attributeName:kXAPKeyShortVersion
                                              attributeValue:shortVersion];
 }
 
 + (XAPScriptModel *)fetchPlistSetVersionCommand:(NSString *)infoPlist
                                         version:(NSString *)version {
     return [XAPScriptResposity fetchPlistSetAttibuteCommand:infoPlist
-                                              attributeName:kXAPPlistKeyVersion
+                                              attributeName:kXAPKeyVersion
                                              attributeValue:version];
 }
 

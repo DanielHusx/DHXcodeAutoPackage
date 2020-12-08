@@ -10,6 +10,7 @@
 #import "XAPScriptModel.h"
 #import "XAPTools.h"
 #import "XAPProvisioningProfileModel.h"
+#import "XAPInfoPlistTools.h"
 
 @interface XAPProvisioningProfileManager ()
 
@@ -163,15 +164,12 @@
     
     [paths enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([XAPTools isProvisioningProfile:obj]) {
-            @autoreleasepool {
-                NSError *error;
-                XAPProvisioningProfileModel *model = [weakself parseProvisioningProfileWithPath:obj error:&error];
-                if (!error && model) {
-                    [result addObject:model];
-                    NSString *fileName = [weakself fileNameWithPath:obj];
-                    [resultDict setObject:model forKey:fileName];
-                }
-                error = nil;
+            NSError *error;
+            XAPProvisioningProfileModel *model = [weakself parseProvisioningProfileWithPath:obj error:&error];
+            if (!error && model) {
+                [result addObject:model];
+                NSString *fileName = [weakself fileNameWithPath:obj];
+                [resultDict setObject:model forKey:fileName];
             }
         }
     }];
@@ -221,18 +219,20 @@
 //    NSDictionary *entitlements;
     
     NSDictionary *info = [[XAPScriptor sharedInstance] fetchProfileInfoWithProfile:path
-                                                                       profileName:&profileName
-                                                                  bundleIdentifier:&bundleId
-                                                                    teamIdentifier:&teamId
-                                                             applicationIdentifier:&appId
-                                                                              uuid:&uuid
-                                                                          teamName:&teamName
-                                                                           channel:&channel
-                                                                   createTimestamp:&createTimestamp
-                                                                   expireTimestamp:&expireTimestamp
-                                                                      entitlements:nil
                                                                              error:error];
     if (*error || !info) { return nil; }
+    
+    [XAPInfoPlistTools parseProvisionProfileInfoPlistWithPlistFileOrDictionary:info
+                                                                   profileName:&profileName
+                                                              bundleIdentifier:&bundleId
+                                                                teamIdentifier:&teamId
+                                                         applicationIdentifier:&appId
+                                                                          uuid:&uuid
+                                                                      teamName:&teamName
+                                                                       channel:&channel
+                                                               createTimestamp:&createTimestamp
+                                                               expireTimestamp:&expireTimestamp
+                                                                  entitlements:nil];
     
     model.name = profileName;
     model.bundleIdentifier = bundleId;

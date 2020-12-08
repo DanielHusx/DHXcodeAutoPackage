@@ -287,11 +287,11 @@
     if (!(!isDir && isExist)) { return nil; }
     // 解析info.plist内的ApplicationProperties=>ApplicationPath的值得到.app文件路径
     NSDictionary *infoPlistDictionary = [NSDictionary dictionaryWithContentsOfFile:infoPlistFile];
-    NSDictionary *applicationProperties = [infoPlistDictionary objectForKey:kXAPPlistKeyApplicationProperties];
+    NSDictionary *applicationProperties = [infoPlistDictionary objectForKey:kXAPKeyApplicationProperties];
     if (![applicationProperties isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
-    NSString *applicationPath = [applicationProperties objectForKey:kXAPPlistKeyApplicationPath];
+    NSString *applicationPath = [applicationProperties objectForKey:kXAPKeyApplicationPath];
     if (![applicationPath isKindOfClass:[NSString class]]) {
         return nil;
     }

@@ -60,6 +60,8 @@
 		65F16AF82578065F0095C607 /* XAPProvisioningProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */; };
 		65F16AFD25780A1C0095C607 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFC25780A1C0095C607 /* libiconv.tbd */; };
 		65F16B0025780A230095C607 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFF25780A230095C607 /* libz.tbd */; };
+		F6C821F5257F53570054183F /* XAPInfoPlistTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821F3257F53570054183F /* XAPInfoPlistTools.h */; };
+		F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C821F4257F53570054183F /* XAPInfoPlistTools.m */; };
 		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */; };
 		F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7EE2577387200C5C893 /* XAPTools.h */; };
@@ -124,6 +126,8 @@
 		65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileModel.m; sourceTree = "<group>"; };
 		65F16AFC25780A1C0095C607 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		65F16AFF25780A230095C607 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F6C821F3257F53570054183F /* XAPInfoPlistTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPInfoPlistTools.h; sourceTree = "<group>"; };
+		F6C821F4257F53570054183F /* XAPInfoPlistTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPInfoPlistTools.m; sourceTree = "<group>"; };
 		F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPErrorMacro.h; sourceTree = "<group>"; };
 		F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProvisioningProfileManager.h; sourceTree = "<group>"; };
 		F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileManager.m; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 				F6F8B7EF2577387200C5C893 /* XAPTools.m */,
 				65F16A932577F10D0095C607 /* XAPZipTools.h */,
 				65F16A942577F10D0095C607 /* XAPZipTools.m */,
+				F6C821F3257F53570054183F /* XAPInfoPlistTools.h */,
+				F6C821F4257F53570054183F /* XAPInfoPlistTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				65F16A70257522C10095C607 /* XAPScriptModel.h in Headers */,
 				65F16AD72577F13A0095C607 /* mz_crypt.h in Headers */,
 				65F16ADC2577F13A0095C607 /* SSZipCommon.h in Headers */,
+				F6C821F5257F53570054183F /* XAPInfoPlistTools.h in Headers */,
 				65F16AC92577F13A0095C607 /* mz_strm.h in Headers */,
 				65F16ABC2577F1390095C607 /* ZipArchive.h in Headers */,
 				65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */,
@@ -443,6 +450,7 @@
 				65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */,
 				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
 				65F16A7B257522DD0095C607 /* XAPScriptResposity.m in Sources */,
+				F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */,
 				65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */,
 				65F16AD12577F13A0095C607 /* mz_os.c in Sources */,
 				65F16AC82577F13A0095C607 /* mz_crypt_apple.c in Sources */,

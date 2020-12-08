@@ -80,7 +80,7 @@ static NSErrorDomain const kXAPScriptErrorDomain = @"daniel.script.error";
                                      NSLocalizedFailureReasonErrorKey:errorMessage?:@""
                                  }];
     
-    if (error) { *error = e; }
+    *error = e;
 }
 
 

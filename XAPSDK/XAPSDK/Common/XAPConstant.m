@@ -18,21 +18,29 @@ XAPBuildSettingsKey const kXAPBuildSettingsKeyTeamIdentifier = @"DEVELOPMENT_TEA
 XAPBuildSettingsKey const kXAPBuildSettingsKeyInfoPlistFile = @"INFOPLIST_FILE";
 
 
-XAPPlistKey const kXAPPlistKeyDisplayName = @"CFBundleDisplayName";
-XAPPlistKey const kXAPPlistKeyProductName = @"CFBundleName";
-XAPPlistKey const kXAPPlistKeyBundleIdentifier = @"CFBundleIdentifier";
-XAPPlistKey const kXAPPlistKeyShortVersion = @"CFBundleShortVersionString";
-XAPPlistKey const kXAPPlistKeyVersion = @"CFBundleVersion";
-XAPPlistKey const kXAPPlistKeyTeamIdentifier = @"teamID";
-XAPPlistKey const kXAPPlistKeyEnableBitcode = @"compileBitcode";
-XAPPlistKey const kXAPPlistKeyMinimumOSVersion = @"MinimumOSVersion";
-XAPPlistKey const kXAPPlistKeyExecutableFile = @"CFBundleExecutable";
-XAPPlistKey const kXAPPlistKeyApplicationPath = @"ApplicationPath";
-XAPPlistKey const kXAPPlistKeyApplicationProperties = @"ApplicationProperties";
-XAPPlistKey const kXAPPlistKeyTeam = @"Team";
-XAPPlistKey const kXAPPlistKeyUUID = @"UUID";
-XAPPlistKey const kXAPPlistKeySigningIdentity = @"SigningIdentity";
-
+XAPKey const kXAPKeyDisplayName = @"CFBundleDisplayName";
+XAPKey const kXAPKeyBundleName = @"CFBundleName";
+XAPKey const kXAPKeySchemeName = @"SchemeName";
+XAPKey const kXAPKeyBundleIdentifier = @"CFBundleIdentifier";
+XAPKey const kXAPKeyShortVersion = @"CFBundleShortVersionString";
+XAPKey const kXAPKeyVersion = @"CFBundleVersion";
+XAPKey const kXAPKeyExecutableFile = @"CFBundleExecutable";
+XAPKey const kXAPKeyApplicationPath = @"ApplicationPath";
+XAPKey const kXAPKeyApplicationProperties = @"ApplicationProperties";
+XAPKey const kXAPKeyName = @"Name";
+XAPKey const kXAPKeyTeam = @"Team";
+XAPKey const kXAPKeyUUID = @"UUID";
+XAPKey const kXAPKeySigningIdentity = @"SigningIdentity";
+XAPKey const kXAPKeyArchitectures = @"Architectures";
+XAPKey const kXAPKeyCreationDate = @"CreationDate";
+XAPKey const kXAPKeyExpirationDate = @"ExpirationDate";
+XAPKey const kXAPKeyEntitlements = @"Entitlements";
+XAPKey const kXAPKeyTeamName = @"TeamName";
+XAPKey const kXAPKeyApplicationIdentifier = @"application-identifier";
+XAPKey const kXAPKeyTeamIdentifier = @"com.apple.developer.team-identifier";
+XAPKey const kXAPKeyProvisionedDevices = @"ProvisionedDevices";
+XAPKey const kXAPKeyGetTaskAllow = @"get-task-allow";
+XAPKey const kXAPKeyProvisionsAllDevices = @"ProvisionsAllDevices";
 
 XAPRelativeValue const kXAPRelativeValueTargetName = @"$(TARGET_NAME)";
 XAPRelativeValue const kXAPRelativeValueProductName = @"$(PRODUCT_NAME)";

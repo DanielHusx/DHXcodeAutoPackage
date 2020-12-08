@@ -27,38 +27,44 @@ FOUNDATION_EXTERN XAPBuildSettingsKey const kXAPBuildSettingsKeyTeamIdentifier;
 /// 配置info.plist的路径
 FOUNDATION_EXTERN XAPBuildSettingsKey const kXAPBuildSettingsKeyInfoPlistFile;
 
-typedef NSString * XAPPlistKey NS_STRING_ENUM;
+typedef NSString * XAPKey NS_STRING_ENUM;
 /// plist 展示名称
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyDisplayName;
+FOUNDATION_EXTERN XAPKey const kXAPKeyDisplayName;
 /// plist productName标识
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyProductName;
+FOUNDATION_EXTERN XAPKey const kXAPKeyBundleName;
+/// plist Xcarchive下的产品名称
+FOUNDATION_EXTERN XAPKey const kXAPKeySchemeName;
 /// plist BundleId标识
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyBundleIdentifier;
+FOUNDATION_EXTERN XAPKey const kXAPKeyBundleIdentifier;
 /// plist 版本号标识
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyShortVersion;
+FOUNDATION_EXTERN XAPKey const kXAPKeyShortVersion;
 /// plist Build号标识
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyVersion;
+FOUNDATION_EXTERN XAPKey const kXAPKeyVersion;
 
-/// plist EnableBitcode标识 —— 只能用于创建
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyEnableBitcode;
-/// plist TeamId标识 —— 只能用于创建
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyTeamIdentifier;
-
-/// plist 最小支持系统版本 —— 一般只在.app文件的info.plist中
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyMinimumOSVersion;
 /// plist 可执行文件相对路径 —— 理论上只在.app文件的info.plist中有意义
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyExecutableFile;
+FOUNDATION_EXTERN XAPKey const kXAPKeyExecutableFile;
 
 /// plist .app文件相对路径 —— 只在.xcarchive的info.plist
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyApplicationPath;
+FOUNDATION_EXTERN XAPKey const kXAPKeyApplicationPath;
 /// plist 程序参数 —— 只在.xcarchive的info.plist
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyApplicationProperties;
+FOUNDATION_EXTERN XAPKey const kXAPKeyApplicationProperties;
 /// plist team id —— 只在.xcarchive的info.plist
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyTeam;
+FOUNDATION_EXTERN XAPKey const kXAPKeyTeam;
 /// plist uuid —— 只在解析的profile中
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeyUUID;
+FOUNDATION_EXTERN XAPKey const kXAPKeyUUID;
 /// plist 签名 —— 只在xcarchive的info.plist
-FOUNDATION_EXTERN XAPPlistKey const kXAPPlistKeySigningIdentity;
+FOUNDATION_EXTERN XAPKey const kXAPKeySigningIdentity;
+FOUNDATION_EXTERN XAPKey const kXAPKeyArchitectures;
+FOUNDATION_EXTERN XAPKey const kXAPKeyCreationDate;
+FOUNDATION_EXTERN XAPKey const kXAPKeyExpirationDate;
+FOUNDATION_EXTERN XAPKey const kXAPKeyEntitlements;
+FOUNDATION_EXTERN XAPKey const kXAPKeyTeamName;
+FOUNDATION_EXTERN XAPKey const kXAPKeyName;
+FOUNDATION_EXTERN XAPKey const kXAPKeyApplicationIdentifier;
+FOUNDATION_EXTERN XAPKey const kXAPKeyTeamIdentifier;
+FOUNDATION_EXTERN XAPKey const kXAPKeyProvisionedDevices;
+FOUNDATION_EXTERN XAPKey const kXAPKeyGetTaskAllow;
+FOUNDATION_EXTERN XAPKey const kXAPKeyProvisionsAllDevices;
 
 /// 关联值，类似$(TARGET_NAME)
 typedef NSString * XAPRelativeValue NS_STRING_ENUM;

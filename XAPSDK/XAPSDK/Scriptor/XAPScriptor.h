@@ -120,16 +120,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: - profile相关
 - (NSDictionary * _Nullable)fetchProfileInfoWithProfile:(NSString *)profile
-                                            profileName:(NSString * _Nullable __autoreleasing * _Nullable)profileName
-                                       bundleIdentifier:(NSString * _Nullable __autoreleasing * _Nullable)bundleIdentifier
-                                         teamIdentifier:(NSString * _Nullable __autoreleasing * _Nullable)teamIdentifier
-                                  applicationIdentifier:(NSString * _Nullable __autoreleasing * _Nullable)applicationIdentifier
-                                                   uuid:(NSString * _Nullable __autoreleasing * _Nullable)uuid
-                                               teamName:(NSString * _Nullable __autoreleasing * _Nullable)teamName
-                                                channel:(NSString * _Nullable __autoreleasing * _Nullable)channel
-                                        createTimestamp:(NSString * _Nullable __autoreleasing * _Nullable)createTimestamp
-                                        expireTimestamp:(NSString * _Nullable __autoreleasing * _Nullable)expireTimestamp
-                                           entitlements:(NSDictionary * _Nullable __autoreleasing * _Nullable)entitlements
                                                   error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 - (NSString * _Nullable)fetchProfileCreateTimestampWithProfile:(NSString *)profile
@@ -203,24 +193,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 // MARK: - info.plist相关
-- (NSString * _Nullable)fetchInfoPlistProductNameWithInfoPlist:(NSString *)infoPlist
-                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-
-- (NSString * _Nullable)fetchInfoPlistDisplayNameWithInfoPlist:(NSString *)infoPlist
-                                                         error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-
-- (NSString * _Nullable)fetchInfoPlistBundleIdentifierWithInfoPlist:(NSString *)infoPlist
-                                                              error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-
-- (NSString * _Nullable)fetchInfoPlistShortVersionWithInfoPlist:(NSString *)infoPlist
-                                                          error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-
-- (NSString * _Nullable)fetchInfoPlistVersionWithInfoPlist:(NSString *)infoPlist
-                                                     error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-
-- (NSString * _Nullable)fetchInfoPlistExecutableFileWithInfoPlist:(NSString *)infoPlist
-                                                            error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-
 - (NSString * _Nullable)plistFetchAttributeWithInfoPlist:(NSString *)infoPlist
                                             attributeKey:(NSString *)attributeKey
                                                    error:(NSError * _Nullable __autoreleasing * _Nullable)error;

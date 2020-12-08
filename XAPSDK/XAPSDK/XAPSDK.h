@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char XAPSDKVersionString[];
 #import <XAPSDK/XAPProvisioningProfileModel.h>
 #import <XAPSDK/XAPProvisioningProfileManager.h>
 #import <XAPSDK/XAPScriptor.h>
+
