@@ -501,8 +501,8 @@
     
     NSArray *list = [output componentsSeparatedByString:@"\r"];
     /*
-     1) F7E1D505B4CAD8B016523F45A8FD6F4529A66AD7 "Apple Development: 数据 菲凡 (5V8CU4553V)" (CSSMERR_TP_CERT_REVOKED)
-     2) EBC2AF4662E58DAECA38698985BC4285D9D6176C "Apple Development: renfei song (9C2Q99VBH5)"
+     1) F7E1D505B4CAD8B016523F45A8FD5F4529A66AD7 "Apple Development: 某某 (AAAAAAAAA)" (CSSMERR_TP_CERT_REVOKED)
+     2) EBC2AF4662E58DAECA38698985BC3285D9D6176C "Apple Development: someone (AAAAAAAAA)"
      */
     __block NSMutableArray *teamNamesResult = [NSMutableArray array];
     __block NSMutableArray *uuidsResult = [NSMutableArray array];

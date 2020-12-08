@@ -82,6 +82,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 通过相对路径(SRCROOT, PROJECT_DIR, ../)，获取绝对路径
 + (NSString *)absolutePathWithXcodeprojFile:(NSString *)xcodeprojFile
                                relativePath:(NSString *)relativePath;
+/// 从Workspace文件中得到关联项目路径（虚拟路径）
++ (NSArray <NSString *> *)xcodeprojVirtualFilesWithWorkspaceFile:(NSString *)xcworkspaceFile;
+/// 从Workspace文件中得到关联项目路径（真实路径）
++ (NSArray <NSString *> *)xcodeprojFilesWithWorkspaceFile:(NSString *)xcworkspaceFile;
 
 /// 获取.xcarchive下.app的文档路径
 + (NSString *)appFileWithXcarchiveFile:(NSString *)xcarchiveFile;

@@ -60,6 +60,8 @@
 		65F16AF82578065F0095C607 /* XAPProvisioningProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */; };
 		65F16AFD25780A1C0095C607 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFC25780A1C0095C607 /* libiconv.tbd */; };
 		65F16B0025780A230095C607 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFF25780A230095C607 /* libz.tbd */; };
+		65F16B44257FAD830095C607 /* XAPXMLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B42257FAD830095C607 /* XAPXMLTools.h */; };
+		65F16B45257FAD830095C607 /* XAPXMLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B43257FAD830095C607 /* XAPXMLTools.m */; };
 		F6C821F5257F53570054183F /* XAPInfoPlistTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821F3257F53570054183F /* XAPInfoPlistTools.h */; };
 		F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C821F4257F53570054183F /* XAPInfoPlistTools.m */; };
 		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -126,6 +128,8 @@
 		65F16AF62578065F0095C607 /* XAPProvisioningProfileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileModel.m; sourceTree = "<group>"; };
 		65F16AFC25780A1C0095C607 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		65F16AFF25780A230095C607 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		65F16B42257FAD830095C607 /* XAPXMLTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPXMLTools.h; sourceTree = "<group>"; };
+		65F16B43257FAD830095C607 /* XAPXMLTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPXMLTools.m; sourceTree = "<group>"; };
 		F6C821F3257F53570054183F /* XAPInfoPlistTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPInfoPlistTools.h; sourceTree = "<group>"; };
 		F6C821F4257F53570054183F /* XAPInfoPlistTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPInfoPlistTools.m; sourceTree = "<group>"; };
 		F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPErrorMacro.h; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				65F16A942577F10D0095C607 /* XAPZipTools.m */,
 				F6C821F3257F53570054183F /* XAPInfoPlistTools.h */,
 				F6C821F4257F53570054183F /* XAPInfoPlistTools.m */,
+				65F16B42257FAD830095C607 /* XAPXMLTools.h */,
+				65F16B43257FAD830095C607 /* XAPXMLTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */,
 				65F16A7F257522EC0095C607 /* XAPScriptExecutor.h in Headers */,
 				65F16A8D25753FB20095C607 /* XAPScriptPathManager.h in Headers */,
+				65F16B44257FAD830095C607 /* XAPXMLTools.h in Headers */,
 				65F16AD82577F13A0095C607 /* mz_strm_mem.h in Headers */,
 				65F16AC02577F1390095C607 /* mz_compat.h in Headers */,
 				65F16AC32577F1390095C607 /* mz_os.h in Headers */,
@@ -449,6 +456,7 @@
 				65F16AD92577F13A0095C607 /* mz_strm.c in Sources */,
 				65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */,
 				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
+				65F16B45257FAD830095C607 /* XAPXMLTools.m in Sources */,
 				65F16A7B257522DD0095C607 /* XAPScriptResposity.m in Sources */,
 				F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */,
 				65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */,
