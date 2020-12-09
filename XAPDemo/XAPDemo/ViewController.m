@@ -9,6 +9,32 @@
 #import <XAPSDK/XAPSDK.h>
 #define kXAPXMLTextNodeKey @"XAP_TEXT"
 
+#import <objc/runtime.h>
+
+@interface MyTemp : NSObject
+@property (nonatomic, assign) NSInteger intergerProperty;
+@property (nonatomic, assign) long longProperty;
+@property (nonatomic, assign) double doubleProperty;
+@property (nonatomic, assign) float floatProperty;
+@property (nonatomic, assign) long long longlongProperty;
+@property (nonatomic, assign) NSUInteger uintegerProperty;
+@property (nonatomic, assign) CGFloat cgfloatProperty;
+@property (nonatomic, assign) CGSize cgsizeProperty;
+@property (nonatomic, assign) NSRect cgrectProperty;
+@property (nonatomic, assign) CGPoint cgpointProperty;
+@property (nonatomic, assign) NSEdgeInsets edgeInsetsProperty;
+
+@property (nonatomic, strong) NSArray *arrayProperty;
+@property (nonatomic, strong) id idProperty;
+@property (nonatomic, strong) NSObject *objectProperty;
+@property (nonatomic, strong) MyTemp *myTempProperty;
+
+
+@end
+@implementation MyTemp
+
+@end
+
 @interface ViewController () <NSXMLParserDelegate>
 
 /// 解析的数组
@@ -33,8 +59,43 @@
 //    [self teamName];
 //    [self createOption];
 //    [self parsePlist];
-    [self parseXML];
+//    [self parseXML];
 //    [self testP];
+    [self testType];
+}
+
+- (void)testType {
+    MyTemp *obj = [[MyTemp alloc] init];
+    [self encodeObject:obj];
+}
+// 加密对象
+- (void)encodeObject:(NSObject *)obj {
+    unsigned int pCount;
+    
+    objc_property_t *properties = class_copyPropertyList([(NSObject *)obj class], &pCount);
+    if (properties) {
+        for (int i = 0; i < pCount; i++) {
+            NSString *pName = @(property_getName(properties[i]));
+            NSString *pType = @(property_getAttributes(properties[i]));
+            NSArray *pTypes = [pType componentsSeparatedByString:@","];
+            NSLog(@"%@ [type: %@]", pName, pType);
+            // 过滤只读属性
+//            if ([pTypes containsObject:@"R"]) { continue; }
+//
+//            if ([pType containsString:@"T@"]) {
+//                // id
+//                [aCoder encodeObject:[obj valueForKey:pName] forKey:pName];
+//            } else if ([pTypes containsObject:@"Tc"]) {
+//                // BOOL
+//                [aCoder encodeBool:[(NSNumber *)[obj valueForKey:pName] boolValue] forKey:pName];
+//            } else if ([pTypes containsObject:@"Tl"]) {
+//                // long NSInteger
+//                [aCoder encodeInteger:[(NSNumber *)[obj valueForKey:pName] integerValue] forKey:pName];
+//            }
+        }
+        free(properties);
+    }
+
 }
 
 - (void)testP {
