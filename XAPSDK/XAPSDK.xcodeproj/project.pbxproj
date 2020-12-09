@@ -62,6 +62,83 @@
 		65F16B0025780A230095C607 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F16AFF25780A230095C607 /* libz.tbd */; };
 		65F16B44257FAD830095C607 /* XAPXMLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B42257FAD830095C607 /* XAPXMLTools.h */; };
 		65F16B45257FAD830095C607 /* XAPXMLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B43257FAD830095C607 /* XAPXMLTools.m */; };
+		65F16B4E2580F2330095C607 /* XAPInfoPlistModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B4C2580F2330095C607 /* XAPInfoPlistModel.h */; };
+		65F16B4F2580F2330095C607 /* XAPInfoPlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B4D2580F2330095C607 /* XAPInfoPlistModel.m */; };
+		65F16B552580F4390095C607 /* XAPAppModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B532580F4390095C607 /* XAPAppModel.h */; };
+		65F16B562580F4390095C607 /* XAPAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B542580F4390095C607 /* XAPAppModel.m */; };
+		65F16B5C2580F4D70095C607 /* XAPPodModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B5A2580F4D70095C607 /* XAPPodModel.h */; };
+		65F16B5D2580F4D70095C607 /* XAPPodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B5B2580F4D70095C607 /* XAPPodModel.m */; };
+		65F16B632580F50B0095C607 /* XAPGitModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B612580F50B0095C607 /* XAPGitModel.h */; };
+		65F16B642580F50B0095C607 /* XAPGitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B622580F50B0095C607 /* XAPGitModel.m */; };
+		65F16B6A2580F5A70095C607 /* XAPArchiveModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B682580F5A70095C607 /* XAPArchiveModel.h */; };
+		65F16B6B2580F5A70095C607 /* XAPArchiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B692580F5A70095C607 /* XAPArchiveModel.m */; };
+		65F16B6F2580F6170095C607 /* XAPIPAModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B6D2580F6170095C607 /* XAPIPAModel.h */; };
+		65F16B702580F6170095C607 /* XAPIPAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B6E2580F6170095C607 /* XAPIPAModel.m */; };
+		65F16B762580F7B50095C607 /* XAPPBXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B742580F7B50095C607 /* XAPPBXObject.h */; };
+		65F16B772580F7B50095C607 /* XAPPBXObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B752580F7B50095C607 /* XAPPBXObject.m */; };
+		65F16B7C2581033C0095C607 /* XAPEngineerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B7A2581033C0095C607 /* XAPEngineerModel.m */; };
+		65F16B80258103620095C607 /* XAPWorkspaceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B7E258103620095C607 /* XAPWorkspaceModel.h */; };
+		65F16B81258103620095C607 /* XAPWorkspaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B7F258103620095C607 /* XAPWorkspaceModel.m */; };
+		65F16B85258103A50095C607 /* XAPProjectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B83258103A50095C607 /* XAPProjectModel.h */; };
+		65F16B86258103A50095C607 /* XAPProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B84258103A50095C607 /* XAPProjectModel.m */; };
+		65F16B8A2581040E0095C607 /* XAPTargetModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B882581040E0095C607 /* XAPTargetModel.h */; };
+		65F16B8B2581040E0095C607 /* XAPTargetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B892581040E0095C607 /* XAPTargetModel.m */; };
+		65F16B8F2581041E0095C607 /* XAPBuildConfigurationListModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B8D2581041E0095C607 /* XAPBuildConfigurationListModel.h */; };
+		65F16B902581041E0095C607 /* XAPBuildConfigurationListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B8E2581041E0095C607 /* XAPBuildConfigurationListModel.m */; };
+		65F16B942581042C0095C607 /* XAPBuildConfigurationModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B922581042C0095C607 /* XAPBuildConfigurationModel.h */; };
+		65F16B952581042C0095C607 /* XAPBuildConfigurationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B932581042C0095C607 /* XAPBuildConfigurationModel.m */; };
+		65F16B98258113100095C607 /* XAPEngineerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B792581033C0095C607 /* XAPEngineerModel.h */; };
+		65F16B9D258114B50095C607 /* XAPConfigurationModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16B9B258114B50095C607 /* XAPConfigurationModel.h */; };
+		65F16B9E258114B50095C607 /* XAPConfigurationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16B9C258114B50095C607 /* XAPConfigurationModel.m */; };
+		65F16BA2258116390095C607 /* XAPProjectExtraConfigurationModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BA0258116390095C607 /* XAPProjectExtraConfigurationModel.h */; };
+		65F16BA3258116390095C607 /* XAPProjectExtraConfigurationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BA1258116390095C607 /* XAPProjectExtraConfigurationModel.m */; };
+		65F16BA7258117F70095C607 /* XAPArchiveExtraConfigurationModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BA5258117F70095C607 /* XAPArchiveExtraConfigurationModel.h */; };
+		65F16BA8258117F70095C607 /* XAPArchiveExtraConfigurationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BA6258117F70095C607 /* XAPArchiveExtraConfigurationModel.m */; };
+		65F16BAC25811B3C0095C607 /* XAPDistributorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BAB25811B3C0095C607 /* XAPDistributorProtocol.h */; };
+		65F16BB125811C590095C607 /* XAPFirDistributor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BAF25811C590095C607 /* XAPFirDistributor.h */; };
+		65F16BB225811C590095C607 /* XAPFirDistributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BB025811C590095C607 /* XAPFirDistributor.m */; };
+		65F16BB625811C640095C607 /* XAPPgyerDistributor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BB425811C640095C607 /* XAPPgyerDistributor.h */; };
+		65F16BB725811C640095C607 /* XAPPgyerDistributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BB525811C640095C607 /* XAPPgyerDistributor.m */; };
+		65F16BBB25811C710095C607 /* XAPAppStoreDistributor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BB925811C710095C607 /* XAPAppStoreDistributor.h */; };
+		65F16BBC25811C710095C607 /* XAPAppStoreDistributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BBA25811C710095C607 /* XAPAppStoreDistributor.m */; };
+		65F16BC125811FEF0095C607 /* XAPDistributionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BBF25811FEF0095C607 /* XAPDistributionManager.h */; };
+		65F16BC225811FEF0095C607 /* XAPDistributionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BC025811FEF0095C607 /* XAPDistributionManager.m */; };
+		65F16BEA258120410095C607 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BC7258120410095C607 /* UIProgressView+AFNetworking.m */; };
+		65F16BEB258120410095C607 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BC8258120410095C607 /* UIButton+AFNetworking.h */; };
+		65F16BEC258120410095C607 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BC9258120410095C607 /* UIRefreshControl+AFNetworking.m */; };
+		65F16BED258120410095C607 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BCA258120410095C607 /* UIImageView+AFNetworking.h */; };
+		65F16BEE258120410095C607 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BCB258120410095C607 /* AFImageDownloader.h */; };
+		65F16BEF258120410095C607 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BCC258120410095C607 /* AFNetworkActivityIndicatorManager.m */; };
+		65F16BF0258120410095C607 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BCD258120410095C607 /* AFAutoPurgingImageCache.h */; };
+		65F16BF1258120410095C607 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BCE258120410095C607 /* UIWebView+AFNetworking.h */; };
+		65F16BF2258120410095C607 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BCF258120410095C607 /* UIActivityIndicatorView+AFNetworking.h */; };
+		65F16BF3258120410095C607 /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BD0258120410095C607 /* UIImage+AFNetworking.h */; };
+		65F16BF4258120410095C607 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BD1258120410095C607 /* UIProgressView+AFNetworking.h */; };
+		65F16BF5258120410095C607 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BD2258120410095C607 /* UIImageView+AFNetworking.m */; };
+		65F16BF6258120410095C607 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BD3258120410095C607 /* UIKit+AFNetworking.h */; };
+		65F16BF7258120410095C607 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BD4258120410095C607 /* UIRefreshControl+AFNetworking.h */; };
+		65F16BF8258120410095C607 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BD5258120410095C607 /* UIButton+AFNetworking.m */; };
+		65F16BF9258120410095C607 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BD6258120410095C607 /* UIActivityIndicatorView+AFNetworking.m */; };
+		65F16BFA258120410095C607 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BD7258120410095C607 /* UIWebView+AFNetworking.m */; };
+		65F16BFB258120410095C607 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BD8258120410095C607 /* AFAutoPurgingImageCache.m */; };
+		65F16BFC258120410095C607 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BD9258120410095C607 /* AFNetworkActivityIndicatorManager.h */; };
+		65F16BFD258120410095C607 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BDA258120410095C607 /* AFImageDownloader.m */; };
+		65F16BFE258120410095C607 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BDC258120410095C607 /* AFSecurityPolicy.h */; };
+		65F16BFF258120410095C607 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BDD258120410095C607 /* AFNetworkReachabilityManager.h */; };
+		65F16C00258120410095C607 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BDE258120410095C607 /* AFURLSessionManager.h */; };
+		65F16C01258120410095C607 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BDF258120410095C607 /* AFURLRequestSerialization.h */; };
+		65F16C02258120410095C607 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BE0258120410095C607 /* AFURLResponseSerialization.m */; };
+		65F16C03258120410095C607 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BE1258120410095C607 /* AFHTTPSessionManager.m */; };
+		65F16C04258120410095C607 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BE2258120410095C607 /* AFURLResponseSerialization.h */; };
+		65F16C05258120410095C607 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BE3258120410095C607 /* AFURLSessionManager.m */; };
+		65F16C06258120410095C607 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BE4258120410095C607 /* AFURLRequestSerialization.m */; };
+		65F16C07258120410095C607 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BE5258120410095C607 /* AFNetworking.h */; };
+		65F16C08258120410095C607 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BE6258120410095C607 /* AFNetworkReachabilityManager.m */; };
+		65F16C09258120410095C607 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16BE7258120410095C607 /* AFSecurityPolicy.m */; };
+		65F16C0A258120410095C607 /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BE8258120410095C607 /* AFCompatibilityMacros.h */; };
+		65F16C0B258120410095C607 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BE9258120410095C607 /* AFHTTPSessionManager.h */; };
+		65F16C10258123EB0095C607 /* XAPTaskModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16C0E258123EB0095C607 /* XAPTaskModel.h */; };
+		65F16C11258123EB0095C607 /* XAPTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16C0F258123EB0095C607 /* XAPTaskModel.m */; };
 		F6C821F5257F53570054183F /* XAPInfoPlistTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821F3257F53570054183F /* XAPInfoPlistTools.h */; };
 		F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C821F4257F53570054183F /* XAPInfoPlistTools.m */; };
 		F6C821FC258070550054183F /* XAPRuntimeTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821FA258070550054183F /* XAPRuntimeTools.h */; };
@@ -132,6 +209,83 @@
 		65F16AFF25780A230095C607 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		65F16B42257FAD830095C607 /* XAPXMLTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPXMLTools.h; sourceTree = "<group>"; };
 		65F16B43257FAD830095C607 /* XAPXMLTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPXMLTools.m; sourceTree = "<group>"; };
+		65F16B4C2580F2330095C607 /* XAPInfoPlistModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPInfoPlistModel.h; sourceTree = "<group>"; };
+		65F16B4D2580F2330095C607 /* XAPInfoPlistModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPInfoPlistModel.m; sourceTree = "<group>"; };
+		65F16B532580F4390095C607 /* XAPAppModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPAppModel.h; sourceTree = "<group>"; };
+		65F16B542580F4390095C607 /* XAPAppModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPAppModel.m; sourceTree = "<group>"; };
+		65F16B5A2580F4D70095C607 /* XAPPodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPPodModel.h; sourceTree = "<group>"; };
+		65F16B5B2580F4D70095C607 /* XAPPodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPPodModel.m; sourceTree = "<group>"; };
+		65F16B612580F50B0095C607 /* XAPGitModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPGitModel.h; sourceTree = "<group>"; };
+		65F16B622580F50B0095C607 /* XAPGitModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPGitModel.m; sourceTree = "<group>"; };
+		65F16B682580F5A70095C607 /* XAPArchiveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPArchiveModel.h; sourceTree = "<group>"; };
+		65F16B692580F5A70095C607 /* XAPArchiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPArchiveModel.m; sourceTree = "<group>"; };
+		65F16B6D2580F6170095C607 /* XAPIPAModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPIPAModel.h; sourceTree = "<group>"; };
+		65F16B6E2580F6170095C607 /* XAPIPAModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPIPAModel.m; sourceTree = "<group>"; };
+		65F16B742580F7B50095C607 /* XAPPBXObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPPBXObject.h; sourceTree = "<group>"; };
+		65F16B752580F7B50095C607 /* XAPPBXObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPPBXObject.m; sourceTree = "<group>"; };
+		65F16B792581033C0095C607 /* XAPEngineerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPEngineerModel.h; sourceTree = "<group>"; };
+		65F16B7A2581033C0095C607 /* XAPEngineerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPEngineerModel.m; sourceTree = "<group>"; };
+		65F16B7E258103620095C607 /* XAPWorkspaceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPWorkspaceModel.h; sourceTree = "<group>"; };
+		65F16B7F258103620095C607 /* XAPWorkspaceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPWorkspaceModel.m; sourceTree = "<group>"; };
+		65F16B83258103A50095C607 /* XAPProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProjectModel.h; sourceTree = "<group>"; };
+		65F16B84258103A50095C607 /* XAPProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProjectModel.m; sourceTree = "<group>"; };
+		65F16B882581040E0095C607 /* XAPTargetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPTargetModel.h; sourceTree = "<group>"; };
+		65F16B892581040E0095C607 /* XAPTargetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPTargetModel.m; sourceTree = "<group>"; };
+		65F16B8D2581041E0095C607 /* XAPBuildConfigurationListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPBuildConfigurationListModel.h; sourceTree = "<group>"; };
+		65F16B8E2581041E0095C607 /* XAPBuildConfigurationListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPBuildConfigurationListModel.m; sourceTree = "<group>"; };
+		65F16B922581042C0095C607 /* XAPBuildConfigurationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPBuildConfigurationModel.h; sourceTree = "<group>"; };
+		65F16B932581042C0095C607 /* XAPBuildConfigurationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPBuildConfigurationModel.m; sourceTree = "<group>"; };
+		65F16B9B258114B50095C607 /* XAPConfigurationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPConfigurationModel.h; sourceTree = "<group>"; };
+		65F16B9C258114B50095C607 /* XAPConfigurationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPConfigurationModel.m; sourceTree = "<group>"; };
+		65F16BA0258116390095C607 /* XAPProjectExtraConfigurationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProjectExtraConfigurationModel.h; sourceTree = "<group>"; };
+		65F16BA1258116390095C607 /* XAPProjectExtraConfigurationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProjectExtraConfigurationModel.m; sourceTree = "<group>"; };
+		65F16BA5258117F70095C607 /* XAPArchiveExtraConfigurationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPArchiveExtraConfigurationModel.h; sourceTree = "<group>"; };
+		65F16BA6258117F70095C607 /* XAPArchiveExtraConfigurationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPArchiveExtraConfigurationModel.m; sourceTree = "<group>"; };
+		65F16BAB25811B3C0095C607 /* XAPDistributorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPDistributorProtocol.h; sourceTree = "<group>"; };
+		65F16BAF25811C590095C607 /* XAPFirDistributor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPFirDistributor.h; sourceTree = "<group>"; };
+		65F16BB025811C590095C607 /* XAPFirDistributor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPFirDistributor.m; sourceTree = "<group>"; };
+		65F16BB425811C640095C607 /* XAPPgyerDistributor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPPgyerDistributor.h; sourceTree = "<group>"; };
+		65F16BB525811C640095C607 /* XAPPgyerDistributor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPPgyerDistributor.m; sourceTree = "<group>"; };
+		65F16BB925811C710095C607 /* XAPAppStoreDistributor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPAppStoreDistributor.h; sourceTree = "<group>"; };
+		65F16BBA25811C710095C607 /* XAPAppStoreDistributor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPAppStoreDistributor.m; sourceTree = "<group>"; };
+		65F16BBF25811FEF0095C607 /* XAPDistributionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPDistributionManager.h; sourceTree = "<group>"; };
+		65F16BC025811FEF0095C607 /* XAPDistributionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPDistributionManager.m; sourceTree = "<group>"; };
+		65F16BC7258120410095C607 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		65F16BC8258120410095C607 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BC9258120410095C607 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		65F16BCA258120410095C607 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BCB258120410095C607 /* AFImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageDownloader.h; sourceTree = "<group>"; };
+		65F16BCC258120410095C607 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		65F16BCD258120410095C607 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAutoPurgingImageCache.h; sourceTree = "<group>"; };
+		65F16BCE258120410095C607 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BCF258120410095C607 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BD0258120410095C607 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BD1258120410095C607 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BD2258120410095C607 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		65F16BD3258120410095C607 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BD4258120410095C607 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		65F16BD5258120410095C607 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		65F16BD6258120410095C607 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		65F16BD7258120410095C607 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		65F16BD8258120410095C607 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAutoPurgingImageCache.m; sourceTree = "<group>"; };
+		65F16BD9258120410095C607 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		65F16BDA258120410095C607 /* AFImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageDownloader.m; sourceTree = "<group>"; };
+		65F16BDC258120410095C607 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		65F16BDD258120410095C607 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		65F16BDE258120410095C607 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		65F16BDF258120410095C607 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		65F16BE0258120410095C607 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		65F16BE1258120410095C607 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		65F16BE2258120410095C607 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		65F16BE3258120410095C607 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		65F16BE4258120410095C607 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		65F16BE5258120410095C607 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		65F16BE6258120410095C607 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		65F16BE7258120410095C607 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		65F16BE8258120410095C607 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		65F16BE9258120410095C607 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		65F16C0E258123EB0095C607 /* XAPTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPTaskModel.h; sourceTree = "<group>"; };
+		65F16C0F258123EB0095C607 /* XAPTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPTaskModel.m; sourceTree = "<group>"; };
 		F6C821F3257F53570054183F /* XAPInfoPlistTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPInfoPlistTools.h; sourceTree = "<group>"; };
 		F6C821F4257F53570054183F /* XAPInfoPlistTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPInfoPlistTools.m; sourceTree = "<group>"; };
 		F6C821FA258070550054183F /* XAPRuntimeTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPRuntimeTools.h; sourceTree = "<group>"; };
@@ -191,6 +345,7 @@
 		65F16A61257521D50095C607 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				65F16BC5258120410095C607 /* AFNetworking */,
 				65F16A982577F1390095C607 /* SSZipArchive */,
 			);
 			path = Vendors;
@@ -277,7 +432,16 @@
 		65F16AF3257806150095C607 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65F16C0D258123E20095C607 /* Task */,
+				65F16B9A258114A20095C607 /* Configuration */,
+				65F16B732580F6D50095C607 /* Engineer */,
+				65F16B722580F6AA0095C607 /* Project */,
+				65F16B602580F5000095C607 /* Git */,
+				65F16B592580F4C30095C607 /* Pod */,
+				65F16B522580F42B0095C607 /* Package */,
+				65F16B4B2580F20D0095C607 /* InfoPlist */,
 				65F16AF42578063D0095C607 /* ProvisioningProfile */,
+				65F16BAA25811B100095C607 /* Distributor */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,9 +464,180 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		65F16B4B2580F20D0095C607 /* InfoPlist */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B4C2580F2330095C607 /* XAPInfoPlistModel.h */,
+				65F16B4D2580F2330095C607 /* XAPInfoPlistModel.m */,
+			);
+			path = InfoPlist;
+			sourceTree = "<group>";
+		};
+		65F16B522580F42B0095C607 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B532580F4390095C607 /* XAPAppModel.h */,
+				65F16B542580F4390095C607 /* XAPAppModel.m */,
+				65F16B682580F5A70095C607 /* XAPArchiveModel.h */,
+				65F16B692580F5A70095C607 /* XAPArchiveModel.m */,
+				65F16B6D2580F6170095C607 /* XAPIPAModel.h */,
+				65F16B6E2580F6170095C607 /* XAPIPAModel.m */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
+		65F16B592580F4C30095C607 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B5A2580F4D70095C607 /* XAPPodModel.h */,
+				65F16B5B2580F4D70095C607 /* XAPPodModel.m */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		65F16B602580F5000095C607 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B612580F50B0095C607 /* XAPGitModel.h */,
+				65F16B622580F50B0095C607 /* XAPGitModel.m */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
+		65F16B722580F6AA0095C607 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B742580F7B50095C607 /* XAPPBXObject.h */,
+				65F16B752580F7B50095C607 /* XAPPBXObject.m */,
+				65F16B7E258103620095C607 /* XAPWorkspaceModel.h */,
+				65F16B7F258103620095C607 /* XAPWorkspaceModel.m */,
+				65F16B83258103A50095C607 /* XAPProjectModel.h */,
+				65F16B84258103A50095C607 /* XAPProjectModel.m */,
+				65F16B882581040E0095C607 /* XAPTargetModel.h */,
+				65F16B892581040E0095C607 /* XAPTargetModel.m */,
+				65F16B8D2581041E0095C607 /* XAPBuildConfigurationListModel.h */,
+				65F16B8E2581041E0095C607 /* XAPBuildConfigurationListModel.m */,
+				65F16B922581042C0095C607 /* XAPBuildConfigurationModel.h */,
+				65F16B932581042C0095C607 /* XAPBuildConfigurationModel.m */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		65F16B732580F6D50095C607 /* Engineer */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B792581033C0095C607 /* XAPEngineerModel.h */,
+				65F16B7A2581033C0095C607 /* XAPEngineerModel.m */,
+			);
+			path = Engineer;
+			sourceTree = "<group>";
+		};
+		65F16B9A258114A20095C607 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				65F16B9B258114B50095C607 /* XAPConfigurationModel.h */,
+				65F16B9C258114B50095C607 /* XAPConfigurationModel.m */,
+				65F16BA0258116390095C607 /* XAPProjectExtraConfigurationModel.h */,
+				65F16BA1258116390095C607 /* XAPProjectExtraConfigurationModel.m */,
+				65F16BA5258117F70095C607 /* XAPArchiveExtraConfigurationModel.h */,
+				65F16BA6258117F70095C607 /* XAPArchiveExtraConfigurationModel.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		65F16BAA25811B100095C607 /* Distributor */ = {
+			isa = PBXGroup;
+			children = (
+				65F16BAB25811B3C0095C607 /* XAPDistributorProtocol.h */,
+				65F16BAF25811C590095C607 /* XAPFirDistributor.h */,
+				65F16BB025811C590095C607 /* XAPFirDistributor.m */,
+				65F16BB425811C640095C607 /* XAPPgyerDistributor.h */,
+				65F16BB525811C640095C607 /* XAPPgyerDistributor.m */,
+				65F16BB925811C710095C607 /* XAPAppStoreDistributor.h */,
+				65F16BBA25811C710095C607 /* XAPAppStoreDistributor.m */,
+			);
+			path = Distributor;
+			sourceTree = "<group>";
+		};
+		65F16BBE25811FDE0095C607 /* Distribution */ = {
+			isa = PBXGroup;
+			children = (
+				65F16BBF25811FEF0095C607 /* XAPDistributionManager.h */,
+				65F16BC025811FEF0095C607 /* XAPDistributionManager.m */,
+			);
+			path = Distribution;
+			sourceTree = "<group>";
+		};
+		65F16BC5258120410095C607 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				65F16BC6258120410095C607 /* UIKit+AFNetworking */,
+				65F16BDB258120410095C607 /* AFNetworking */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		65F16BC6258120410095C607 /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				65F16BC7258120410095C607 /* UIProgressView+AFNetworking.m */,
+				65F16BC8258120410095C607 /* UIButton+AFNetworking.h */,
+				65F16BC9258120410095C607 /* UIRefreshControl+AFNetworking.m */,
+				65F16BCA258120410095C607 /* UIImageView+AFNetworking.h */,
+				65F16BCB258120410095C607 /* AFImageDownloader.h */,
+				65F16BCC258120410095C607 /* AFNetworkActivityIndicatorManager.m */,
+				65F16BCD258120410095C607 /* AFAutoPurgingImageCache.h */,
+				65F16BCE258120410095C607 /* UIWebView+AFNetworking.h */,
+				65F16BCF258120410095C607 /* UIActivityIndicatorView+AFNetworking.h */,
+				65F16BD0258120410095C607 /* UIImage+AFNetworking.h */,
+				65F16BD1258120410095C607 /* UIProgressView+AFNetworking.h */,
+				65F16BD2258120410095C607 /* UIImageView+AFNetworking.m */,
+				65F16BD3258120410095C607 /* UIKit+AFNetworking.h */,
+				65F16BD4258120410095C607 /* UIRefreshControl+AFNetworking.h */,
+				65F16BD5258120410095C607 /* UIButton+AFNetworking.m */,
+				65F16BD6258120410095C607 /* UIActivityIndicatorView+AFNetworking.m */,
+				65F16BD7258120410095C607 /* UIWebView+AFNetworking.m */,
+				65F16BD8258120410095C607 /* AFAutoPurgingImageCache.m */,
+				65F16BD9258120410095C607 /* AFNetworkActivityIndicatorManager.h */,
+				65F16BDA258120410095C607 /* AFImageDownloader.m */,
+			);
+			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		65F16BDB258120410095C607 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				65F16BDC258120410095C607 /* AFSecurityPolicy.h */,
+				65F16BDD258120410095C607 /* AFNetworkReachabilityManager.h */,
+				65F16BDE258120410095C607 /* AFURLSessionManager.h */,
+				65F16BDF258120410095C607 /* AFURLRequestSerialization.h */,
+				65F16BE0258120410095C607 /* AFURLResponseSerialization.m */,
+				65F16BE1258120410095C607 /* AFHTTPSessionManager.m */,
+				65F16BE2258120410095C607 /* AFURLResponseSerialization.h */,
+				65F16BE3258120410095C607 /* AFURLSessionManager.m */,
+				65F16BE4258120410095C607 /* AFURLRequestSerialization.m */,
+				65F16BE5258120410095C607 /* AFNetworking.h */,
+				65F16BE6258120410095C607 /* AFNetworkReachabilityManager.m */,
+				65F16BE7258120410095C607 /* AFSecurityPolicy.m */,
+				65F16BE8258120410095C607 /* AFCompatibilityMacros.h */,
+				65F16BE9258120410095C607 /* AFHTTPSessionManager.h */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		65F16C0D258123E20095C607 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				65F16C0E258123EB0095C607 /* XAPTaskModel.h */,
+				65F16C0F258123EB0095C607 /* XAPTaskModel.m */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
 		F6F8B7E5257736CC00C5C893 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				65F16BBE25811FDE0095C607 /* Distribution */,
 				F6F8B7E6257736D000C5C893 /* ProvisioningProfile */,
 			);
 			path = Manager;
@@ -341,37 +676,78 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F16C00258120410095C607 /* AFURLSessionManager.h in Headers */,
+				65F16BED258120410095C607 /* UIImageView+AFNetworking.h in Headers */,
 				65F16AC62577F13A0095C607 /* mz_strm_split.h in Headers */,
+				65F16B9D258114B50095C607 /* XAPConfigurationModel.h in Headers */,
 				65F16A852575236E0095C607 /* XAPConstant.h in Headers */,
 				F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */,
 				65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */,
+				65F16B6F2580F6170095C607 /* XAPIPAModel.h in Headers */,
 				65F16A7F257522EC0095C607 /* XAPScriptExecutor.h in Headers */,
 				65F16A8D25753FB20095C607 /* XAPScriptPathManager.h in Headers */,
+				65F16BF7258120410095C607 /* UIRefreshControl+AFNetworking.h in Headers */,
+				65F16B98258113100095C607 /* XAPEngineerModel.h in Headers */,
 				65F16B44257FAD830095C607 /* XAPXMLTools.h in Headers */,
 				65F16AD82577F13A0095C607 /* mz_strm_mem.h in Headers */,
 				F6C821FC258070550054183F /* XAPRuntimeTools.h in Headers */,
+				65F16BF1258120410095C607 /* UIWebView+AFNetworking.h in Headers */,
 				65F16AC02577F1390095C607 /* mz_compat.h in Headers */,
 				65F16AC32577F1390095C607 /* mz_os.h in Headers */,
+				65F16BC125811FEF0095C607 /* XAPDistributionManager.h in Headers */,
+				65F16B6A2580F5A70095C607 /* XAPArchiveModel.h in Headers */,
 				65F16A70257522C10095C607 /* XAPScriptModel.h in Headers */,
+				65F16BF4258120410095C607 /* UIProgressView+AFNetworking.h in Headers */,
+				65F16BF0258120410095C607 /* AFAutoPurgingImageCache.h in Headers */,
+				65F16C0A258120410095C607 /* AFCompatibilityMacros.h in Headers */,
+				65F16C07258120410095C607 /* AFNetworking.h in Headers */,
+				65F16BF6258120410095C607 /* UIKit+AFNetworking.h in Headers */,
 				65F16AD72577F13A0095C607 /* mz_crypt.h in Headers */,
+				65F16C01258120410095C607 /* AFURLRequestSerialization.h in Headers */,
 				65F16ADC2577F13A0095C607 /* SSZipCommon.h in Headers */,
+				65F16B762580F7B50095C607 /* XAPPBXObject.h in Headers */,
 				F6C821F5257F53570054183F /* XAPInfoPlistTools.h in Headers */,
+				65F16C04258120410095C607 /* AFURLResponseSerialization.h in Headers */,
+				65F16BFF258120410095C607 /* AFNetworkReachabilityManager.h in Headers */,
+				65F16C10258123EB0095C607 /* XAPTaskModel.h in Headers */,
+				65F16BAC25811B3C0095C607 /* XAPDistributorProtocol.h in Headers */,
+				65F16B85258103A50095C607 /* XAPProjectModel.h in Headers */,
 				65F16AC92577F13A0095C607 /* mz_strm.h in Headers */,
 				65F16ABC2577F1390095C607 /* ZipArchive.h in Headers */,
+				65F16B8A2581040E0095C607 /* XAPTargetModel.h in Headers */,
+				65F16BA7258117F70095C607 /* XAPArchiveExtraConfigurationModel.h in Headers */,
+				65F16C0B258120410095C607 /* AFHTTPSessionManager.h in Headers */,
+				65F16BB625811C640095C607 /* XAPPgyerDistributor.h in Headers */,
 				65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */,
 				65F16AD22577F13A0095C607 /* mz_zip.h in Headers */,
 				65F16A952577F10D0095C607 /* XAPZipTools.h in Headers */,
+				65F16B5C2580F4D70095C607 /* XAPPodModel.h in Headers */,
+				65F16BA2258116390095C607 /* XAPProjectExtraConfigurationModel.h in Headers */,
+				65F16B632580F50B0095C607 /* XAPGitModel.h in Headers */,
 				65F16AC72577F13A0095C607 /* mz_strm_buf.h in Headers */,
 				65F16ACF2577F13A0095C607 /* mz_strm_pkcrypt.h in Headers */,
 				F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */,
 				65F16A5A257521110095C607 /* XAPSDK.h in Headers */,
+				65F16BFC258120410095C607 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				65F16B942581042C0095C607 /* XAPBuildConfigurationModel.h in Headers */,
 				65F16AF72578065F0095C607 /* XAPProvisioningProfileModel.h in Headers */,
 				65F16ABF2577F1390095C607 /* mz_strm_wzaes.h in Headers */,
+				65F16B552580F4390095C607 /* XAPAppModel.h in Headers */,
+				65F16BF2258120410095C607 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
 				65F16ACD2577F13A0095C607 /* mz_strm_zlib.h in Headers */,
+				65F16BBB25811C710095C607 /* XAPAppStoreDistributor.h in Headers */,
+				65F16BF3258120410095C607 /* UIImage+AFNetworking.h in Headers */,
+				65F16BB125811C590095C607 /* XAPFirDistributor.h in Headers */,
+				65F16B80258103620095C607 /* XAPWorkspaceModel.h in Headers */,
+				65F16BFE258120410095C607 /* AFSecurityPolicy.h in Headers */,
+				65F16B4E2580F2330095C607 /* XAPInfoPlistModel.h in Headers */,
+				65F16B8F2581041E0095C607 /* XAPBuildConfigurationListModel.h in Headers */,
 				65F16AD42577F13A0095C607 /* mz.h in Headers */,
 				65F16AD02577F13A0095C607 /* mz_zip_rw.h in Headers */,
 				65F16ADA2577F13A0095C607 /* mz_strm_os.h in Headers */,
+				65F16BEE258120410095C607 /* AFImageDownloader.h in Headers */,
 				65F16A7A257522DD0095C607 /* XAPScriptResposity.h in Headers */,
+				65F16BEB258120410095C607 /* UIButton+AFNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,33 +822,69 @@
 			files = (
 				65F16A8E25753FB20095C607 /* XAPScriptPathManager.m in Sources */,
 				65F16ADD2577F13A0095C607 /* SSZipArchive.m in Sources */,
+				65F16BF8258120410095C607 /* UIButton+AFNetworking.m in Sources */,
 				65F16A71257522C10095C607 /* XAPScriptModel.m in Sources */,
 				65F16A6B257522B10095C607 /* XAPScriptor.m in Sources */,
+				65F16BEA258120410095C607 /* UIProgressView+AFNetworking.m in Sources */,
+				65F16BF5258120410095C607 /* UIImageView+AFNetworking.m in Sources */,
+				65F16BC225811FEF0095C607 /* XAPDistributionManager.m in Sources */,
 				65F16AC12577F1390095C607 /* mz_strm_zlib.c in Sources */,
+				65F16BFD258120410095C607 /* AFImageDownloader.m in Sources */,
+				65F16C08258120410095C607 /* AFNetworkReachabilityManager.m in Sources */,
+				65F16BFB258120410095C607 /* AFAutoPurgingImageCache.m in Sources */,
+				65F16B5D2580F4D70095C607 /* XAPPodModel.m in Sources */,
 				F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */,
 				65F16AF82578065F0095C607 /* XAPProvisioningProfileModel.m in Sources */,
 				65F16AC52577F13A0095C607 /* mz_zip_rw.c in Sources */,
 				65F16AC22577F1390095C607 /* mz_zip.c in Sources */,
+				65F16B7C2581033C0095C607 /* XAPEngineerModel.m in Sources */,
 				65F16A862575236E0095C607 /* XAPConstant.m in Sources */,
+				65F16B8B2581040E0095C607 /* XAPTargetModel.m in Sources */,
+				65F16B902581041E0095C607 /* XAPBuildConfigurationListModel.m in Sources */,
 				65F16ACA2577F13A0095C607 /* mz_strm_mem.c in Sources */,
+				65F16BB225811C590095C607 /* XAPFirDistributor.m in Sources */,
 				65F16AD32577F13A0095C607 /* mz_os_posix.c in Sources */,
 				65F16AD62577F13A0095C607 /* mz_strm_split.c in Sources */,
 				65F16ACB2577F13A0095C607 /* mz_crypt.c in Sources */,
 				65F16A962577F10D0095C607 /* XAPZipTools.m in Sources */,
+				65F16B81258103620095C607 /* XAPWorkspaceModel.m in Sources */,
+				65F16C03258120410095C607 /* AFHTTPSessionManager.m in Sources */,
+				65F16B562580F4390095C607 /* XAPAppModel.m in Sources */,
+				65F16B952581042C0095C607 /* XAPBuildConfigurationModel.m in Sources */,
 				65F16ABD2577F1390095C607 /* mz_strm_os_posix.c in Sources */,
+				65F16C06258120410095C607 /* AFURLRequestSerialization.m in Sources */,
+				65F16B642580F50B0095C607 /* XAPGitModel.m in Sources */,
+				65F16B772580F7B50095C607 /* XAPPBXObject.m in Sources */,
+				65F16B9E258114B50095C607 /* XAPConfigurationModel.m in Sources */,
 				65F16AD92577F13A0095C607 /* mz_strm.c in Sources */,
 				65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */,
 				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
+				65F16BA8258117F70095C607 /* XAPArchiveExtraConfigurationModel.m in Sources */,
 				65F16B45257FAD830095C607 /* XAPXMLTools.m in Sources */,
+				65F16BF9258120410095C607 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				65F16A7B257522DD0095C607 /* XAPScriptResposity.m in Sources */,
 				F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */,
 				F6C821FD258070550054183F /* XAPRuntimeTools.m in Sources */,
+				65F16B702580F6170095C607 /* XAPIPAModel.m in Sources */,
+				65F16B6B2580F5A70095C607 /* XAPArchiveModel.m in Sources */,
+				65F16BBC25811C710095C607 /* XAPAppStoreDistributor.m in Sources */,
+				65F16BA3258116390095C607 /* XAPProjectExtraConfigurationModel.m in Sources */,
+				65F16BEC258120410095C607 /* UIRefreshControl+AFNetworking.m in Sources */,
 				65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */,
 				65F16AD12577F13A0095C607 /* mz_os.c in Sources */,
 				65F16AC82577F13A0095C607 /* mz_crypt_apple.c in Sources */,
+				65F16C11258123EB0095C607 /* XAPTaskModel.m in Sources */,
+				65F16B86258103A50095C607 /* XAPProjectModel.m in Sources */,
 				F6F8B7F12577387200C5C893 /* XAPTools.m in Sources */,
 				65F16AD52577F13A0095C607 /* mz_strm_buf.c in Sources */,
+				65F16C05258120410095C607 /* AFURLSessionManager.m in Sources */,
+				65F16BEF258120410095C607 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				65F16BFA258120410095C607 /* UIWebView+AFNetworking.m in Sources */,
+				65F16B4F2580F2330095C607 /* XAPInfoPlistModel.m in Sources */,
+				65F16C09258120410095C607 /* AFSecurityPolicy.m in Sources */,
+				65F16C02258120410095C607 /* AFURLResponseSerialization.m in Sources */,
 				65F16ACE2577F13A0095C607 /* mz_compat.c in Sources */,
+				65F16BB725811C640095C607 /* XAPPgyerDistributor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
