@@ -2,7 +2,7 @@
 //  XAPRuntimeTools.m
 //  XAPSDK
 //
-//  Created by 菲凡数据 on 2020/12/9.
+//  Created by Daniel on 2020/12/9.
 //
 
 #import "XAPRuntimeTools.h"

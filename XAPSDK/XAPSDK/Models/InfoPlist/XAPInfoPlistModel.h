@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 产品名
 @property (nonatomic, copy) NSString *bundleName;
 /// 展示名称
-@property (nonatomic, copy) NSString *bundleDiaplayName;
+@property (nonatomic, copy) NSString *bundleDisplayName;
 /// 可执行文件路径
 @property (nonatomic, copy) NSString *executableFile;
 /// 是否允许bitcode

@@ -2,7 +2,7 @@
 //  XAPTaskParser.h
 //  XAPSDK
 //
-//  Created by 菲凡数据 on 2020/12/10.
+//  Created by Daniel on 2020/12/10.
 //
 
 #import <Foundation/Foundation.h>
