@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XAPTaskModel : NSObject
 
+/// 源路径
+@property (nonatomic, copy) NSString *path;
 /// 工程信息
 @property (nonatomic, strong) XAPEngineerModel *engineer;
 /// 配置信息

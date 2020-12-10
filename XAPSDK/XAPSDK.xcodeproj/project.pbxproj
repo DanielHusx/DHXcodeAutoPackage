@@ -143,6 +143,10 @@
 		F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C821F4257F53570054183F /* XAPInfoPlistTools.m */; };
 		F6C821FC258070550054183F /* XAPRuntimeTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821FA258070550054183F /* XAPRuntimeTools.h */; };
 		F6C821FD258070550054183F /* XAPRuntimeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C821FB258070550054183F /* XAPRuntimeTools.m */; };
+		F6C8227F2581E6900054183F /* XAPTaskParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C8227D2581E6900054183F /* XAPTaskParser.h */; };
+		F6C822802581E6900054183F /* XAPTaskParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C8227E2581E6900054183F /* XAPTaskParser.m */; };
+		F6C822862581FE430054183F /* XAPEngineerParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C822842581FE430054183F /* XAPEngineerParser.m */; };
+		F6C82289258202930054183F /* XAPEngineerParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C822832581FE430054183F /* XAPEngineerParser.h */; };
 		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */; };
 		F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7EE2577387200C5C893 /* XAPTools.h */; };
@@ -290,6 +294,10 @@
 		F6C821F4257F53570054183F /* XAPInfoPlistTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPInfoPlistTools.m; sourceTree = "<group>"; };
 		F6C821FA258070550054183F /* XAPRuntimeTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPRuntimeTools.h; sourceTree = "<group>"; };
 		F6C821FB258070550054183F /* XAPRuntimeTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPRuntimeTools.m; sourceTree = "<group>"; };
+		F6C8227D2581E6900054183F /* XAPTaskParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPTaskParser.h; sourceTree = "<group>"; };
+		F6C8227E2581E6900054183F /* XAPTaskParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPTaskParser.m; sourceTree = "<group>"; };
+		F6C822832581FE430054183F /* XAPEngineerParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPEngineerParser.h; sourceTree = "<group>"; };
+		F6C822842581FE430054183F /* XAPEngineerParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPEngineerParser.m; sourceTree = "<group>"; };
 		F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPErrorMacro.h; sourceTree = "<group>"; };
 		F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProvisioningProfileManager.h; sourceTree = "<group>"; };
 		F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileManager.m; sourceTree = "<group>"; };
@@ -332,6 +340,7 @@
 			children = (
 				65F16A58257521110095C607 /* XAPSDK.h */,
 				65F16A62257521F50095C607 /* Common */,
+				F6C8227B2581E5FF0054183F /* Parser */,
 				65F16AF3257806150095C607 /* Models */,
 				F6F8B7ED2577385800C5C893 /* Tools */,
 				F6F8B7E5257736CC00C5C893 /* Manager */,
@@ -634,6 +643,17 @@
 			path = Task;
 			sourceTree = "<group>";
 		};
+		F6C8227B2581E5FF0054183F /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8227D2581E6900054183F /* XAPTaskParser.h */,
+				F6C8227E2581E6900054183F /* XAPTaskParser.m */,
+				F6C822832581FE430054183F /* XAPEngineerParser.h */,
+				F6C822842581FE430054183F /* XAPEngineerParser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		F6F8B7E5257736CC00C5C893 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +704,7 @@
 				F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */,
 				65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */,
 				65F16B6F2580F6170095C607 /* XAPIPAModel.h in Headers */,
+				F6C8227F2581E6900054183F /* XAPTaskParser.h in Headers */,
 				65F16A7F257522EC0095C607 /* XAPScriptExecutor.h in Headers */,
 				65F16A8D25753FB20095C607 /* XAPScriptPathManager.h in Headers */,
 				65F16BF7258120410095C607 /* UIRefreshControl+AFNetworking.h in Headers */,
@@ -719,6 +740,7 @@
 				65F16C0B258120410095C607 /* AFHTTPSessionManager.h in Headers */,
 				65F16BB625811C640095C607 /* XAPPgyerDistributor.h in Headers */,
 				65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */,
+				F6C82289258202930054183F /* XAPEngineerParser.h in Headers */,
 				65F16AD22577F13A0095C607 /* mz_zip.h in Headers */,
 				65F16A952577F10D0095C607 /* XAPZipTools.h in Headers */,
 				65F16B5C2580F4D70095C607 /* XAPPodModel.h in Headers */,
@@ -831,6 +853,7 @@
 				65F16AC12577F1390095C607 /* mz_strm_zlib.c in Sources */,
 				65F16BFD258120410095C607 /* AFImageDownloader.m in Sources */,
 				65F16C08258120410095C607 /* AFNetworkReachabilityManager.m in Sources */,
+				F6C822802581E6900054183F /* XAPTaskParser.m in Sources */,
 				65F16BFB258120410095C607 /* AFAutoPurgingImageCache.m in Sources */,
 				65F16B5D2580F4D70095C607 /* XAPPodModel.m in Sources */,
 				F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */,
@@ -857,6 +880,7 @@
 				65F16B772580F7B50095C607 /* XAPPBXObject.m in Sources */,
 				65F16B9E258114B50095C607 /* XAPConfigurationModel.m in Sources */,
 				65F16AD92577F13A0095C607 /* mz_strm.c in Sources */,
+				F6C822862581FE430054183F /* XAPEngineerParser.m in Sources */,
 				65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */,
 				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
 				65F16BA8258117F70095C607 /* XAPArchiveExtraConfigurationModel.m in Sources */,
