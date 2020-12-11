@@ -18,6 +18,7 @@
 #import "XAPPodModel.h"
 #import "XAPScriptor.h"
 #import "XAPGitModel.h"
+#import "XAPAppModel.h"
 
 @implementation XAPEngineerParser
 
@@ -192,6 +193,14 @@
     
     NSString *infoPlistFile = [XAPTools infoPlistFileWithXcarchiveFile:xcarchiveFile];
     NSString *appFile = [XAPTools appFileWithXcarchiveFile:xcarchiveFile];
+    
+}
+
+- (XAPAppModel *)parseAppWithAppFile:(NSString *)appFile {
+    if (![XAPTools isAppFile:appFile]) {
+        return nil;
+    }
+    
 }
 
 - (XAPGitModel *)parseGitWithGitFile:(NSString *)gitFile {

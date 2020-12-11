@@ -389,6 +389,7 @@
     }
     NSString *products = [xcarchiveFile stringByAppendingPathComponent:@"Products"];
     NSString *appFile = [products stringByAppendingPathComponent:applicationPath];
+    // FIXME: 其实也有可能不存在~，可以考虑在该路径下继续查找，如果还没有才宣布失败
     return appFile;
 }
 
