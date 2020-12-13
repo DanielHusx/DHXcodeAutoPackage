@@ -157,6 +157,7 @@
     if (executableFile) {
         *executableFile = result[kXAPKeyExecutableFile];
     }
+    
     return result;
 }
 

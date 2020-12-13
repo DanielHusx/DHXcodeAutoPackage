@@ -19,6 +19,8 @@
 #import "XAPScriptor.h"
 #import "XAPGitModel.h"
 #import "XAPAppModel.h"
+#import "XAPArchiveModel.h"
+#import "XAPIPAModel.h"
 
 @implementation XAPEngineerParser
 
@@ -31,6 +33,8 @@
     return _instance;
 }
 
+
+#pragma mark - public method
 - (XAPWorkspaceModel *)parseWorkspaceWithXcworkspaceFile:(NSString *)xcworkspaceFile {
     if (![XAPTools isXcworkspaceFile:xcworkspaceFile]) {
         return nil;
@@ -48,7 +52,9 @@
     }
     
     XAPWorkspaceModel *workspace = [[XAPWorkspaceModel alloc] init];
-    workspace
+    workspace.xcworkspaceFilePath = xcworkspaceFile;
+    workspace.projects = projects;
+    return workspace;
 }
 
 - (XAPProjectModel *)parseProjectWithXcodeprojFile:(NSString *)xcodeprojFile {
@@ -61,7 +67,10 @@
     NSError *error;
     
     // 所有字段基于此字典进行查找
-    NSDictionary *pbxprojDictionary = [NSPropertyListSerialization propertyListWithData:pbxprojData options:NSPropertyListMutableContainersAndLeaves format:nil error:&error];
+    NSDictionary *pbxprojDictionary = [NSPropertyListSerialization propertyListWithData:pbxprojData
+                                                                                options:NSPropertyListMutableContainersAndLeaves
+                                                                                 format:nil
+                                                                                  error:&error];
     if (error) {
         return nil;
     }
@@ -69,7 +78,7 @@
     XAPProjectModel *projectModel = [[XAPProjectModel alloc] init];
     projectModel.xcodeprojFilePath = xcodeprojFile;
     projectModel.pbxprojFilePath = pbxprojFile;
-    
+    // pbxproj文件结构是基于key-value的格式进行编码的，入口为rootObject
     NSString *rootObject = pbxprojDictionary[@"rootObject"];
     NSDictionary *projectDictionary = pbxprojDictionary[rootObject];
     projectModel.identifier = rootObject;
@@ -81,7 +90,7 @@
     projectModel.buildConfiguraionList = [self buildConfigurationListModelWithBuildConfigurationIds:projectBuildConfigurationIds
                                                                                   pbxprojDictionary:pbxprojDictionary
                                                                                   xcodeprojFilePath:xcodeprojFile];
-    
+    // Target查找
     NSArray *targetIds = projectDictionary[@"targets"];
     NSMutableArray *targetModels = [NSMutableArray arrayWithCapacity:targetIds.count];
     for (NSString *targetId in targetIds) {
@@ -92,7 +101,7 @@
         XAPTargetModel *targetModel = [[XAPTargetModel alloc] init];
         targetModel.name = name;
         targetModel.identifier = targetId;
-        
+        // Target配置
         NSDictionary *targetConfigurationList = pbxprojDictionary[targetBuildConfigurationListId];
         NSArray *buildConfigurationIds = targetConfigurationList[@"buildConfigurations"];
         targetModel.buildConfigurationList = [self buildConfigurationListModelWithBuildConfigurationIds:buildConfigurationIds
@@ -105,6 +114,72 @@
     return projectModel;
 }
 
+- (XAPIPAModel *)parseIPAWithIPAFile:(NSString *)ipaFile {
+    if (![XAPTools isIPAFile:ipaFile]) {
+        return nil;
+    }
+    NSString *unzippedPath;
+    NSString *appFile = [XAPTools appFileWithIPAFile:ipaFile unzippedPath:&unzippedPath];
+    if (!appFile) {
+        return nil;
+    }
+    
+    XAPIPAModel *ipa = [[XAPIPAModel alloc] init];
+    ipa.ipaFilePath = ipaFile;
+    ipa.app = [self parseAppWithAppFile:appFile];
+    return ipa;
+}
+
+- (XAPArchiveModel *)parseArchiveWithXcarchiveFile:(NSString *)xcarchiveFile {
+    if (![XAPTools isXcarchiveFile:xcarchiveFile]) {
+        return nil;
+    }
+    
+    NSString *appFile = [XAPTools appFileWithXcarchiveFile:xcarchiveFile];
+    
+    XAPArchiveModel *archiver = [[XAPArchiveModel alloc] init];
+    archiver.xcarchiveFilePath = xcarchiveFile;
+    archiver.infoPlist = [self infoPlistModelWithXcarchiveFilePath:xcarchiveFile];
+    archiver.app = [self parseAppWithAppFile:appFile];
+    return archiver;
+}
+
+- (XAPGitModel *)parseGitWithGitFile:(NSString *)gitFile {
+    if (![XAPTools isGitFile:gitFile]) {
+        return nil;
+    }
+    NSString *gitDirectory = [XAPTools directoryPathWithFilePath:gitFile];
+    XAPScriptor *scriptor = [XAPScriptor sharedInstance];
+    NSError *error;
+    
+    NSString *currentBranch = [scriptor gitCurrentBranchWithGitDirectory:gitDirectory error:&error];
+    if (error) {
+        return nil;
+    }
+    
+    NSArray *branchs = [scriptor fetchGitBranchsWithGitDirectory:gitDirectory error:&error];
+    if (error) {
+        return nil;
+    }
+    
+    XAPGitModel *git = [[XAPGitModel alloc] init];
+    git.gitFilePath = gitFile;
+    git.currentBranch = currentBranch;
+    git.branchs = branchs;
+    
+    return git;
+}
+
+- (XAPPodModel *)parsePodWithPodFile:(NSString *)podFile {
+    if (![XAPTools isPodfileFile:podFile]) {
+        return nil;
+    }
+    XAPPodModel *podModel = [[XAPPodModel alloc] init];
+    podModel.podfileFilePath = podFile;
+    return podModel;
+}
+
+#pragma mark - private method
 - (XAPBuildConfigurationListModel *)buildConfigurationListModelWithBuildConfigurationIds:(NSArray *)buildConfigurationIds
                                                                        pbxprojDictionary:(NSDictionary *)pbxprojDictionary
                                                                        xcodeprojFilePath:(NSString *)xcodeprojFilePath {
@@ -157,9 +232,34 @@
     return infoPlistModel;
 }
 
+- (XAPInfoPlistModel *)infoPlistModelWithAppFilePath:(NSString *)appFilePath {
+    XAPInfoPlistModel *infoPlistModel = [[XAPInfoPlistModel alloc] init];
+    NSString *infoPlistPath = [XAPTools infoPlistFileWithAppFile:appFilePath];
+    NSString *displayName;
+    NSString *productName;
+    NSString *bundleIdentifier;
+    NSString *version;
+    NSString *shortVersion;
+    NSString *executableFile;
+    [XAPInfoPlistTools parseProjectOrAppInfoPlistFileWithPlistFileOrDictionary:infoPlistPath
+                                                                   displayName:&displayName
+                                                                   productName:&productName
+                                                              bundleIdentifier:&bundleIdentifier
+                                                                  shortVersion:&shortVersion
+                                                                       version:&version
+                                                                executableFile:&executableFile];
+    infoPlistModel.bundleIdentifier = bundleIdentifier;
+    infoPlistModel.bundleName = productName;
+    infoPlistModel.bundleDisplayName = displayName;
+    infoPlistModel.bundleVersion = version;
+    infoPlistModel.bundleShortVersion = shortVersion;
+    infoPlistModel.executableFile = executableFile;
+    return infoPlistModel;
+}
+
 - (XAPInfoPlistModel *)infoPlistModelWithXcarchiveFilePath:(NSString *)xcarchiveFilePath {
     XAPInfoPlistModel *infoPlistModel = [[XAPInfoPlistModel alloc] init];
-    NSString *infoPlistFile = [XAPTools infoPlistFileWithXcarchiveFile:xcarchiveFile];
+    NSString *infoPlistFile = [XAPTools infoPlistFileWithXcarchiveFile:xcarchiveFilePath];
     NSString *schemeName;
     NSString *bundleIdentifier;
     NSString *version;
@@ -181,61 +281,16 @@
     return infoPlistModel;
 }
 
-
-- (XAPIPAModel *)parseIPAWithIPAFile:(NSString *)ipaFile {
-    
-}
-
-- (XAPArchiveModel *)parseArchiveWithXcarchiveFile:(NSString *)xcarchiveFile {
-    if (![XAPTools isXcarchiveFile:xcarchiveFile]) {
-        return nil;
-    }
-    
-    NSString *infoPlistFile = [XAPTools infoPlistFileWithXcarchiveFile:xcarchiveFile];
-    NSString *appFile = [XAPTools appFileWithXcarchiveFile:xcarchiveFile];
-    
-}
-
 - (XAPAppModel *)parseAppWithAppFile:(NSString *)appFile {
     if (![XAPTools isAppFile:appFile]) {
         return nil;
     }
-    
-}
-
-- (XAPGitModel *)parseGitWithGitFile:(NSString *)gitFile {
-    if (![XAPTools isGitFile:gitFile]) {
-        return nil;
-    }
-    NSString *gitDirectory = [XAPTools directoryPathWithFilePath:gitFile];
-    XAPScriptor *scriptor = [XAPScriptor sharedInstance];
-    NSError *error;
-    
-    NSString *currentBranch = [scriptor gitCurrentBranchWithGitDirectory:gitDirectory error:&error];
-    if (error) {
-        return nil;
-    }
-    
-    NSArray *branchs = [scriptor fetchGitBranchsWithGitDirectory:gitDirectory error:&error];
-    if (error) {
-        return nil;
-    }
-    
-    XAPGitModel *git = [[XAPGitModel alloc] init];
-    git.gitFilePath = gitFile;
-    git.currentBranch = currentBranch;
-    git.branchs = branchs;
-    
-    return git;
-}
-
-- (XAPPodModel *)parsePodWithPodFile:(NSString *)podFile {
-    if (![XAPTools isPodfileFile:podFile]) {
-        return nil;
-    }
-    XAPPodModel *podModel = [[XAPPodModel alloc] init];
-    podModel.podfileFilePath = podFile;
-    return podModel;
+    XAPAppModel *app = [[XAPAppModel alloc] init];
+    app.appFilePath = appFile;
+    app.infoPlist = [self infoPlistModelWithAppFilePath:appFile];
+    NSString *embeddedProvisionFile = [XAPTools embeddedProvisionFileWithAppFile:appFile];
+    app.embeddedProfile = [[XAPProvisioningProfileManager manager] fetchProvisioningProfilesWithPath:embeddedProvisionFile];
+    return app;
 }
 
 @end

@@ -7,6 +7,9 @@
 
 #import "XAPTaskParser.h"
 #import "XAPTaskModel.h"
+#import "XAPEngineerParser.h"
+#import "XAPEngineerModel.h"
+#import "XAPConfigurationModel.h"
 
 @implementation XAPTaskParser
 
@@ -96,5 +99,19 @@
     
     return nil;
 }
+
+- (XAPTaskModel *)parseTaskModelWithXcrchiveFilePath:(NSString *)xcarchiveFilePath {
+    XAPTaskModel *task = [[XAPTaskModel alloc] init];
+    task.path = xcarchiveFilePath;
+    
+    XAPEngineerModel *engineer = [[XAPEngineerModel alloc] init];
+    engineer.archive = [[XAPEngineerParser sharedParser] parseArchiveWithXcarchiveFile:xcarchiveFilePath];
+    
+    XAPConfigurationModel *configuration = [[XAPConfigurationModel alloc] init];
+    
+    return task;
+}
+
+
 
 @end

@@ -18,9 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// App信息
 /// @attention 此属性下的文件为临时文件，不可靠
 @property (nonatomic, strong) XAPAppModel *app;
-/// info.plist信息
-/// @attention 此属性下的文件为临时文件，不可靠
-@property (nonatomic, strong) XAPInfoPlistModel *infoPlist;
 
 @end
 
