@@ -147,6 +147,8 @@
 		F6C822802581E6900054183F /* XAPTaskParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C8227E2581E6900054183F /* XAPTaskParser.m */; };
 		F6C822862581FE430054183F /* XAPEngineerParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C822842581FE430054183F /* XAPEngineerParser.m */; };
 		F6C82289258202930054183F /* XAPEngineerParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C822832581FE430054183F /* XAPEngineerParser.h */; };
+		F6C82325258B4AA20054183F /* XAPConfigurationParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C82323258B4AA20054183F /* XAPConfigurationParser.h */; };
+		F6C82326258B4AA20054183F /* XAPConfigurationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C82324258B4AA20054183F /* XAPConfigurationParser.m */; };
 		F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6F8B7EA257736EB00C5C893 /* XAPProvisioningProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */; };
 		F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F8B7EE2577387200C5C893 /* XAPTools.h */; };
@@ -298,6 +300,8 @@
 		F6C8227E2581E6900054183F /* XAPTaskParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPTaskParser.m; sourceTree = "<group>"; };
 		F6C822832581FE430054183F /* XAPEngineerParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPEngineerParser.h; sourceTree = "<group>"; };
 		F6C822842581FE430054183F /* XAPEngineerParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPEngineerParser.m; sourceTree = "<group>"; };
+		F6C82323258B4AA20054183F /* XAPConfigurationParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPConfigurationParser.h; sourceTree = "<group>"; };
+		F6C82324258B4AA20054183F /* XAPConfigurationParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPConfigurationParser.m; sourceTree = "<group>"; };
 		F6F8B7DC2576275F00C5C893 /* XAPErrorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPErrorMacro.h; sourceTree = "<group>"; };
 		F6F8B7E7257736EB00C5C893 /* XAPProvisioningProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPProvisioningProfileManager.h; sourceTree = "<group>"; };
 		F6F8B7E8257736EB00C5C893 /* XAPProvisioningProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPProvisioningProfileManager.m; sourceTree = "<group>"; };
@@ -650,6 +654,8 @@
 				F6C8227E2581E6900054183F /* XAPTaskParser.m */,
 				F6C822832581FE430054183F /* XAPEngineerParser.h */,
 				F6C822842581FE430054183F /* XAPEngineerParser.m */,
+				F6C82323258B4AA20054183F /* XAPConfigurationParser.h */,
+				F6C82324258B4AA20054183F /* XAPConfigurationParser.m */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				65F16BB125811C590095C607 /* XAPFirDistributor.h in Headers */,
 				65F16B80258103620095C607 /* XAPWorkspaceModel.h in Headers */,
 				65F16BFE258120410095C607 /* AFSecurityPolicy.h in Headers */,
+				F6C82325258B4AA20054183F /* XAPConfigurationParser.h in Headers */,
 				65F16B4E2580F2330095C607 /* XAPInfoPlistModel.h in Headers */,
 				65F16B8F2581041E0095C607 /* XAPBuildConfigurationListModel.h in Headers */,
 				65F16AD42577F13A0095C607 /* mz.h in Headers */,
@@ -875,6 +882,7 @@
 				65F16B562580F4390095C607 /* XAPAppModel.m in Sources */,
 				65F16B952581042C0095C607 /* XAPBuildConfigurationModel.m in Sources */,
 				65F16ABD2577F1390095C607 /* mz_strm_os_posix.c in Sources */,
+				F6C82326258B4AA20054183F /* XAPConfigurationParser.m in Sources */,
 				65F16C06258120410095C607 /* AFURLRequestSerialization.m in Sources */,
 				65F16B642580F50B0095C607 /* XAPGitModel.m in Sources */,
 				65F16B772580F7B50095C607 /* XAPPBXObject.m in Sources */,

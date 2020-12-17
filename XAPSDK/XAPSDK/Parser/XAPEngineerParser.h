@@ -8,29 +8,18 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class XAPWorkspaceModel;
-@class XAPProjectModel;
-@class XAPPodModel;
-@class XAPGitModel;
-@class XAPArchiveModel;
-@class XAPIPAModel;
 
 @interface XAPEngineerParser : NSObject
 
 /// 单例
 + (instancetype)sharedParser;
 
-- (XAPWorkspaceModel *)parseWorkspaceWithXcworkspaceFile:(NSString *)xcworkspaceFile;
-
-- (XAPProjectModel *)parseProjectWithXcodeprojFile:(NSString *)xcodeprojFile;
-
-- (XAPIPAModel *)parseIPAWithIPAFile:(NSString *)ipaFile;
-
-- (XAPArchiveModel *)parseArchiveWithXcarchiveFile:(NSString *)xcarchiveFile;
-
-- (XAPGitModel *)parseGitWithGitFile:(NSString *)gitFile;
-
-- (XAPPodModel *)parsePodWithPodFile:(NSString *)podFile;
+/// 从路径中解析工程信息
+/// @param path 路径
+/// @param error [out] 错误信息
+/// @return 返回解析后的工程信息
+- (XAPEngineerModel *)parseEngineerWithPath:(NSString *)path
+                                      error:(NSError * __autoreleasing _Nullable * _Nullable)error;
 
 @end
 
