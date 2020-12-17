@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65B5081B258B99C700232D90 /* XAPChainOfResponsibilityProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B5081A258B99C700232D90 /* XAPChainOfResponsibilityProtocol.h */; };
+		65B50820258B9A5C00232D90 /* XAPIPAModel+XAPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B5081E258B9A5C00232D90 /* XAPIPAModel+XAPParser.h */; };
+		65B50821258B9A5C00232D90 /* XAPIPAModel+XAPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B5081F258B9A5C00232D90 /* XAPIPAModel+XAPParser.m */; };
+		65B50825258B9A8700232D90 /* XAPArchiveModel+XAPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B50823258B9A8700232D90 /* XAPArchiveModel+XAPParser.h */; };
+		65B50826258B9A8700232D90 /* XAPArchiveModel+XAPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B50824258B9A8700232D90 /* XAPArchiveModel+XAPParser.m */; };
+		65B5082A258B9AB000232D90 /* XAPGitModel+XAPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B50828258B9AB000232D90 /* XAPGitModel+XAPParser.h */; };
+		65B5082B258B9AB000232D90 /* XAPGitModel+XAPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B50829258B9AB000232D90 /* XAPGitModel+XAPParser.m */; };
+		65B5082F258B9ABF00232D90 /* XAPPodModel+XAPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B5082D258B9ABF00232D90 /* XAPPodModel+XAPParser.h */; };
+		65B50830258B9ABF00232D90 /* XAPPodModel+XAPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B5082E258B9ABF00232D90 /* XAPPodModel+XAPParser.m */; };
+		65B50834258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B50832258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.h */; };
+		65B50835258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B50833258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.m */; };
+		65B50839258B9AE100232D90 /* XAPProjectModel+XAPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B50837258B9AE100232D90 /* XAPProjectModel+XAPParser.h */; };
+		65B5083A258B9AE100232D90 /* XAPProjectModel+XAPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B50838258B9AE100232D90 /* XAPProjectModel+XAPParser.m */; };
+		65B5083E258B9CC500232D90 /* XAPDirectoryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B5083C258B9CC500232D90 /* XAPDirectoryParser.h */; };
+		65B5083F258B9CC500232D90 /* XAPDirectoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B5083D258B9CC500232D90 /* XAPDirectoryParser.m */; };
+		65B50843258B9D7500232D90 /* XAPPathParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B50841258B9D7500232D90 /* XAPPathParser.h */; };
+		65B50844258B9D7500232D90 /* XAPPathParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B50842258B9D7500232D90 /* XAPPathParser.m */; };
 		65F16A5A257521110095C607 /* XAPSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A58257521110095C607 /* XAPSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65F16A6A257522B10095C607 /* XAPScriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16A68257522B10095C607 /* XAPScriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65F16A6B257522B10095C607 /* XAPScriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16A69257522B10095C607 /* XAPScriptor.m */; };
@@ -156,6 +173,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65B5081A258B99C700232D90 /* XAPChainOfResponsibilityProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPChainOfResponsibilityProtocol.h; sourceTree = "<group>"; };
+		65B5081E258B9A5C00232D90 /* XAPIPAModel+XAPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAPIPAModel+XAPParser.h"; sourceTree = "<group>"; };
+		65B5081F258B9A5C00232D90 /* XAPIPAModel+XAPParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XAPIPAModel+XAPParser.m"; sourceTree = "<group>"; };
+		65B50823258B9A8700232D90 /* XAPArchiveModel+XAPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAPArchiveModel+XAPParser.h"; sourceTree = "<group>"; };
+		65B50824258B9A8700232D90 /* XAPArchiveModel+XAPParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XAPArchiveModel+XAPParser.m"; sourceTree = "<group>"; };
+		65B50828258B9AB000232D90 /* XAPGitModel+XAPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAPGitModel+XAPParser.h"; sourceTree = "<group>"; };
+		65B50829258B9AB000232D90 /* XAPGitModel+XAPParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XAPGitModel+XAPParser.m"; sourceTree = "<group>"; };
+		65B5082D258B9ABF00232D90 /* XAPPodModel+XAPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAPPodModel+XAPParser.h"; sourceTree = "<group>"; };
+		65B5082E258B9ABF00232D90 /* XAPPodModel+XAPParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XAPPodModel+XAPParser.m"; sourceTree = "<group>"; };
+		65B50832258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAPWorkspaceModel+XAPParser.h"; sourceTree = "<group>"; };
+		65B50833258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XAPWorkspaceModel+XAPParser.m"; sourceTree = "<group>"; };
+		65B50837258B9AE100232D90 /* XAPProjectModel+XAPParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XAPProjectModel+XAPParser.h"; sourceTree = "<group>"; };
+		65B50838258B9AE100232D90 /* XAPProjectModel+XAPParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XAPProjectModel+XAPParser.m"; sourceTree = "<group>"; };
+		65B5083C258B9CC500232D90 /* XAPDirectoryParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPDirectoryParser.h; sourceTree = "<group>"; };
+		65B5083D258B9CC500232D90 /* XAPDirectoryParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPDirectoryParser.m; sourceTree = "<group>"; };
+		65B50841258B9D7500232D90 /* XAPPathParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPPathParser.h; sourceTree = "<group>"; };
+		65B50842258B9D7500232D90 /* XAPPathParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPPathParser.m; sourceTree = "<group>"; };
 		65F16A55257521110095C607 /* XAPSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAPSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F16A58257521110095C607 /* XAPSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPSDK.h; sourceTree = "<group>"; };
 		65F16A59257521110095C607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -322,6 +356,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65B50819258B98E400232D90 /* EngineerCategory */ = {
+			isa = PBXGroup;
+			children = (
+				65B5081A258B99C700232D90 /* XAPChainOfResponsibilityProtocol.h */,
+				65B5081E258B9A5C00232D90 /* XAPIPAModel+XAPParser.h */,
+				65B5081F258B9A5C00232D90 /* XAPIPAModel+XAPParser.m */,
+				65B50823258B9A8700232D90 /* XAPArchiveModel+XAPParser.h */,
+				65B50824258B9A8700232D90 /* XAPArchiveModel+XAPParser.m */,
+				65B50828258B9AB000232D90 /* XAPGitModel+XAPParser.h */,
+				65B50829258B9AB000232D90 /* XAPGitModel+XAPParser.m */,
+				65B5082D258B9ABF00232D90 /* XAPPodModel+XAPParser.h */,
+				65B5082E258B9ABF00232D90 /* XAPPodModel+XAPParser.m */,
+				65B50832258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.h */,
+				65B50833258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.m */,
+				65B50837258B9AE100232D90 /* XAPProjectModel+XAPParser.h */,
+				65B50838258B9AE100232D90 /* XAPProjectModel+XAPParser.m */,
+				65B5083C258B9CC500232D90 /* XAPDirectoryParser.h */,
+				65B5083D258B9CC500232D90 /* XAPDirectoryParser.m */,
+				65B50841258B9D7500232D90 /* XAPPathParser.h */,
+				65B50842258B9D7500232D90 /* XAPPathParser.m */,
+			);
+			path = EngineerCategory;
+			sourceTree = "<group>";
+		};
 		65F16A4B257521110095C607 = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +714,7 @@
 				F6C822842581FE430054183F /* XAPEngineerParser.m */,
 				F6C82323258B4AA20054183F /* XAPConfigurationParser.h */,
 				F6C82324258B4AA20054183F /* XAPConfigurationParser.m */,
+				65B50819258B98E400232D90 /* EngineerCategory */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -707,6 +766,7 @@
 				65F16AC62577F13A0095C607 /* mz_strm_split.h in Headers */,
 				65F16B9D258114B50095C607 /* XAPConfigurationModel.h in Headers */,
 				65F16A852575236E0095C607 /* XAPConstant.h in Headers */,
+				65B50834258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.h in Headers */,
 				F6F8B7E9257736EB00C5C893 /* XAPProvisioningProfileManager.h in Headers */,
 				65F16ADB2577F13A0095C607 /* SSZipArchive.h in Headers */,
 				65F16B6F2580F6170095C607 /* XAPIPAModel.h in Headers */,
@@ -719,16 +779,21 @@
 				65F16AD82577F13A0095C607 /* mz_strm_mem.h in Headers */,
 				F6C821FC258070550054183F /* XAPRuntimeTools.h in Headers */,
 				65F16BF1258120410095C607 /* UIWebView+AFNetworking.h in Headers */,
+				65B50843258B9D7500232D90 /* XAPPathParser.h in Headers */,
 				65F16AC02577F1390095C607 /* mz_compat.h in Headers */,
 				65F16AC32577F1390095C607 /* mz_os.h in Headers */,
 				65F16BC125811FEF0095C607 /* XAPDistributionManager.h in Headers */,
 				65F16B6A2580F5A70095C607 /* XAPArchiveModel.h in Headers */,
 				65F16A70257522C10095C607 /* XAPScriptModel.h in Headers */,
+				65B50839258B9AE100232D90 /* XAPProjectModel+XAPParser.h in Headers */,
 				65F16BF4258120410095C607 /* UIProgressView+AFNetworking.h in Headers */,
 				65F16BF0258120410095C607 /* AFAutoPurgingImageCache.h in Headers */,
+				65B50825258B9A8700232D90 /* XAPArchiveModel+XAPParser.h in Headers */,
 				65F16C0A258120410095C607 /* AFCompatibilityMacros.h in Headers */,
+				65B5083E258B9CC500232D90 /* XAPDirectoryParser.h in Headers */,
 				65F16C07258120410095C607 /* AFNetworking.h in Headers */,
 				65F16BF6258120410095C607 /* UIKit+AFNetworking.h in Headers */,
+				65B5082A258B9AB000232D90 /* XAPGitModel+XAPParser.h in Headers */,
 				65F16AD72577F13A0095C607 /* mz_crypt.h in Headers */,
 				65F16C01258120410095C607 /* AFURLRequestSerialization.h in Headers */,
 				65F16ADC2577F13A0095C607 /* SSZipCommon.h in Headers */,
@@ -741,7 +806,9 @@
 				65F16B85258103A50095C607 /* XAPProjectModel.h in Headers */,
 				65F16AC92577F13A0095C607 /* mz_strm.h in Headers */,
 				65F16ABC2577F1390095C607 /* ZipArchive.h in Headers */,
+				65B5081B258B99C700232D90 /* XAPChainOfResponsibilityProtocol.h in Headers */,
 				65F16B8A2581040E0095C607 /* XAPTargetModel.h in Headers */,
+				65B5082F258B9ABF00232D90 /* XAPPodModel+XAPParser.h in Headers */,
 				65F16BA7258117F70095C607 /* XAPArchiveExtraConfigurationModel.h in Headers */,
 				65F16C0B258120410095C607 /* AFHTTPSessionManager.h in Headers */,
 				65F16BB625811C640095C607 /* XAPPgyerDistributor.h in Headers */,
@@ -756,6 +823,7 @@
 				65F16ACF2577F13A0095C607 /* mz_strm_pkcrypt.h in Headers */,
 				F6F8B7F02577387200C5C893 /* XAPTools.h in Headers */,
 				65F16A5A257521110095C607 /* XAPSDK.h in Headers */,
+				65B50820258B9A5C00232D90 /* XAPIPAModel+XAPParser.h in Headers */,
 				65F16BFC258120410095C607 /* AFNetworkActivityIndicatorManager.h in Headers */,
 				65F16B942581042C0095C607 /* XAPBuildConfigurationModel.h in Headers */,
 				65F16AF72578065F0095C607 /* XAPProvisioningProfileModel.h in Headers */,
@@ -877,6 +945,7 @@
 				65F16AD62577F13A0095C607 /* mz_strm_split.c in Sources */,
 				65F16ACB2577F13A0095C607 /* mz_crypt.c in Sources */,
 				65F16A962577F10D0095C607 /* XAPZipTools.m in Sources */,
+				65B50835258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.m in Sources */,
 				65F16B81258103620095C607 /* XAPWorkspaceModel.m in Sources */,
 				65F16C03258120410095C607 /* AFHTTPSessionManager.m in Sources */,
 				65F16B562580F4390095C607 /* XAPAppModel.m in Sources */,
@@ -884,11 +953,13 @@
 				65F16ABD2577F1390095C607 /* mz_strm_os_posix.c in Sources */,
 				F6C82326258B4AA20054183F /* XAPConfigurationParser.m in Sources */,
 				65F16C06258120410095C607 /* AFURLRequestSerialization.m in Sources */,
+				65B5083A258B9AE100232D90 /* XAPProjectModel+XAPParser.m in Sources */,
 				65F16B642580F50B0095C607 /* XAPGitModel.m in Sources */,
 				65F16B772580F7B50095C607 /* XAPPBXObject.m in Sources */,
 				65F16B9E258114B50095C607 /* XAPConfigurationModel.m in Sources */,
 				65F16AD92577F13A0095C607 /* mz_strm.c in Sources */,
 				F6C822862581FE430054183F /* XAPEngineerParser.m in Sources */,
+				65B50821258B9A5C00232D90 /* XAPIPAModel+XAPParser.m in Sources */,
 				65F16A80257522EC0095C607 /* XAPScriptExecutor.m in Sources */,
 				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
 				65F16BA8258117F70095C607 /* XAPArchiveExtraConfigurationModel.m in Sources */,
@@ -902,19 +973,24 @@
 				65F16BBC25811C710095C607 /* XAPAppStoreDistributor.m in Sources */,
 				65F16BA3258116390095C607 /* XAPProjectExtraConfigurationModel.m in Sources */,
 				65F16BEC258120410095C607 /* UIRefreshControl+AFNetworking.m in Sources */,
+				65B5083F258B9CC500232D90 /* XAPDirectoryParser.m in Sources */,
 				65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */,
 				65F16AD12577F13A0095C607 /* mz_os.c in Sources */,
 				65F16AC82577F13A0095C607 /* mz_crypt_apple.c in Sources */,
 				65F16C11258123EB0095C607 /* XAPTaskModel.m in Sources */,
 				65F16B86258103A50095C607 /* XAPProjectModel.m in Sources */,
 				F6F8B7F12577387200C5C893 /* XAPTools.m in Sources */,
+				65B50844258B9D7500232D90 /* XAPPathParser.m in Sources */,
 				65F16AD52577F13A0095C607 /* mz_strm_buf.c in Sources */,
 				65F16C05258120410095C607 /* AFURLSessionManager.m in Sources */,
 				65F16BEF258120410095C607 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				65F16BFA258120410095C607 /* UIWebView+AFNetworking.m in Sources */,
+				65B50830258B9ABF00232D90 /* XAPPodModel+XAPParser.m in Sources */,
 				65F16B4F2580F2330095C607 /* XAPInfoPlistModel.m in Sources */,
+				65B5082B258B9AB000232D90 /* XAPGitModel+XAPParser.m in Sources */,
 				65F16C09258120410095C607 /* AFSecurityPolicy.m in Sources */,
 				65F16C02258120410095C607 /* AFURLResponseSerialization.m in Sources */,
+				65B50826258B9A8700232D90 /* XAPArchiveModel+XAPParser.m in Sources */,
 				65F16ACE2577F13A0095C607 /* mz_compat.c in Sources */,
 				65F16BB725811C640095C607 /* XAPPgyerDistributor.m in Sources */,
 			);
