@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 下一个责任人
 @property (nonatomic, strong) id <XAPChainOfResponsibilityProtocol> nextHandler;
 /// 接收处理信息
-- (XAPEngineerModel *)handlePath:(NSString *)path;
+- (XAPEngineerModel *)handlePath:(NSString *)path error:(NSError * __autoreleasing _Nullable * _Nullable)error;
 
 @end
 

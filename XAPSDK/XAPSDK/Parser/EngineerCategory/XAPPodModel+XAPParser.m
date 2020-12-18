@@ -18,9 +18,9 @@
     objc_setAssociatedObject(self, @selector(nextHandler), nextHandler, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (XAPEngineerModel *)handlePath:(NSString *)path {
+- (XAPEngineerModel *)handlePath:(NSString *)path error:(NSError * __autoreleasing _Nullable * _Nullable)error {
     if (![XAPTools isPodfileFile:path]) {
-        return [self.nextHandler handlePath:path];
+        return [self.nextHandler handlePath:path error:error];
     }
     return nil;
 }

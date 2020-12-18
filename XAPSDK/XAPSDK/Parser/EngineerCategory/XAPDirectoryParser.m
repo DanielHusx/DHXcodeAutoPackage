@@ -9,7 +9,7 @@
 
 @implementation XAPDirectoryParser
 
-- (XAPEngineerModel *)handlePath:(NSString *)path {
+- (XAPEngineerModel *)handlePath:(NSString *)path error:(NSError * __autoreleasing _Nullable * _Nullable)error {
     if (![XAPTools isDirectoryPath:path]) {
         return nil;
     }
