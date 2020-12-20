@@ -38,7 +38,7 @@
                   error:(NSError *__autoreleasing  _Nullable *)error {
     // 解析工程信息
     XAPEngineerModel *engineerInfo = [self.engineerParser parseEngineerWithPath:path error:error];
-    if (!engineerInfo) {
+    if (![engineerInfo isKindOfClass:[XAPEngineerModel class]]) {
         return nil;
     }
     // 配置对应配置

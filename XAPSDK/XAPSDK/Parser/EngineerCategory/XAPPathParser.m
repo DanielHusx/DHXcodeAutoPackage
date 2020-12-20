@@ -9,12 +9,12 @@
 
 @implementation XAPPathParser
 
-- (XAPEngineerModel *)handlePath:(NSString *)path error:(NSError * __autoreleasing _Nullable * _Nullable)error {
+- (id)handlePath:(NSString *)path externalInfo:(NSDictionary *)externalInfo error:(NSError *__autoreleasing  _Nullable *)error {
     if (![XAPTools isPathExist:path]) {
         return nil;
     }
     
-    return [self.nextHandler handlePath:path error:error];
+    return [self.nextHandler handlePath:path externalInfo:externalInfo error:error];
 }
 
 

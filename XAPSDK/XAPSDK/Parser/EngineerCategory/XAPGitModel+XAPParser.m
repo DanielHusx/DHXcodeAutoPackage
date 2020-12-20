@@ -8,6 +8,7 @@
 #import "XAPGitModel+XAPParser.h"
 #import <objc/runtime.h>
 #import "XAPScriptor.h"
+#import "XAPEngineerModel.h"
 
 @implementation XAPGitModel (XAPParser)
 
@@ -19,11 +20,26 @@
     objc_setAssociatedObject(self, @selector(nextHandler), nextHandler, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (XAPEngineerModel *)handlePath:(NSString *)path error:(NSError * __autoreleasing _Nullable * _Nullable)error {
-    if (![XAPTools isGitFile:path]) {
-        return [self.nextHandler handlePath:path error:error];
+- (id)handlePath:(NSString *)path externalInfo:(NSDictionary *)externalInfo error:(NSError *__autoreleasing  _Nullable *)error {
+    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:externalInfo];
+    if (externalInfo) {
+        id gitInfo = externalInfo[kXAPChainOfResponsibilityExternalKeyGit];
+        // 如果gitInfo为字符串则是.git的路径；如果是此类，则是已经解析的git信息；其他情况，搞错信息，则移除校正
+        if ([gitInfo isKindOfClass:[NSString class]]) {
+            if (![XAPTools isGitFile:gitInfo]) {
+                // TODO: 暴露路径错误信息
+                [result removeObjectForKey:kXAPChainOfResponsibilityExternalKeyGit];
+            } else {
+                // 解析
+                XAPGitModel *git = [self parseGitWithGitFile:gitInfo];
+                [result setValue:git forKey:kXAPChainOfResponsibilityExternalKeyGit];
+            }
+        } else if (![gitInfo isKindOfClass:[self class]]) {
+            // 未知错误信息被赋值，移除
+            [result removeObjectForKey:kXAPChainOfResponsibilityExternalKeyGit];
+        }
     }
-    return nil;
+    return [self.nextHandler handlePath:path externalInfo:result error:error];
 }
 
 

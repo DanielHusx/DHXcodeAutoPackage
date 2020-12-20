@@ -23,9 +23,9 @@
     objc_setAssociatedObject(self, @selector(nextHandler), nextHandler, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (XAPEngineerModel *)handlePath:(NSString *)path error:(NSError * __autoreleasing _Nullable * _Nullable)error {
+- (id)handlePath:(NSString *)path externalInfo:(NSDictionary *)externalInfo error:(NSError *__autoreleasing  _Nullable *)error {
     if (![XAPTools isXcarchiveFile:path]) {
-        return [self.nextHandler handlePath:path error:error];
+        return [self.nextHandler handlePath:path externalInfo:externalInfo error:error];
     }
     
     XAPEngineerModel *engineer = [self parseEngineerWithXcarchiveFile:path];
@@ -35,7 +35,7 @@
 
 #pragma mark - parser method
 - (XAPEngineerModel *)parseEngineerWithXcarchiveFile:(NSString *)xcarchiverFile {
-    XAPArchiveModel *archive = [self parseArchiveWithXcarchiveFile:path];
+    XAPArchiveModel *archive = [self parseArchiveWithXcarchiveFile:xcarchiverFile];
     if (!archive) {
         return nil;
     }

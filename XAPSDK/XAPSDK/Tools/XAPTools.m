@@ -82,7 +82,7 @@
 
 + (BOOL)isXcodeprojFile:(NSString *)path {
     if (![self isDirectoryPath:path]) { return NO; }
-    if (![path containsString:@".xcodeproj"]) { return NO; }
+    if (![path.pathExtension isEqualToString:@"xcodeproj"]) { return NO; }
     BOOL isDir = NO;
     BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:[self pbxprojFileWithXcodeprojFile:path]
                                                         isDirectory:&isDir];
@@ -91,7 +91,7 @@
 
 + (BOOL)isGitFile:(NSString *)path {
     if (![self isDirectoryPath:path]) { return NO; }
-    if (![path containsString:@".git"]) { return NO; }
+    if (![path.lastPathComponent isEqualToString:@".git"]) { return NO; }
     BOOL isDir = NO;
     BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path
                                                         isDirectory:&isDir];
