@@ -39,6 +39,7 @@
     if (engineerInfo.workspace || engineerInfo.project || engineerInfo.archive) {
         archiveExtra = [[XAPArchiveExtraConfigurationModel alloc] init];
         archiveExtra.channel = kXAPChannelAdHoc;
+        // 此处不匹配描述文件，没有意义
     }
     
     XAPConfigurationModel *configuration = [[XAPConfigurationModel alloc] init];

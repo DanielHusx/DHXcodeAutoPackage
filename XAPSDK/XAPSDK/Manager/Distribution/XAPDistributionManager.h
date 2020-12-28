@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 单例
 + (instancetype)manager;
 
-
 /// POST请求
 /// @param URLString 请求地址
 /// @param parameters 请求参数
