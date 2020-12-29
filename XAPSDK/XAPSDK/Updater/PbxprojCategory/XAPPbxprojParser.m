@@ -30,10 +30,10 @@ NS_INLINE BOOL XAPRangeNotFound(NSRange r) {
 
 @implementation NSString (XAPPbxprojParser)
 #pragma mark - *** 表达式操作(Public) ***
-- (BOOL)setupAssigmentForValue:(NSString *)value
-                       withKey:(NSString *)key
-                         range:(NSRange)range
-                replacedString:(NSString **)replacedString {
+- (BOOL)updateAssigmentForValue:(NSString *)value
+                        withKey:(NSString *)key
+                          range:(NSRange)range
+                 replacedString:(NSString **)replacedString {
     NSString *currentValue;
     NSRange currentValueRange;
     // 查找到现在值的区间
@@ -416,11 +416,11 @@ NS_INLINE BOOL XAPRangeNotFound(NSRange r) {
 @end
 
 #pragma mark -
-@implementation NSMutableString (XAPPbxprojParserExtension)
+@implementation NSMutableString (XAPPbxprojParser)
 
-- (BOOL)setupAssigmentForValue:(NSString *)value
-                       withKey:(NSString *)key
-                         range:(NSRange)range {
+- (BOOL)updateAssigmentForValue:(NSString *)value
+                        withKey:(NSString *)key
+                          range:(NSRange)range {
     NSString *currentValue;
     NSRange currentValueRange;
     // 查找到现在值的区间
@@ -476,6 +476,106 @@ NS_INLINE BOOL XAPRangeNotFound(NSRange r) {
     NSRange lineRange = [self lineRangeForRange:currentValueRange];
     // 删除区间字符串
     [self deleteCharactersInRange:lineRange];
+    return YES;
+}
+
+@end
+
+
+#pragma mark - buildSettings扩展
+@implementation NSMutableString (XAPPbxprojBuildSettings)
+
+- (BOOL)updateBuildSettingsWithKey:(NSString *)buildSettingsKey
+                             value:(NSString *)buildSettingsValue
+             buildConfiguratioinId:(NSString *)buildConfiguratioinId {
+    NSString *value;
+    NSRange valueRange;
+    BOOL ret = NO;
+    // 查找配置的值与位置——每次都得重新计算是因为其他更改，可能导致Range变了
+    ret = [self findDictionaryWithKey:buildConfiguratioinId
+                                value:&value
+                           valueRange:&valueRange];
+    if (!ret) { return NO; }
+    NSRange buildConfigurationRange = valueRange;
+
+    // 查找buildSettings的值与位置——此处是相对于buildConfiguration的值计算的
+    ret = [self findDictionaryWithKey:@"buildSettings"
+                                range:buildConfigurationRange
+                                value:&value
+                           valueRange:&valueRange];
+    if (!ret) { return NO; }
+
+    // 此位置是对于整个pbxprojString来说的
+    NSRange buildSettingsRange = valueRange;
+
+    // 设置
+    ret = [self updateAssigmentForValue:buildSettingsValue
+                                withKey:buildSettingsKey
+                                  range:buildSettingsRange];
+    if (!ret) { return NO; }
+
+    return YES;
+}
+
+- (BOOL)appendBuildSettingsWithKey:(NSString *)buildSettingsKey
+                             value:(NSString *)buildSettingsValue
+             buildConfiguratioinId:(NSString *)buildConfiguratioinId {
+    NSString *value;
+    NSRange valueRange;
+    BOOL ret = NO;
+    // 查找配置的值与位置——每次都得重新计算是因为其他更改，可能导致Range变了
+    ret = [self findDictionaryWithKey:buildConfiguratioinId
+                                value:&value
+                           valueRange:&valueRange];
+    if (!ret) { return NO; }
+    NSRange buildConfigurationRange = valueRange;
+
+    // 查找buildSettings的值与位置——此处是相对于buildConfiguration的值计算的
+    ret = [self findDictionaryWithKey:@"buildSettings"
+                                range:buildConfigurationRange
+                                value:&value
+                           valueRange:&valueRange];
+    if (!ret) { return NO; }
+
+    // 此位置是对于整个pbxprojString来说的
+    NSRange buildSettingsRange = valueRange;
+
+    // 新增
+    ret = [self appendAssigmentWithKey:buildSettingsKey
+                                 value:buildSettingsValue
+                                 range:buildSettingsRange];
+    if (!ret) { return NO; }
+
+    return YES;
+}
+
+- (BOOL)removeBuildSettingsWithKey:(NSString *)buildSettingsKey
+             buildConfiguratioinId:(NSString *)buildConfiguratioinId {
+    NSString *value;
+    NSRange valueRange;
+    BOOL ret = NO;
+    // 查找配置的值与位置——每次都得重新计算是因为其他更改，可能导致Range变了
+    ret = [self findDictionaryWithKey:buildConfiguratioinId
+                                value:&value
+                           valueRange:&valueRange];
+    if (!ret) { return NO; }
+    NSRange buildConfigurationRange = valueRange;
+
+    // 查找buildSettings的值与位置——此处是相对于buildConfiguration的值计算的
+    ret = [self findDictionaryWithKey:@"buildSettings"
+                                range:buildConfigurationRange
+                                value:&value
+                           valueRange:&valueRange];
+    if (!ret) { return NO; }
+
+    // 此位置是对于整个pbxprojString来说的
+    NSRange buildSettingsRange = valueRange;
+
+    // 新增
+    ret = [self deleteAssigmentForKey:buildSettingsKey
+                                range:buildSettingsRange];
+    if (!ret) { return NO; }
+
     return YES;
 }
 

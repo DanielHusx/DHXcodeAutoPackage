@@ -114,10 +114,10 @@ FOUNDATION_EXTERN XAPUniqueMark const kXAPUniqueMarkArrayEnd;
 /// @param key 查找key
 /// @param range 查找区间（buildSettings字典区间）
 /// @param replacedString 设置替换后的新的字符串
-- (BOOL)setupAssigmentForValue:(NSString *)value
-                       withKey:(NSString *)key
-                         range:(NSRange)range
-                replacedString:(NSString * _Nullable * _Nonnull)replacedString;
+- (BOOL)updateAssigmentForValue:(NSString *)value
+                        withKey:(NSString *)key
+                          range:(NSRange)range
+                 replacedString:(NSString * _Nullable * _Nonnull)replacedString;
 
 /// 添加赋值表达式
 ///
@@ -139,16 +139,16 @@ FOUNDATION_EXTERN XAPUniqueMark const kXAPUniqueMarkArrayEnd;
                  deleteString:(NSString * _Nullable * _Nonnull)deleteString;
 @end
 
-
-@interface NSMutableString (XAPPbxprojParserExtension)
+#pragma mark -
+@interface NSMutableString (XAPPbxprojParser)
 /// 查找赋值表达式后设置值
 ///
 /// @param value 设置的值
 /// @param key 查找key
 /// @param range 查找区间（buildSettings字典区间）
-- (BOOL)setupAssigmentForValue:(NSString *)value
-                       withKey:(NSString *)key
-                         range:(NSRange)range;
+- (BOOL)updateAssigmentForValue:(NSString *)value
+                        withKey:(NSString *)key
+                          range:(NSRange)range;
 
 /// 添加赋值表达式
 ///
@@ -168,4 +168,34 @@ FOUNDATION_EXTERN XAPUniqueMark const kXAPUniqueMarkArrayEnd;
 
 @end
 
+
+#pragma mark - buildSettings扩展
+@interface NSMutableString (XAPPbxprojBuildSettings)
+
+/// 更新buildSettings的表达式值
+///
+/// @param buildSettingsKey 表达式键
+/// @param buildSettingsValue  表达式值
+/// @param buildConfiguratioinId 编译配置id
+- (BOOL)updateBuildSettingsWithKey:(NSString *)buildSettingsKey
+                             value:(NSString *)buildSettingsValue
+             buildConfiguratioinId:(NSString *)buildConfiguratioinId;
+
+/// 添加buildSettings的表达式值
+///
+/// @param buildSettingsKey 表达式键
+/// @param buildSettingsValue  表达式值
+/// @param buildConfiguratioinId 编译配置id
+- (BOOL)appendBuildSettingsWithKey:(NSString *)buildSettingsKey
+                             value:(NSString *)buildSettingsValue
+             buildConfiguratioinId:(NSString *)buildConfiguratioinId;
+
+/// 删除buildSettings的表达式值
+///
+/// @param buildSettingsKey 表达式键
+/// @param buildConfiguratioinId 编译配置id
+- (BOOL)removeBuildSettingsWithKey:(NSString *)buildSettingsKey
+             buildConfiguratioinId:(NSString *)buildConfiguratioinId;
+
+@end
 NS_ASSUME_NONNULL_END
