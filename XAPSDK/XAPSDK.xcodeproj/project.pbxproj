@@ -156,6 +156,10 @@
 		65F16C0B258120410095C607 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16BE9258120410095C607 /* AFHTTPSessionManager.h */; };
 		65F16C10258123EB0095C607 /* XAPTaskModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F16C0E258123EB0095C607 /* XAPTaskModel.h */; };
 		65F16C11258123EB0095C607 /* XAPTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F16C0F258123EB0095C607 /* XAPTaskModel.m */; };
+		F66D955B259AC79D00745523 /* XAPPbxprojUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = F66D9559259AC79D00745523 /* XAPPbxprojUpdater.h */; };
+		F66D955C259AC79D00745523 /* XAPPbxprojUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D955A259AC79D00745523 /* XAPPbxprojUpdater.m */; };
+		F66D9561259AC87000745523 /* XAPPbxprojParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F66D955F259AC87000745523 /* XAPPbxprojParser.h */; };
+		F66D9562259AC87000745523 /* XAPPbxprojParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D9560259AC87000745523 /* XAPPbxprojParser.m */; };
 		F6C821F5257F53570054183F /* XAPInfoPlistTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821F3257F53570054183F /* XAPInfoPlistTools.h */; };
 		F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C821F4257F53570054183F /* XAPInfoPlistTools.m */; };
 		F6C821FC258070550054183F /* XAPRuntimeTools.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C821FA258070550054183F /* XAPRuntimeTools.h */; };
@@ -326,6 +330,10 @@
 		65F16BE9258120410095C607 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		65F16C0E258123EB0095C607 /* XAPTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPTaskModel.h; sourceTree = "<group>"; };
 		65F16C0F258123EB0095C607 /* XAPTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPTaskModel.m; sourceTree = "<group>"; };
+		F66D9559259AC79D00745523 /* XAPPbxprojUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPPbxprojUpdater.h; sourceTree = "<group>"; };
+		F66D955A259AC79D00745523 /* XAPPbxprojUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPPbxprojUpdater.m; sourceTree = "<group>"; };
+		F66D955F259AC87000745523 /* XAPPbxprojParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPPbxprojParser.h; sourceTree = "<group>"; };
+		F66D9560259AC87000745523 /* XAPPbxprojParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPPbxprojParser.m; sourceTree = "<group>"; };
 		F6C821F3257F53570054183F /* XAPInfoPlistTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPInfoPlistTools.h; sourceTree = "<group>"; };
 		F6C821F4257F53570054183F /* XAPInfoPlistTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAPInfoPlistTools.m; sourceTree = "<group>"; };
 		F6C821FA258070550054183F /* XAPRuntimeTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAPRuntimeTools.h; sourceTree = "<group>"; };
@@ -403,6 +411,7 @@
 				65F16A58257521110095C607 /* XAPSDK.h */,
 				65F16A62257521F50095C607 /* Common */,
 				F6C8227B2581E5FF0054183F /* Parser */,
+				F66D9558259AC6F500745523 /* Updater */,
 				65F16AF3257806150095C607 /* Models */,
 				F6F8B7ED2577385800C5C893 /* Tools */,
 				F6F8B7E5257736CC00C5C893 /* Manager */,
@@ -705,6 +714,25 @@
 			path = Task;
 			sourceTree = "<group>";
 		};
+		F66D9558259AC6F500745523 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				F66D9559259AC79D00745523 /* XAPPbxprojUpdater.h */,
+				F66D955A259AC79D00745523 /* XAPPbxprojUpdater.m */,
+				F66D955E259AC7C100745523 /* PbxprojCategory */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
+		F66D955E259AC7C100745523 /* PbxprojCategory */ = {
+			isa = PBXGroup;
+			children = (
+				F66D955F259AC87000745523 /* XAPPbxprojParser.h */,
+				F66D9560259AC87000745523 /* XAPPbxprojParser.m */,
+			);
+			path = PbxprojCategory;
+			sourceTree = "<group>";
+		};
 		F6C8227B2581E5FF0054183F /* Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +792,7 @@
 				65F16C00258120410095C607 /* AFURLSessionManager.h in Headers */,
 				65F16BED258120410095C607 /* UIImageView+AFNetworking.h in Headers */,
 				65F16AC62577F13A0095C607 /* mz_strm_split.h in Headers */,
+				F66D9561259AC87000745523 /* XAPPbxprojParser.h in Headers */,
 				65F16B9D258114B50095C607 /* XAPConfigurationModel.h in Headers */,
 				65F16A852575236E0095C607 /* XAPConstant.h in Headers */,
 				65B50834258B9AD300232D90 /* XAPWorkspaceModel+XAPParser.h in Headers */,
@@ -817,6 +846,7 @@
 				65F16AD22577F13A0095C607 /* mz_zip.h in Headers */,
 				65F16A952577F10D0095C607 /* XAPZipTools.h in Headers */,
 				65F16B5C2580F4D70095C607 /* XAPPodModel.h in Headers */,
+				F66D955B259AC79D00745523 /* XAPPbxprojUpdater.h in Headers */,
 				65F16BA2258116390095C607 /* XAPProjectExtraConfigurationModel.h in Headers */,
 				65F16B632580F50B0095C607 /* XAPGitModel.h in Headers */,
 				65F16AC72577F13A0095C607 /* mz_strm_buf.h in Headers */,
@@ -964,6 +994,7 @@
 				65F16ACC2577F13A0095C607 /* mz_strm_wzaes.c in Sources */,
 				65F16BA8258117F70095C607 /* XAPArchiveExtraConfigurationModel.m in Sources */,
 				65F16B45257FAD830095C607 /* XAPXMLTools.m in Sources */,
+				F66D955C259AC79D00745523 /* XAPPbxprojUpdater.m in Sources */,
 				65F16BF9258120410095C607 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				65F16A7B257522DD0095C607 /* XAPScriptResposity.m in Sources */,
 				F6C821F6257F53570054183F /* XAPInfoPlistTools.m in Sources */,
@@ -974,6 +1005,7 @@
 				65F16BA3258116390095C607 /* XAPProjectExtraConfigurationModel.m in Sources */,
 				65F16BEC258120410095C607 /* UIRefreshControl+AFNetworking.m in Sources */,
 				65B5083F258B9CC500232D90 /* XAPDirectoryParser.m in Sources */,
+				F66D9562259AC87000745523 /* XAPPbxprojParser.m in Sources */,
 				65F16ABE2577F1390095C607 /* mz_strm_pkcrypt.c in Sources */,
 				65F16AD12577F13A0095C607 /* mz_os.c in Sources */,
 				65F16AC82577F13A0095C607 /* mz_crypt_apple.c in Sources */,
