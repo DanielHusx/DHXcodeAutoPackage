@@ -69,8 +69,4 @@ MacOS 自动化打包ipa，上传至蒲公英、fir，自动化xcarchive导包�
 
 如果你觉得还不错，就赞一个啦~ 谢谢！
 
-听说你想请我喝杯咖啡？那就你懂的~ 谢谢！
-
-![pay](Resource/K_WechatPay.png)
-
 [MIT LICENSE](LICENSE)
