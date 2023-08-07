@@ -1,4 +1,5 @@
 # XcodeAutoPackage
+此项目使用OC，最新请参考用Swift写的[Serendipity](https://github.com/DanielHusx/Serendipity)
 
 [XcodeAutoPackage_English](README_EN.md)
 
